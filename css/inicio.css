@@ -29,7 +29,7 @@
 	width: 200px;
 	vertical-align: text-top;
 	margin: 10px;
-	opacity: 0;
+	opacity: 1;
 	transition-duration: 0.5s;
 }
 	.item-cuadrado, .item-circulo{

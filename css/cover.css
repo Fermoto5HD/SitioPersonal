@@ -1,0 +1,29 @@
+.cuerpo-landing{
+	/*height: 375px;*/
+	width: 100%;
+	background-color: rgb(240, 150, 0);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	overflow: hidden;
+	text-align: center;
+	transition-duration: 3s;
+}
+	.cuerpo-landing.proximamente{
+		background-image: url(../img/landing_noche.jpg);
+	}
+	.cuerpo-landing.contacto{
+		background-image: url(../img/landing_dia.jpg);
+	}
+	.landing-sombra{
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+	.landing-texto.proximamente{
+		font-size: 30px;
+		padding: 175px 10px;
+	}
+	.landing-texto.contacto{
+		font-size: 30px;
+		padding: 175px 10px;
+	}

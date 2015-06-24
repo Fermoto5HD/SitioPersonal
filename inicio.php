@@ -1,6 +1,4 @@
-<script src="js/scripts.js"></script>
-<link rel="stylesheet" type="text/css" href="css/inicio.css">
-<div class="cuerpo-landing">
+<div class="cuerpo-landing proximamente">
 	<div class="landing-sombra">
 		<div class="encuadre">
 			<!--<div class="landing-espacio" id="proximamente"></div>-->
@@ -57,8 +55,8 @@
 			<a href="http://facebook.com/Fermoto5HD" target="blank"><button><i class="fa fa-facebook-official fa-2x"></i></button></a>
 			<a href="http://twitter.com/Fermoto5HD" target="blank"><button><i class="fa fa-twitter fa-2x"></i></button></a>
 			<a href="https://plus.google.com/117999670362964140369/" target="blank"><button><i class="fa fa-google-plus fa-2x"></i></button></a>
-			<!--<p>O podés enviarme un correo:</p>
-			<button>Ir al formulario de contacto</button>-->
+			<p>O podés enviarme un correo:</p>
+			<button onclick="Contacto()">Ir al formulario de contacto</button>
 		</div>
 	</center>
 </div>

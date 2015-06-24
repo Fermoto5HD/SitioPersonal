@@ -1,7 +1,23 @@
 // Levantar cover
     $(document).ready(function() {
-        $(".cuerpo-landing").addClass("proximamente").fadeIn();
+        //$(".cuerpo-landing").addClass("proximamente").fadeIn();
+        console.log("¡Bienvenido a mi sitio! Acá podrás ver todas las acciónes registradas durante la navegación en el sitio.");
     });
+
+//
+function Inicio(){
+    MostrarSeccion("inicio");
+    console.log("Cambió el contenido a la página inicial.");
+    HaciaArriba();
+}
+function Contacto(){
+    MostrarSeccion("contacto");
+    console.log("Cambió el contenido a la página de contacto.");
+    HaciaArriba();
+}
+function HaciaArriba(){
+    console.log("Desplazando el sitio hacia arriba.");
+}
 
 $(function() {  
     var items_resumen = $(".seccion#inicio-resumen .cuerpo-item");

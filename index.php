@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div id="cuerpo">
-			<?php include ("inicio.php");?>
+			<?php // include ("contacto.php");?>
 		</div>
 	</body>
 	<footer>
