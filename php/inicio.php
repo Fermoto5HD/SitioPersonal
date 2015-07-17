@@ -1,8 +1,7 @@
-<div class="cuerpo-landing proximamente">
+<div class="cuerpo-landing" id="home">
 	<div class="landing-sombra">
 		<div class="encuadre">
-			<!--<div class="landing-espacio" id="proximamente"></div>-->
-			<div class="landing-texto proximamente"><h1 style="margin-bottom: 0px;">¡Bienvenido a mi sitio!</h1>
+			<div class="landing-texto" id="home"><h1 style="margin-bottom: 0px;">¡Bienvenido a mi sitio!</h1>
 			Próximamente te voy a contar sobre mí y sobre los trabajos que hice.<br>El sitio aún está siendo programado, y faltan sorpresas. Paciencia ;) </div>
 		</div>
 	</div>

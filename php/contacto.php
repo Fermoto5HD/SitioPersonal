@@ -1,7 +1,7 @@
-<div class="cuerpo-landing contacto">
+<div class="cuerpo-landing" id="contacto">
 	<div class="landing-sombra">
 		<div class="encuadre">
-			<div class="landing-texto proximamente"><h1 style="margin-bottom: 0px;">¿Alguna duda con algo? ¿Te interesaron los trabajos que realicé?</h1>
+			<div class="landing-texto" id="contacto"><h1 style="margin-bottom: 0px;">¿Alguna duda con algo?<br />¿Te interesaron mis trabajos?</h1>
 			¡Ponete en contacto conmigo y te responderé las dudas o consultas que tengas!</div>
 		</div>
 	</div>

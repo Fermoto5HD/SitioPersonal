@@ -51,7 +51,7 @@ function RealizarEnvio(){
  
      $.ajax({
              data:  datos,
-             url:   'contacto-proceso.php',
+             url:   'php/contacto-proceso.php',
              type:  'post',
              beforeSend: function () {
                     $('#contactform').css("border-color","#25A25A");

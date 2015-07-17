@@ -1,0 +1,121 @@
+// Colores 
+$ColorTexto: "rgb(255, 255, 255)";
+$ColorTextoBoton: "rgb(0, 150, 250)";
+$ColorFondo: "rgb(20, 20, 20)";
+$ColorFondoBoton: "rgb(50, 50, 50)";
+
+// Responsive 
+$movil: "(max-width: 639px)";
+$escritorio: "(min-width: 640px)";
+
+// Fuentes tipográficas 
+$CadenaFuentes: "'Museo Sans', 'Tahoma', 'Verdana', 'Arial', 'Sans-serif'";
+$Regular: "'Open Sans', " + $CadenaFuentes;
+$Light: "'Open Sans Light', " + $CadenaFuentes;
+
+/* Fuentes tipográficas */
+@font-face {
+	font:{
+		family:"Open Sans";
+		font-weight: normal;
+		font-style: normal;
+	}
+	src:url("../fonts/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+	font:{
+		family:"Open Sans Light";
+		font-weight: normal;
+		font-style: normal;
+	}
+	src:url("../fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+/* Reset, declaración tipográfica y bloqueo de selección */
+*{
+	margin: 0; padding: 0;
+	color: #{$ColorTexto};;
+	font-family: #{$Regular};
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+/* Declaración tipográfica en párrafos y footer */
+p, footer{font-family: #{$Light};}
+
+
+/* Encuadre */
+.encuadre{
+	& #header{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	}
+	@media #{$escritorio} {
+		width: 100%;
+		max-width: 860px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+/* Body */
+body{
+	background: #{$ColorFondo};;
+}
+
+/* h1 */
+h1{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+/* Botones */
+button{
+	margin: 5px;
+	padding: 10px; 
+	border: 1px solid rgba(0, 0, 0, 0.75); border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+	border-radius: 8px;
+	background-color: #{$ColorFondoBoton};;
+	color: #{$ColorTextoBoton};;
+	cursor: pointer;
+}
+
+/* Transparencias */
+.opaco{opacity: 1;}
+.semitransparencia{opacity: 0.5;}
+
+/* Loading con Ajax */
+.loading{
+	background-color: rgb(0, 0, 0);
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 99999999;
+}
+.loading-texto{top: 50%; width: 100%; text-align: center; position: fixed;}
+
+/* Cuerpo y secciones */
+#cuerpo{
+	padding-bottom: 20px;
+}
+
+.seccion{
+	border-top: 1px solid rgba(255, 255, 255, 0.5);
+	padding-top: 10px;
+	padding-bottom: 20px;
+	&:first-child{
+		border-top: none;
+	}
+}
+
+@import "header";
+
+//Footer (como no hay mucho en el footer, va directo acá). 
+/* Footer */
+footer{
+	padding: 10px;
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	text-align: center;
+	opacity: 0.75;
+	font-size: 13px; 
+}

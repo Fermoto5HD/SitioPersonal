@@ -34,8 +34,10 @@
 					//setTimeout('objetoajax()',seconds*1000);
 				}
 	        }
+			var Frases = ['Cargando sección...', 'Esperá un momento...', 'La sección se está cargando...']; 
+    		var resultadoRandom = Frases[Math.floor(Math.random() * Frases.length)];
 		// Muestra que está cargando el sitio
-			$('#cuerpo').html('<div id="pantalla-carga"><br><br><br><br>Esperá un momento. <br>Próximamente una pantalla de carga decente. </div>');
+			$('#cuerpo').html('<div class="loading"><div class="loading-texto"><i class="fa fa-cog fa-spin fa-4x"></i><h2>'+resultadoRandom+'</h2></div>');
 		// Más magia :D 
 			$.ajax({
 				url: contenido+".php",
