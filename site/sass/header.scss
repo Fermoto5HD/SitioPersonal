@@ -1,0 +1,122 @@
+// Header del sitio 
+$altoHeader: "65px"; 
+$movil: "(max-width: 639px)";
+$escritorio: "(min-width: 640px)";
+
+// Modificaciones con Foundation 
+.contain-to-grid#principal, nav.top-bar#principal, ul.right#principal, ul.right#principal li, li:not(.has-form) a:not(.button){
+	background-color: transparent; 
+}
+nav.top-bar#principal{
+	height: #{$altoHeader}; 
+	border-bottom: 2px solid rgba(255, 255, 255, 0.5); 
+}
+nav.top-bar.expanded#principal{
+		height: inherit;
+		background-color: rgba(0, 0, 0, 0.8); 
+		& .title-area {
+			background-color: transparent; 
+		}
+}
+.title-area{
+	height: #{$altoHeader}; 
+}
+.top-bar-section ul li > a{
+	opacity: 1; 
+	font-style: inherit; 
+	font-family: inherit; 
+}
+
+ul.right#principal{
+	background-color: transparent; 
+	font-style: inherit; 
+	& li:not(.has-form) a:not(.button) {
+		font-style: inherit; 
+		font-family: inherit; 
+		@media only screen and (min-width: 40.0625em){
+			background-color: transparent; 
+			opacity: 0.5; 
+			transition: 0.5s; 
+			font-size: 16px; 
+			padding: 10px 20px;
+		}
+		&:hover{
+			opacity: 1; 
+		}
+	}
+}
+
+
+
+
+
+
+/* Div contenedor del header */
+header#estructura-header{
+	width: 100%; 
+	background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, transparent 100%) repeat scroll 0% 0%;
+	padding-bottom: 2.5px;
+	color: rgb(20, 20, 20);
+	position: absolute;
+	transition-duration: 0.5s;
+
+	@media #{$movil} {
+		position: fixed;
+		z-index: 10;
+	}
+}
+/* Icono menu */
+#icono-menu-responsive{
+	display: none;
+
+	@media #{$movil} {
+		color: rgb(255, 255, 255);
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 40px;
+		margin-left: 15px; 
+	}
+}
+
+/* Logo */
+.encabezado-logotipo{
+	margin: 10px;
+	width: 210px;
+	height: 50px;
+	background-image: url(../img/brand.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Navegación */
+nav.encabezado-navegacion{
+	display: inline-block;
+	float: right;
+	padding: 10px;
+	margin: 10px;
+
+	@media #{$movil} {
+		display: none;
+		float: none;
+	}
+}
+li.navegacion-item{
+	display: inline-block;
+	padding: 10px;
+	opacity: 0.5;
+	transition-duration: 0.75s;
+	cursor: pointer;
+	vertical-align: middle;
+	color: rgb(200, 200, 200) !important;
+
+	@media #{$movil} {
+		display: block;
+	}
+	
+	&:hover{
+		opacity: 1;
+	}
+}

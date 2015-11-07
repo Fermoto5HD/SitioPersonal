@@ -1,0 +1,39 @@
+.cuerpo-landing {
+  width: 100%;
+  height: inherit;
+  background-color: rgb(0, 150, 200);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  text-align: center;
+  transition-duration: 3s; }
+  @media only screen and (min-width: 40.0625em) {
+    .cuerpo-landing {
+      height: 600px; } }
+  .cuerpo-landing#home, .cuerpo-landing#instahome {
+    background-image: url(../img/landing_noche.jpg); }
+  .cuerpo-landing#portfolio {
+    background-image: url(../img/landing_noche.jpg); }
+  .cuerpo-landing#creditos {
+    background-image: url(../img/landing_noche.jpg); }
+  .cuerpo-landing#contacto {
+    background-image: url(../img/landing_dia.jpg); }
+  .cuerpo-landing#error404 {
+    background-image: url(http://Fermoto5HD.xtrweb.com/img/landing_404.jpg); }
+  .cuerpo-landing .landing-sombra {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+    @media only screen and (min-width: 40.0625em) {
+      .cuerpo-landing .landing-sombra {
+        height: 600px; } }
+
+.landing-texto#home, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
+  font-size: 20px;
+  padding: 60px 10px; }
+  @media only screen and (min-width: 40.0625em) {
+    .landing-texto#home, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
+      font-size: 25px;
+      padding: 175px 10px; } }
+
+/*# sourceMappingURL=cover.css.map */

@@ -1,0 +1,35 @@
+<div class="cuerpo-landing" id="contacto">
+	<div class="landing-sombra">
+		<div class="encuadre">
+			<div class="landing-texto" id="contacto"><h1 style="margin-bottom: 0px;">Some questions?<br />Are interested of my portfolio?</h1>
+			Contact me and I'll answer your issues and questions!</div>
+		</div>
+	</div>
+</div>
+<div class="encuadre">
+	<center>
+		<div class="seccion" id="contacto-redessociales">
+			<h1>You can connect me through the following networks:</h1>
+			<a href="http://facebook.com/Fermoto5HD" target="blank"><button><i class="fa fa-facebook-official fa-2x"></i></button></a>
+			<a href="http://twitter.com/Fermoto5HD" target="blank"><button><i class="fa fa-twitter fa-2x"></i></button></a>
+			<a href="https://plus.google.com/117999670362964140369/" target="blank"><button><i class="fa fa-google-plus fa-2x"></i></button></a>
+		</div>
+		<div class="seccion" id="contacto-formulario">
+			<h1>If you prefer a personal answer via e-mail, please fill the following form: </h1>
+			<div id="estado-envio" class="oculto">
+				<p>Unknown e-mail status. </p>
+			</div>
+			<form id="formulario-contacto" name="contacto">
+				<input class="campo-texto" id="contacto-nombre" type="text" placeholder="Your name"></input>
+				<input class="campo-texto" id="contacto-correo" type="email" placeholder="Your e-mail"></input>
+				<input class="campo-texto" id="contacto-telefono" type="number" placeholder="A number phone if you want to call you (optional)"></input>
+				<textarea class="campo-texto-extendido" id="contacto-mensaje" placeholder="And the message of course!"></textarea>
+				<div class="error-envio" style="display: none;">
+					<h1 class="error-envio-titulo">Check the form... something is causing an error and cannot send the message.</h1>
+					<p class="error-envio-item">Unknown error. <br>If it persists please open an "issue" into my repository of the site and report this error. </p>
+				</div>
+				<input id="contacto-enviar" type="button" onclick="RealizarEnvio()" value="Send message!"></input>
+			</form>
+		</div>
+	</center>
+</div>

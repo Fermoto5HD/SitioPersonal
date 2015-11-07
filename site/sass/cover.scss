@@ -1,0 +1,58 @@
+//Responsive
+$movil: "(max-width: 639px)";
+$escritorio: "(min-width: 640px)";
+
+// Parametros 
+$ColorFondoCover: "rgb(0, 150, 200)";
+$RutaImg: "../img/";
+$ImgCoverHome: $RutaImg + "landing_noche.jpg";
+$ImgCoverContacto: $RutaImg + "landing_dia.jpg";
+$ImgCover404: "http://Fermoto5HD.xtrweb.com/img/landing_404.jpg"; 
+$AlturaCover: '600px'; 
+// Cover
+.cuerpo-landing{
+	width: 100%; 
+	height: inherit; 
+	background-color: #{$ColorFondoCover};;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	overflow: hidden;
+	text-align: center;
+	transition-duration: 3s;
+	@media only screen and (min-width: 40.0625em){
+		height: #{$AlturaCover};; 
+	}
+	&#home, &#instahome{
+		background-image: url(#{$ImgCoverHome});
+	}
+	&#portfolio{
+		background-image: url(#{$ImgCoverHome});
+	}
+	&#creditos{
+		background-image: url(#{$ImgCoverHome});
+	}
+	&#contacto{
+		background-image: url(#{$ImgCoverContacto});
+	}
+	&#error404{
+		background-image: url(#{$ImgCover404});
+	}
+	.landing-sombra{
+		width: 100%; 
+		background-color: rgba(0, 0, 0, 0.5);
+		@media only screen and (min-width: 40.0625em){
+			height: #{$AlturaCover};; 
+		}
+	}
+}
+.landing-texto{
+	&#home, &#portfolio, &#creditos, &#contacto, &#error404{
+		font-size: 20px;
+		padding: 60px 10px;
+		@media only screen and (min-width: 40.0625em){
+			font-size: 25px;
+			padding: 175px 10px;
+		}
+	}
+}

@@ -1,0 +1,93 @@
+.cuerpo-item {
+  display: inline-block;
+  width: 200px;
+  vertical-align: text-top;
+  margin: 10px;
+  opacity: 1;
+  transition-duration: 0.5s; }
+
+.item-cuadrado, .item-circulo {
+  height: 175px;
+  width: 175px;
+  background-color: #3c3c3c;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle; }
+
+.item-circulo {
+  border-radius: 100%; }
+  .item-circulo#rojo {
+    background-color: #c80000; }
+  .item-circulo#naranja {
+    background-color: #c86400; }
+  .item-circulo#anaranjado {
+    background-color: #c8af00; }
+  .item-circulo#amarillo {
+    background-color: #f0f000; }
+  .item-circulo#azul-claro {
+    background-color: #0064c8; }
+  .item-circulo#azul-oscuro {
+    background-color: #000064; }
+
+.item-texto {
+  padding-top: 10px;
+  vertical-align: text-top; }
+
+.portfolio {
+  max-width: 600px;
+  margin: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 10px; }
+  .portfolio:first-child {
+    border-top: none; }
+  .portfolio img {
+    margin: 10px;
+    width: 225px;
+    height: 225px;
+    vertical-align: top;
+    object-fit: cover; }
+
+.portfolio-img {
+  margin: 10px;
+  width: 225px;
+  height: 175px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: top; }
+  .portfolio-img#FactorRHCreativo {
+    background-image: url("../img/portfolio/factorrhcreativo.png"); }
+  .portfolio-img#ClubBaldomero-Home {
+    background-image: url("../img/portfolio/clubbaldomero-test.png"); }
+  .portfolio-img#ClubBaldomero-Forms {
+    background-image: url("../img/portfolio/clubbaldomero-forms.png"); }
+
+.portfolio-txt {
+  padding: 10px;
+  text-align: left;
+  max-width: 325px;
+  display: inline-block; }
+
+.actividad-usuario {
+  padding: 20px;
+  max-width: 600px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: left; }
+  .actividad-usuario :last-child {
+    border-bottom: none; }
+
+.actividad-usuario-imagen {
+  width: 80px;
+  height: 105px;
+  background-color: #323232;
+  display: inline-block;
+  vertical-align: middle; }
+
+.actividad-usuario-descripcion {
+  vertical-align: middle;
+  display: inline-block;
+  max-width: 500px; }
+
+/*# sourceMappingURL=inicio.css.map */

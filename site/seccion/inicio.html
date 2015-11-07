@@ -1,0 +1,108 @@
+<script type="text/javascript">
+	$.getJSON( "js/portfolio.json", function( data ) {
+	var items = []; 
+	$.each(data, function(index, d){ 
+		items.push("<div class='portfolio'> <img src='img/portfolio/"+d.imagen+".png' /> <div class='portfolio-txt'><h3>"+d.titulo+"</h3><h4>"+d.periodo+"</h4><p>"+d.descripcionCorta+"</p> <center><a href='"+d.linkURL+"' target='blank'><button>Visitar sitio</button></a> <a href='"+d.linkGitHub+"' target='blank'><button>Ver repositorio</button></a></center></div>");
+	});
+	$('#listado-portfolio').html(items);
+});
+</script>
+<script type="text/javascript">
+	var feed = new Instafeed({
+				get: 'user',
+				userId: '1631184808', 
+				clientId: '3c38d510e4ce43b08f4157fd0ee381fb',
+				limit: 1, 
+				resolution: 'standard_resolution', 
+				target: 'cover-home', 
+				template: '<div class="cuerpo-landing" style="background-image: url({{image}})" >\
+							<div class="landing-sombra">\
+								<div class="encuadre">\
+									<div class="landing-texto" id="home">\
+										<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>\
+										¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />\
+										Esta página está en plena actualización. Estate atento! ;) <br /> \
+									</div>\
+								</div>\
+							</div>\
+					</div>', 
+				error: function() {
+					$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" >\
+							<div class="landing-sombra">\
+								<div class="encuadre">\
+									<div class="landing-texto" id="home">\
+										<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>\
+										¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />\
+										Esta página está en plena actualización. Estate atento! ;) <br /> \
+									</div>\
+								</div>\
+							</div>\
+					</div>');
+				}
+		});
+		feed.run();
+</script>
+<div class="contenido" id="cover-home">
+</div>
+<div class="contenido" id="home">
+	<!--<div class="cuerpo-landing" id="home">
+		<div class="landing-sombra">
+			<div class="encuadre">
+				<div class="landing-texto" id="home">
+					<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>
+					¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />
+					Esta página está en plena actualización. Estate atento! ;) <br /> 
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<div class="encuadre">
+		<center>
+			<div class="seccion" id="inicio-resumen">
+				<h1>Un resumen de lo que hago</h1>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="rojo"><i class="mdi mdi-school" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Curso la tecnicatura en Tecnología Ferroviaria en la UNSAM.</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="naranja"><i class="mdi mdi-laptop-windows" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Programo apps web en HTML5, PHP, CSS3, JS, jQuery, Ajax y más!</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="anaranjado"><i class="mdi mdi-account-multiple" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Ayudo como voluntario en la Biblioteca Baldomero en "Programá tu Futuro".</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="amarillo"><i class="mdi mdi-television-guide" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Veo animé y analizo un poco la televisión argentina.</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="azul-claro"><i class="fa fa-subway fa-5x" style="line-height: 2.1;"></i></div>
+					<div class="item-texto">Me apasiona el urbanismo y el transporte público. En especial el subte.</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="azul-oscuro"><i class="mdi mdi-city" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Busco gente que quiera explorar nuevos lugares en Buenos Aires.</div>
+				</div>
+			</div>
+			<div class="seccion" id="inicio-portfolio">
+				<h1>Portfolios destacados</h1>
+				<div id="listado-portfolio">
+					Cargando... 
+				</div>
+			</div>
+			<div class="seccion" id="inicio_contacto">
+				<h1>Esto es lo que hay por el momento</h1>
+				<p>Te invito a seguir el desarrollo de la versión 4 de mi sitio en el <a href="https://github.com/Fermoto5HD/SitioPersonal-v4.0" target="blank">repositorio de GitHub</a>.</p>
+				<p>Si tenés una consulta en particular, podés realizarla en las redes donde participo:</p>
+				<a href="http://facebook.com/Fermoto5HD" target="blank"><button><i class="fa fa-facebook-official fa-2x"></i></button></a>
+				<a href="http://twitter.com/Fermoto5HD" target="blank"><button><i class="fa fa-twitter fa-2x"></i></button></a>
+				<a href="https://plus.google.com/117999670362964140369/" target="blank"><button><i class="fa fa-google-plus fa-2x"></i></button></a>
+				<p>O podés enviarme un correo:</p>
+				<center>
+					<button onclick="seccion('contacto')">Ir al formulario de contacto</button>
+				</center>
+			</div>
+		</center>
+	</div>
+</div>
