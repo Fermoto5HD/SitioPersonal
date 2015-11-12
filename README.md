@@ -1,8 +1,15 @@
-# Fermoto5HD - Sitio Personal v4.0 (Beta 3)
+# Fermoto5HD - Sitio Personal v4.0 (Beta 3.5)
 Este es el repositorio que muestra el armado integral de mi sitio personal en la versión 4.0 Beta 3. 
 El sitio se creó desde cero, con implementación de HTML5, CSS3, SASS, conceptos de Responsive Design, jQuery, JSON y Ajax. 
 
 ## Cambios en esta versión 
+* Mejoras en el código del cover inicial, soporta caídas de respuesta de la API de Instagram. 
+* Nuevo cover para la sección "Créditos". 
+* Retoques parciales en el texto. 
+* Se incorpora la sección "Sobre mí". 
+* Se prepara la incorporación de una sub-sección dentro de "Sobre mí" llamada "Currículum". 
+
+## Beta 3
 * Se utiliza NodeJS para iniciar la instancia de Express. 
 * Se incorpora Grunt como automatizador de tareas y levantar la instancia de Express mediante un único comando. 
 * Se incorpora Foundation v4. 
@@ -23,4 +30,4 @@ El sitio se creó desde cero, con implementación de HTML5, CSS3, SASS, concepto
 * Correr `grunt`. El sitio se emula en `localhost:1234`. 
 
 ## Reutilización de archivos 
-Sentite libre en utilizar los distintos archivos para lo que se te ocurra, incluso de emularlo en tu PC, te autorizo sin problemas! 
+Sentite libre en utilizar los distintos archivos de este repositorio para lo que se te ocurra o para algún proyecto que tengas! 

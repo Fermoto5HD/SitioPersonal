@@ -4,10 +4,14 @@ $escritorio: "(min-width: 640px)";
 
 // Parametros 
 $ColorFondoCover: "rgb(0, 150, 200)";
-$RutaImg: "../img/";
-$ImgCoverHome: $RutaImg + "landing_noche.jpg";
-$ImgCoverContacto: $RutaImg + "landing_dia.jpg";
-$ImgCover404: "http://Fermoto5HD.xtrweb.com/img/landing_404.jpg"; 
+$RutaImg: "../img/cover/";
+$ImgCoverInicio: $RutaImg + "inicio.jpg";
+$ImgCoverSobreMi: $RutaImg + "sobre-mi.jpg";
+$ImgCoverCurriculum: $RutaImg + "inicio.jpg";
+$ImgCoverPortfolio: $RutaImg + "inicio.jpg";
+$ImgCoverCreditos: $RutaImg + "creditos.jpg";
+$ImgCoverContacto: $RutaImg + "contacto.jpg";
+$ImgCover404: $RutaImg + "error404.jpg"; 
 $AlturaCover: '600px'; 
 // Cover
 .cuerpo-landing{
@@ -24,13 +28,19 @@ $AlturaCover: '600px';
 		height: #{$AlturaCover};; 
 	}
 	&#home, &#instahome{
-		background-image: url(#{$ImgCoverHome});
+		background-image: url(#{$ImgCoverInicio}); 
+	}
+	&#sobre-mi{
+		background-image: url(#{$ImgCoverSobreMi}); 
+	}
+	&#curriculum{
+		background-image: url(#{$ImgCoverCurriculum}); 
 	}
 	&#portfolio{
-		background-image: url(#{$ImgCoverHome});
+		background-image: url(#{$ImgCoverPortfolio}); 
 	}
 	&#creditos{
-		background-image: url(#{$ImgCoverHome});
+		background-image: url(#{$ImgCoverCreditos}); 
 	}
 	&#contacto{
 		background-image: url(#{$ImgCoverContacto});
@@ -47,7 +57,7 @@ $AlturaCover: '600px';
 	}
 }
 .landing-texto{
-	&#home, &#portfolio, &#creditos, &#contacto, &#error404{
+	&#home, &#sobre-mi, &#portfolio, &#creditos, &#contacto, &#error404{
 		font-size: 20px;
 		padding: 60px 10px;
 		@media only screen and (min-width: 40.0625em){

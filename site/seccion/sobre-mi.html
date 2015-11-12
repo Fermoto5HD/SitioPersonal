@@ -1,0 +1,81 @@
+<script type="text/javascript">
+	$.getJSON( "js/portfolio.json", function( data ) {
+	var items = []; 
+	$.each(data, function(index, d){ 
+		items.push("<div class='portfolio'> <img src='img/portfolio/"+d.imagen+".png' /> <div class='portfolio-txt'><h3>"+d.titulo+"</h3><h4>"+d.periodo+"</h4><p>"+d.descripcionCorta+"</p> <center><a href='"+d.linkURL+"' target='blank'><button>Visitar sitio</button></a> <a href='"+d.linkGitHub+"' target='blank'><button>Ver repositorio</button></a></center></div>");
+			return index < 1;
+	});
+	$('#listado-portfolio').html(items); 
+});
+</script>
+<div class="contenido" id="sobre-mi">
+	<div class="cuerpo-landing" id="sobre-mi">
+		<div class="landing-sombra">
+			<div class="encuadre">
+				<div class="landing-texto" id="sobre-mi">
+					<h1 style="margin-bottom: 0px;">Conoceme un poco más</h1>
+					Desde los datos más básicos, pasando por la experiencia adquirida, hasta algunos de mis pasatiempos. 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="encuadre">
+		<center>
+			<div class="seccion" id="inicio-resumen">
+				<h1>Un resumen de lo que hago</h1>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="rojo"><i class="mdi mdi-school" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Curso la tecnicatura en Tecnología Ferroviaria en la UNSAM.</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="naranja"><i class="mdi mdi-laptop-windows" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Programo apps web en HTML5, PHP, CSS3, JS, jQuery, Ajax y más!</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="anaranjado"><i class="mdi mdi-account-multiple" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Ayudo como voluntario en la Biblioteca Baldomero en "Programá tu Futuro".</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="amarillo"><i class="mdi mdi-television-guide" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Veo animé y analizo un poco la televisión argentina.</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="azul-claro"><i class="fa fa-subway fa-5x" style="line-height: 2.1;"></i></div>
+					<div class="item-texto">Me apasiona el urbanismo y el transporte público. En especial el subte.</div>
+				</div>
+				<div class="cuerpo-item">
+					<div class="item-circulo" id="azul-oscuro"><i class="mdi mdi-city" style="font-size: 80px; line-height: 2.1;"></i></div>
+					<div class="item-texto">Busco gente que quiera explorar nuevos lugares en Buenos Aires.</div>
+				</div>
+			</div>
+			<div class="seccion" id="presentacion-corta">
+				<h1>Me presento </h1>
+				<p>Me llamo Fernando Osorio, tengo 20 años y vivo en el barrio de Villa del Parque, Capital Federal, Argentina. </p>
+				<p></p>
+			</div>
+			<div class="seccion" id="experiencias">
+				<h1>Antecedentes y experiencias </h1>
+				<p>Hice casi de todo, desde organizar informacion e ingresar informacion a una base de datos como data entry, formar parte de varios call centers, pasando por soporte tecnico y reparacion de computadoras a domicilio, hasta llegar hoy en dia con el diseño de sitios web en forma freelance. </p>
+				<p>Actualmente soy estudiante de la tecnicatura en Tecnologia Ferroviaria en la Universidad de San Martin, y ayudo como voluntario en el programa "Programa tu Futuro" en la sede de la Biblioteca Baldomero Fernandez Moreno. </p> 
+				<p>Mis proyectos personales son la creacion de aplicaciones y sitios web para cada necesidad. </p>
+			</div>
+			<div class="seccion" id="mis-proyectos">
+				<h1>Proyectos colaborativos</h1>
+				<p>En los proyectos colaborativos soy uno de los principales team leaders en Lantalks Webmedia, un grupo de medios web con el cual trabajo con mi mejor amigo y mano izquierda o derecha (ya no se que mano es jaja) Gerardo Coceres y con mis colegas Emiliano Fazzolari, Eduardo Peralta y Tomás Gonzalez en la consolidacion de las dos radios del grupo: Loop Radio y Plux Radio. </p>
+				<p>Encabezo el liderazgo en el diseño UX y programacion del futuro portal de tecnologia Lantalks, y de los sitios de las radios del grupo. </p>
+				<p>Formo parte del scripting en la creación del sitio web del club de programacion, encabezado por Nicolás Isnardi (Mentor del club). </p>
+			</div>
+			<div class="seccion" id="vision-a-futuro">
+				<h1>Una visión a futuro</h1>
+				<h3>¿Cómo me veo dentro de 10 años?</h3>
+				<p>Dentro de 10 años quiero tener por asegurado estar trabajando con estabilidad con proyectos que permitan superarme a mi mismo y crecer como persona, manteniendo las relaciones intrapersonales y creando nuevas con los mismos objetivos y propósitos para generar nuevas oportunidades de emprendimiento de proyectos innovadores para la comunidad. </p>
+				<p>Tambien quiero ayudar a que las personas que quieran ingresar al ambito de la programacion lo puedan hacer de una forma mas sencilla y sin esfuerzo alguno, por medio de la creación de tutoriales interactivos y explicaciónes sencillas que permitan introducirlos fácilmente a este ámbito. </p>
+			</div>
+			<div class="seccion" id="vision-a-futuro">
+				<h1>¿Querés saber más de mí pero en forma detallada? </h1>
+				<h3>¡Mirá mi currículum!</h3>
+				<a href="cv/FernandoOsorio-2015.pdf"><button>Currículum en PDF</button></a>
+			</div>
+		</center>
+	</div>
+</div>

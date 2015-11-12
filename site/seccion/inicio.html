@@ -3,20 +3,13 @@
 	var items = []; 
 	$.each(data, function(index, d){ 
 		items.push("<div class='portfolio'> <img src='img/portfolio/"+d.imagen+".png' /> <div class='portfolio-txt'><h3>"+d.titulo+"</h3><h4>"+d.periodo+"</h4><p>"+d.descripcionCorta+"</p> <center><a href='"+d.linkURL+"' target='blank'><button>Visitar sitio</button></a> <a href='"+d.linkGitHub+"' target='blank'><button>Ver repositorio</button></a></center></div>");
+			return index < 1;
 	});
-	$('#listado-portfolio').html(items);
+	$('#listado-portfolio').html(items); 
 });
 </script>
 <script type="text/javascript">
-	var feed = new Instafeed({
-				get: 'user',
-				userId: '1631184808', 
-				clientId: '3c38d510e4ce43b08f4157fd0ee381fb',
-				limit: 1, 
-				resolution: 'standard_resolution', 
-				target: 'cover-home', 
-				template: '<div class="cuerpo-landing" style="background-image: url({{image}})" >\
-							<div class="landing-sombra">\
+	var landingOriginal = '<div class="landing-sombra">\
 								<div class="encuadre">\
 									<div class="landing-texto" id="home">\
 										<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>\
@@ -24,9 +17,27 @@
 										Esta página está en plena actualización. Estate atento! ;) <br /> \
 									</div>\
 								</div>\
-							</div>\
-					</div>', 
-				error: function() {
+							</div>'; 
+	//var errorInstafeed = function(){
+	//	$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" >'+landingOriginal+'</div>');
+	//}
+	$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" >'+landingOriginal+'</div>');
+	var feed = new Instafeed({
+				get: 'user', 
+				userId: '1631184808', 
+				clientId: '3c38d510e4ce43b08f4157fd0ee381fb',
+				limit: 1, 
+				resolution: 'standard_resolution', 
+				target: 'cover-home', 
+				template: '<div class="cuerpo-landing" style="background-image: url({{image}})" >'+landingOriginal+'</div>', 
+				success: function () {
+					$('.contenido#cover-home').html('');
+				}
+		});
+		feed.run();
+</script>
+<!-- 
+	error: function() {
 					$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" >\
 							<div class="landing-sombra">\
 								<div class="encuadre">\
@@ -39,9 +50,7 @@
 							</div>\
 					</div>');
 				}
-		});
-		feed.run();
-</script>
+ -->
 <div class="contenido" id="cover-home">
 </div>
 <div class="contenido" id="home">
@@ -90,6 +99,7 @@
 				<div id="listado-portfolio">
 					Cargando... 
 				</div>
+				<button onclick="seccion('portfolio')">Ver más trabajos</button>
 			</div>
 			<div class="seccion" id="inicio_contacto">
 				<h1>Esto es lo que hay por el momento</h1>

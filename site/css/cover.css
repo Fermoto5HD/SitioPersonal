@@ -12,15 +12,19 @@
     .cuerpo-landing {
       height: 600px; } }
   .cuerpo-landing#home, .cuerpo-landing#instahome {
-    background-image: url(../img/landing_noche.jpg); }
+    background-image: url(../img/cover/inicio.jpg); }
+  .cuerpo-landing#sobre-mi {
+    background-image: url(../img/cover/sobre-mi.jpg); }
+  .cuerpo-landing#curriculum {
+    background-image: url(../img/cover/inicio.jpg); }
   .cuerpo-landing#portfolio {
-    background-image: url(../img/landing_noche.jpg); }
+    background-image: url(../img/cover/inicio.jpg); }
   .cuerpo-landing#creditos {
-    background-image: url(../img/landing_noche.jpg); }
+    background-image: url(../img/cover/creditos.jpg); }
   .cuerpo-landing#contacto {
-    background-image: url(../img/landing_dia.jpg); }
+    background-image: url(../img/cover/contacto.jpg); }
   .cuerpo-landing#error404 {
-    background-image: url(http://Fermoto5HD.xtrweb.com/img/landing_404.jpg); }
+    background-image: url(../img/cover/error404.jpg); }
   .cuerpo-landing .landing-sombra {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5); }
@@ -28,11 +32,11 @@
       .cuerpo-landing .landing-sombra {
         height: 600px; } }
 
-.landing-texto#home, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
+.landing-texto#home, .landing-texto#sobre-mi, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
   font-size: 20px;
   padding: 60px 10px; }
   @media only screen and (min-width: 40.0625em) {
-    .landing-texto#home, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
+    .landing-texto#home, .landing-texto#sobre-mi, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
       font-size: 25px;
       padding: 175px 10px; } }
 
