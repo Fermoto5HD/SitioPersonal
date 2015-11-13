@@ -8,9 +8,6 @@
   overflow: hidden;
   text-align: center;
   transition-duration: 3s; }
-  @media only screen and (min-width: 40.0625em) {
-    .cuerpo-landing {
-      height: 600px; } }
   .cuerpo-landing#home, .cuerpo-landing#instahome {
     background-image: url(../img/cover/inicio.jpg); }
   .cuerpo-landing#sobre-mi {
@@ -28,16 +25,12 @@
   .cuerpo-landing .landing-sombra {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5); }
-    @media only screen and (min-width: 40.0625em) {
-      .cuerpo-landing .landing-sombra {
-        height: 600px; } }
-
-.landing-texto#home, .landing-texto#sobre-mi, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
-  font-size: 20px;
-  padding: 60px 10px; }
-  @media only screen and (min-width: 40.0625em) {
-    .landing-texto#home, .landing-texto#sobre-mi, .landing-texto#portfolio, .landing-texto#creditos, .landing-texto#contacto, .landing-texto#error404 {
-      font-size: 25px;
-      padding: 175px 10px; } }
+    .cuerpo-landing .landing-sombra .container div, .cuerpo-landing .landing-sombra .landing-texto {
+      font-size: 20px;
+      padding: 60px 10px; }
+      @media only screen and (min-width: 40.0625em) {
+        .cuerpo-landing .landing-sombra .container div, .cuerpo-landing .landing-sombra .landing-texto {
+          font-size: 25px;
+          padding: 175px 10px; } }
 
 /*# sourceMappingURL=cover.css.map */

@@ -5,39 +5,26 @@
 		});
 	});
 </script>
-	<!-- Isologotipo + Navegación -->
-<!-- 			<div class="encuadre" id="header">
-			<div id="icono-menu-responsive" onclick="menuResponsive()"><i class="mdi mdi-menu"></i></div>
-				<div class="encabezado-logotipo" onclick="seccion('inicio')" alt="Fermoto5HD"></div>
-				<nav class="encabezado-navegacion" id="navegacion">
-					<ul class="encabezado-navegacion">
-						<li class="navegacion-item" id="home" onclick="seccion('inicio')">Inicio</li>
-						<li class="navegacion-item" id="portfolio" onclick="seccion('portfolio')">Trabajos realizados</li>
-						<li class="navegacion-item" id="contacto" onclick="seccion('creditos')">Creditos</li>
-						<li class="navegacion-item" id="contacto" onclick="seccion('contacto')">Contacto</li>
-					</ul>
-				</nav>
-			</div> -->
-		<!-- Estoy haciendo el traspaso de varios elementos a Foundation para perfeccionar la visualización responsive. -->
-		<div class="contain-to-grid" id="principal">
-			<nav class="top-bar" id="principal" data-topbar role="navigation">
-				<ul class="title-area">
-					<li id="inicio" class="name" style="vertical-align: middle;">
-						<div class="encabezado-logotipo" onclick="seccion('inicio')"></div>
-					</li>
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Secciones</span></a></li>
-				</ul>
-				<section class="top-bar-section">
-					<ul class="right" id="principal">
-						<li id="inicio"><a nohref>Inicio</a></li>
-						<li id="sobre-mi"><a nohref>Sobre mí</a></li>
-						<li id="portfolio"><a nohref>Portfolio</a></li>
-						<li id="creditos"><a nohref>Créditos</a></li>
-						<li id="contacto"><a nohref>Contacto</a></li>
-					</ul>
-				</section>
-			</nav>
-		</div>
-		<script>
-			$(document).foundation();
-		</script>
+<!-- Isologotipo + Navegación (basado en Foundation) -->
+<div class="contain-to-grid" id="principal">
+	<nav class="top-bar" id="principal" data-topbar role="navigation">
+		<ul class="title-area">
+			<li id="inicio" class="name" style="vertical-align: middle;">
+				<div class="encabezado-logotipo" onclick="seccion('inicio')"></div>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#"><span>Secciones</span></a></li>
+		</ul>
+		<section class="top-bar-section">
+			<ul class="right" id="principal">
+				<li id="inicio"><a nohref>Inicio</a></li>
+				<li id="sobre-mi"><a nohref>Sobre mí</a></li>
+				<li id="portfolio"><a nohref>Portfolio</a></li>
+				<li id="creditos"><a nohref>Créditos</a></li>
+				<li id="contacto"><a nohref>Contacto</a></li>
+			</ul>
+		</section>
+	</nav>
+</div>
+<script>
+	$(document).foundation();
+</script>

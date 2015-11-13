@@ -36,12 +36,10 @@ p, footer {
   font-family: 'Open Sans Light', 'Open Sans Light Back', 'Museo Sans', 'Tahoma', 'Verdana', 'Arial', 'Sans-serif'; }
 
 /* Encuadre */
-@media (min-width: 640px) {
-  .encuadre {
-    width: 100%;
-    max-width: 860px;
-    margin-right: auto;
-    margin-left: auto; } }
+div#container, div.container {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0; }
 
 /* Body */
 body {

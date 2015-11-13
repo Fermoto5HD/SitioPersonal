@@ -1,7 +1,3 @@
-//Responsive
-$movil: "(max-width: 639px)";
-$escritorio: "(min-width: 640px)";
-
 // Parametros 
 $ColorFondoCover: "rgb(0, 150, 200)";
 $RutaImg: "../img/cover/";
@@ -24,45 +20,27 @@ $AlturaCover: '600px';
 	overflow: hidden;
 	text-align: center;
 	transition-duration: 3s;
-	@media only screen and (min-width: 40.0625em){
-		height: #{$AlturaCover};; 
-	}
-	&#home, &#instahome{
-		background-image: url(#{$ImgCoverInicio}); 
-	}
-	&#sobre-mi{
-		background-image: url(#{$ImgCoverSobreMi}); 
-	}
-	&#curriculum{
-		background-image: url(#{$ImgCoverCurriculum}); 
-	}
-	&#portfolio{
-		background-image: url(#{$ImgCoverPortfolio}); 
-	}
-	&#creditos{
-		background-image: url(#{$ImgCoverCreditos}); 
-	}
-	&#contacto{
-		background-image: url(#{$ImgCoverContacto});
-	}
-	&#error404{
-		background-image: url(#{$ImgCover404});
-	}
+	//@media only screen and (min-width: 40.0625em){height: #{$AlturaCover};;}
+	&#home, &#instahome{background-image: url(#{$ImgCoverInicio}); }
+	&#sobre-mi{background-image: url(#{$ImgCoverSobreMi}); }
+	&#curriculum{background-image: url(#{$ImgCoverCurriculum}); }
+	&#portfolio{background-image: url(#{$ImgCoverPortfolio}); }
+	&#creditos{background-image: url(#{$ImgCoverCreditos}); }
+	&#contacto{background-image: url(#{$ImgCoverContacto});}
+	&#error404{background-image: url(#{$ImgCover404});}
 	.landing-sombra{
 		width: 100%; 
 		background-color: rgba(0, 0, 0, 0.5);
-		@media only screen and (min-width: 40.0625em){
-			height: #{$AlturaCover};; 
-		}
-	}
-}
-.landing-texto{
-	&#home, &#sobre-mi, &#portfolio, &#creditos, &#contacto, &#error404{
-		font-size: 20px;
-		padding: 60px 10px;
-		@media only screen and (min-width: 40.0625em){
-			font-size: 25px;
-			padding: 175px 10px;
+		//@media only screen and (min-width: 40.0625em){
+		//	height: #{$AlturaCover};; 
+		//}
+		& .container div, & .landing-texto{
+			font-size: 20px;
+			padding: 60px 10px;
+			@media only screen and (min-width: 40.0625em){
+				font-size: 25px;
+				padding: 175px 10px;
+			}
 		}
 	}
 }

@@ -9,19 +9,14 @@
 });
 </script>
 <script type="text/javascript">
-	var landingOriginal = '<div class="landing-sombra">\
-								<div class="encuadre">\
-									<div class="landing-texto" id="home">\
+	var landingOriginal = '<div class="container">\
+									<div>\
 										<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>\
 										¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />\
 										Esta página está en plena actualización. Estate atento! ;) <br /> \
 									</div>\
-								</div>\
-							</div>'; 
-	//var errorInstafeed = function(){
-	//	$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" >'+landingOriginal+'</div>');
-	//}
-	$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" >'+landingOriginal+'</div>');
+								</div>'; 
+	$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" ><div class="landing-sombra">'+landingOriginal+'</div></div>');
 	var feed = new Instafeed({
 				get: 'user', 
 				userId: '1631184808', 
@@ -29,43 +24,24 @@
 				limit: 1, 
 				resolution: 'standard_resolution', 
 				target: 'cover-home', 
-				template: '<div class="cuerpo-landing" style="background-image: url({{image}})" >'+landingOriginal+'</div>', 
+				template: '<div class="cuerpo-landing" style="background-image: url({{image}})" ><div class="landing-sombra">'+landingOriginal+'\
+											<div class="instagram">\
+												<div class="container">\
+													<i class="fa fa-instagram"></i> {{caption}} | <a href="{{link}}">Miralo en mi Instagram</a> \
+												</div>\
+											</div>\
+										</div>\
+									</div>', 
 				success: function () {
 					$('.contenido#cover-home').html('');
 				}
 		});
 		feed.run();
 </script>
-<!-- 
-	error: function() {
-					$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" >\
-							<div class="landing-sombra">\
-								<div class="encuadre">\
-									<div class="landing-texto" id="home">\
-										<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>\
-										¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />\
-										Esta página está en plena actualización. Estate atento! ;) <br /> \
-									</div>\
-								</div>\
-							</div>\
-					</div>');
-				}
- -->
 <div class="contenido" id="cover-home">
 </div>
 <div class="contenido" id="home">
-	<!--<div class="cuerpo-landing" id="home">
-		<div class="landing-sombra">
-			<div class="encuadre">
-				<div class="landing-texto" id="home">
-					<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>
-					¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />
-					Esta página está en plena actualización. Estate atento! ;) <br /> 
-				</div>
-			</div>
-		</div>
-	</div>-->
-	<div class="encuadre">
+	<div class="container">
 		<center>
 			<div class="seccion" id="inicio-resumen">
 				<h1>Un resumen de lo que hago</h1>
@@ -93,6 +69,8 @@
 					<div class="item-circulo" id="azul-oscuro"><i class="mdi mdi-city" style="font-size: 80px; line-height: 2.1;"></i></div>
 					<div class="item-texto">Busco gente que quiera explorar nuevos lugares en Buenos Aires.</div>
 				</div>
+				<br />
+				<button onclick="seccion('sobre-mi')">¡Conoceme un poco más!</button>
 			</div>
 			<div class="seccion" id="inicio-portfolio">
 				<h1>Portfolios destacados</h1>
@@ -102,8 +80,8 @@
 				<button onclick="seccion('portfolio')">Ver más trabajos</button>
 			</div>
 			<div class="seccion" id="inicio_contacto">
-				<h1>Esto es lo que hay por el momento</h1>
-				<p>Te invito a seguir el desarrollo de la versión 4 de mi sitio en el <a href="https://github.com/Fermoto5HD/SitioPersonal-v4.0" target="blank">repositorio de GitHub</a>.</p>
+				<h1>¡Falta un poquito más!</h1>
+				<p>Aún queda un poquito más para terminar esta 4ta versión de mi sitio. Seguí el desarrollo del mismo en el <a href="https://github.com/Fermoto5HD/SitioPersonal-v4.0" target="blank">repositorio de GitHub</a>.</p>
 				<p>Si tenés una consulta en particular, podés realizarla en las redes donde participo:</p>
 				<a href="http://facebook.com/Fermoto5HD" target="blank"><button><i class="fa fa-facebook-official fa-2x"></i></button></a>
 				<a href="http://twitter.com/Fermoto5HD" target="blank"><button><i class="fa fa-twitter fa-2x"></i></button></a>

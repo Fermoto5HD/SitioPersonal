@@ -66,17 +66,7 @@ p, footer{font-family: #{$Light};}
 
 
 /* Encuadre */
-.encuadre{
-	//&#header{
-	//	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-	//}
-	@media #{$escritorio} {
-		width: 100%;
-		max-width: 860px;
-		margin-right: auto;
-		margin-left: auto;
-	}
-}
+div#container, div.container {width: 940px; margin: 0 auto; padding: 0; }
 
 /* Body */
 body{
