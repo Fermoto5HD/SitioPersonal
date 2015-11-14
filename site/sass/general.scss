@@ -66,7 +66,7 @@ p, footer{font-family: #{$Light};}
 
 
 /* Encuadre */
-div#container, div.container {width: 940px; margin: 0 auto; padding: 0; }
+#container, .container {max-width: 940px; margin: 0 auto; padding: 0; }
 
 /* Body */
 body{

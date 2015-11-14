@@ -36,8 +36,8 @@ p, footer {
   font-family: 'Open Sans Light', 'Open Sans Light Back', 'Museo Sans', 'Tahoma', 'Verdana', 'Arial', 'Sans-serif'; }
 
 /* Encuadre */
-div#container, div.container {
-  width: 940px;
+#container, .container {
+  max-width: 940px;
   margin: 0 auto;
   padding: 0; }
 
