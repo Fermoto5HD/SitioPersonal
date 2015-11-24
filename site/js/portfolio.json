@@ -1,28 +1,37 @@
 [{
-	"titulo": 					"Club Baldomero: Sitio de pruebas", 
-	"periodo": 					"Mayo 2015", 
-	"descripcionCorta": "Este sitio fue propuesto como objetivo para los ingresantes al club de programación por los mentores del club de la Biblioteca Baldomero.", 
-	"descripcion": 			"Este fue uno de los primeros sitios en realizarse bajo un layout desde cero. </p><p>En un principio se realizó el mismo layout propuesto por los mentores. Durante el transcurso de su realización lo transformé en responsive y le dí funcionalidad bajo Ajax. </p><p>Pero más adelante decidí adaptarlo al nuevo diseño del sitio oficial del Gobierno de la Ciudad de Buenos Aires estrenado en mayo de 2015. ", 
-	"imagen": 					"clubbaldomero-test", 
-	"hashVerMas": 			"clubbaldomero01", 
-	"linkURL": 					"http://Fermoto5HD.xtrweb.com/ClubBaldomero", 
-	"linkGitHub": 			"http://github.com/Fermoto5HD/ClubBaldomero-v2.0"
+	"titulo": 					"Factor RH Creativo", 
+	"periodo": 					"Rebranding Noviembre 2015", 
+	"descripcionCorta": 		"Con motivo de mantener la innovación de la peluquería Factor RH Creativo, decido proponer una actualización de su sitio web. ", 
+	"descripcion": 				"El sitio se realiza desde cero y se van implementando diversas tecnologías. </p><p>Algunas de ellas son la reciente versión 6 de Foundation, ModernizrJS para la diferenciación entre dispositivos, MomentJS para el cálculo de tiempo restante para la apertura o cierre del local, entre otras diversas tecnologías ya utilizadas en proyectos anteriores. ", 
+	"imagen": 					"factorrhcreativo-v3.0", 
+	"hashVerMas": 				"factorrhcreativo-v3.0", 
+	"linkURL": 					"http://FactorRHcreativo.16mb.com", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/RH-v3.0"
 }, {
 	"titulo": 					"Factor RH Creativo", 
 	"periodo": 					"Rebranding Mayo 2015", 
-	"descripcionCorta": "La peluqueria mas concurrida de Villa del Parque me solicita renovar el primer diseño realizado de su sitio web. ", 
-	"descripcion": 			"Para ello decido basarme en el layout del sitio del club de programación, se adaptaron varios elementos a los colores seleccionados por los clientes. </p><p>Dicho sitio se adaptó correctamente a los lineamientos responsive y se optimizaron varias funciones internas del sitio que antes estaban desordenadas. </p><p>El sitio continúa bajo desarrollo. ", 
-	"imagen": 					"factorrhcreativo", 
-	"hashVerMas": 			"factorrhcreativo", 
-	"linkURL": 					"http://FactorRHcreativo.16mb.com", 
-	"linkGitHub": 			"http://github.com/Fermoto5HD/factorRHcreativo-v2.0"
+	"descripcionCorta": 		"La peluqueria mas concurrida de Villa del Parque me solicita renovar el primer diseño realizado de su sitio web. ", 
+	"descripcion": 				"Para ello decido basarme en el layout del sitio del club de programación, se adaptaron varios elementos a los colores seleccionados por los clientes. </p><p>Dicho sitio se adaptó correctamente a los lineamientos responsive y se optimizaron varias funciones internas del sitio que antes estaban desordenadas. ", 
+	"imagen": 					"factorrhcreativo-v2.0", 
+	"hashVerMas": 				"factorrhcreativo-v2.0", 
+	"linkURL": 					"http://FactorRHcreativo.16mb.com/v2", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/RH-v2.0"
 }, {
 	"titulo": 					"Club Baldomero: Tutorial Formularios", 
 	"periodo": 					"Abril-Mayo 2015", 
-	"descripcionCorta": "El objetivo de este sitio ha sido el de crear un tutorial sencillo para la creación de formularios html para contacto. ", 
-	"descripcion": 			"Este sitio usó como base el mismo layout del sitio principal del Club Baldomero, siendo también un sitio responsive. </p><p>El hecho de que sea responsive permite que el usuario pueda aprender a usar forms incluso desde cualquier dispositivo móvil. ", 
+	"descripcionCorta": 		"El objetivo de este sitio ha sido el de crear un tutorial sencillo para la creación de formularios html para contacto. ", 
+	"descripcion": 				"Este sitio usó como base el mismo layout del sitio principal del Club Baldomero, siendo también un sitio responsive. </p><p>El hecho de que sea responsive permite que el usuario pueda aprender a usar forms incluso desde cualquier dispositivo móvil. ", 
 	"imagen": 					"clubbaldomero-forms", 
-	"hashVerMas": 			"clubbaldomero02", 
+	"hashVerMas": 				"clubbaldomero02", 
 	"linkURL": 					"http://Fermoto5HD.xtrweb.com/ClubBaldomero/tutoriales/formularios", 
-	"linkGitHub": 			"http://github.com/Fermoto5HD/ClubBaldomero-Formularios"
+	"linkGitHub": 				"http://github.com/Fermoto5HD/ClubBaldomero-Formularios"
+}, {
+	"titulo": 					"Club Baldomero: Sitio de pruebas", 
+	"periodo": 					"Mayo 2015", 
+	"descripcionCorta": 		"Este sitio fue propuesto como objetivo para los ingresantes al club de programación por los mentores del club de la Biblioteca Baldomero.", 
+	"descripcion": 				"Este fue uno de los primeros sitios en realizarse bajo un layout desde cero. </p><p>En un principio se realizó el mismo layout propuesto por los mentores. Durante el transcurso de su realización lo transformé en responsive y le dí funcionalidad bajo Ajax. </p><p>Pero más adelante decidí adaptarlo al nuevo diseño del sitio oficial del Gobierno de la Ciudad de Buenos Aires estrenado en mayo de 2015. ", 
+	"imagen": 					"clubbaldomero-test", 
+	"hashVerMas": 				"clubbaldomero01", 
+	"linkURL": 					"http://Fermoto5HD.xtrweb.com/ClubBaldomero", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/ClubBaldomero-v2.0"
 }]

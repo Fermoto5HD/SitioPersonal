@@ -1,8 +1,13 @@
-# Fermoto5HD - Sitio Personal v4.0 (Beta 3.5)
+# Fermoto5HD - Sitio Personal v4.0
 Este es el repositorio que muestra el armado integral de mi sitio personal en la versión 4.0 Beta 3. 
 El sitio se creó desde cero, con implementación de HTML5, CSS3, SASS, conceptos de Responsive Design, jQuery, JSON y Ajax. 
 
-## Cambios en esta versión 
+## Cambios en esta versión (4.5)
+* Incorporación de un minificador de imágenes. 
+* Actualización de portfolio. 
+
+#Changelog
+## Beta 4.0.1
 * Mejoras en el código del cover inicial, soporta caídas de respuesta de la API de Instagram. 
 * Nuevo cover para la sección "Créditos". 
 * Retoques parciales en el texto. 

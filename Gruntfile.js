@@ -10,23 +10,6 @@ module.exports = function(grunt) {
 			  }
 			}
 		}, 
-		// SASS task config
-		// sass: {
-		// 	dist: {
-		// 		options: {
-		// 			style: 'expanded' 
-		// 		}, 
-		// 		files: {
-		// 			// destination              // source file
-		// 			"site/css/contacto.css" : "site/sass/contacto.scss", 
-		// 			"site/css/cover.css" : "site/sass/cover.scss", 
-		// 			"site/css/fonts.css" : "site/sass/fonts.scss", 
-		// 			"site/css/general.css" : "site/sass/general.scss", 
-		// 			"site/css/header.css" : "site/sass/header.scss", 
-		// 			"site/css/inicio.css" : "site/sass/inicio.scss", 
-		// 		}
-		// 	}
-		// }, 
 		sass: {
 			dist: {
 				files: [{
@@ -35,6 +18,16 @@ module.exports = function(grunt) {
 					src: ['*.scss'],
 					dest: 'site/css', 
 					ext: '.css'
+				}]
+			}
+		}, 
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'img/', 
+					src: ['**/*.{png,jpg,ico}'],
+					dest: 'site/img/'
 				}]
 			}
 		}, 
@@ -52,6 +45,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');	
 	grunt.loadNpmTasks('grunt-contrib-watch'); 
 	grunt.loadNpmTasks('grunt-express-server');	
 	grunt.registerTask('default', ['express', 'sass', 'watch']); 
