@@ -1,5 +1,5 @@
 # Fermoto5HD - Sitio Personal v4.0
-Este es el repositorio que muestra el armado integral de mi sitio personal en la versión 4.0 Beta 3. 
+Este es el repositorio que muestra el armado integral de mi sitio personal en su 4ta versión. 
 El sitio se creó desde cero, con implementación de HTML5, CSS3, SASS, conceptos de Responsive Design, jQuery, JSON y Ajax. 
 
 ## Cambios en esta versión (4.5)
