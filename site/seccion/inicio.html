@@ -13,7 +13,7 @@
 									<div>\
 										<h1 style="margin-bottom: 0px;">¡Bienvenido a mi página personal!</h1>\
 										¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />\
-										Esta página está en plena actualización. Estate atento! ;) <br /> \
+										¡Scrolleá y conoceme mejor!<br /> \
 									</div>\
 								</div>'; 
 	$('.contenido#cover-home').html('<div class="cuerpo-landing" id="home" ><div class="landing-sombra">'+landingOriginal+'</div></div>');
@@ -24,7 +24,7 @@
 				limit: 1, 
 				resolution: 'standard_resolution', 
 				target: 'cover-home', 
-				template: '<div class="cuerpo-landing" style="background-image: url({{image}})" ><div class="landing-sombra">'+landingOriginal+'\
+				template: '<div class="cuerpo-landing" style="background-image: url({{image}})" onclick="mostrarOcultarTexto()" ><div class="landing-sombra" id="texto-cover-inicio">'+landingOriginal+'\
 											<div class="instagram">\
 												<div class="container">\
 													<i class="fa fa-instagram"></i> {{caption}} | <a href="{{link}}">Miralo en mi Instagram</a> \
@@ -37,6 +37,18 @@
 				}
 		});
 		feed.run();
+
+	var muestra = false; 
+	var mostrarOcultarTexto = function(){
+		if (muestra) {
+			$('#texto-cover-inicio').css('visibility', 'visible'); 
+			muestra = false; 
+
+		} else {
+			$('#texto-cover-inicio').css('visibility', 'hidden'); 
+			muestra = true; 
+		};
+	}; 
 </script>
 <div class="contenido" id="cover-home">
 </div>
@@ -44,7 +56,7 @@
 	<div class="container">
 		<center>
 			<div class="seccion" id="inicio-resumen">
-				<h1>Un resumen de lo que hago</h1>
+				<h1>Yo, resumido en pocos ítems</h1>
 				<div class="cuerpo-item">
 					<div class="item-circulo" id="rojo"><i class="mdi mdi-school" style="font-size: 80px; line-height: 2.1;"></i></div>
 					<div class="item-texto">Curso la tecnicatura en Tecnología Ferroviaria en la UNSAM.</div>
@@ -59,7 +71,7 @@
 				</div>
 				<div class="cuerpo-item">
 					<div class="item-circulo" id="amarillo"><i class="mdi mdi-television-guide" style="font-size: 80px; line-height: 2.1;"></i></div>
-					<div class="item-texto">Veo animé y analizo un poco la televisión argentina.</div>
+					<div class="item-texto">Veo animé y busco contenido experimental.</div>
 				</div>
 				<div class="cuerpo-item">
 					<div class="item-circulo" id="azul-claro"><i class="fa fa-subway fa-5x" style="line-height: 2.1;"></i></div>
@@ -70,7 +82,7 @@
 					<div class="item-texto">Busco gente que quiera explorar nuevos lugares en Buenos Aires.</div>
 				</div>
 				<br />
-				<button onclick="seccion('sobre-mi')">¡Conoceme un poco más!</button>
+				<button onclick="seccion('sobre-mi')">¡Conoceme en detalle!</button>
 			</div>
 			<div class="seccion" id="inicio-portfolio">
 				<h1>Portfolios destacados</h1>
@@ -80,13 +92,16 @@
 				<button onclick="seccion('portfolio')">Ver más trabajos</button>
 			</div>
 			<div class="seccion" id="inicio_contacto">
-				<h1>¡Falta un poquito más!</h1>
-				<p>Aún queda un poquito más para terminar esta 4ta versión de mi sitio. Seguí el desarrollo del mismo en el <a href="https://github.com/Fermoto5HD/SitioPersonal-v4.0" target="blank">repositorio de GitHub</a>.</p>
-				<p>Si tenés una consulta en particular, podés realizarla en las redes donde participo:</p>
+				<h1>¡Este sitio es de código abierto!</h1>
+				<p>Podés ver los archivos utilizados de mi página en el <a href="https://github.com/Fermoto5HD/SitioPersonal-v4.0" target="blank">repositorio de GitHub</a>.</p>
+			</div>
+			<div class="seccion">
+				<h1>¡Gracias por visitarme!</h1>
+				<p>Ah, y si tenés una consulta en particular podés contactarme por las redes sociales:</p>
 				<a href="http://facebook.com/Fermoto5HD" target="blank"><button><i class="fa fa-facebook-official fa-2x"></i></button></a>
 				<a href="http://twitter.com/Fermoto5HD" target="blank"><button><i class="fa fa-twitter fa-2x"></i></button></a>
 				<a href="https://plus.google.com/117999670362964140369/" target="blank"><button><i class="fa fa-google-plus fa-2x"></i></button></a>
-				<p>O podés enviarme un correo:</p>
+				<p>O podés enviarme un correo desde la página:</p>
 				<center>
 					<button onclick="seccion('contacto')">Ir al formulario de contacto</button>
 				</center>

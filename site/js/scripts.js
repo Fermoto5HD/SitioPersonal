@@ -22,7 +22,7 @@ var paginaactual = undefined;
 			console.log("¡Bienvenido a mi sitio! Acá podrás ver todas las acciónes registradas durante la navegación en el sitio.");
 	});
 
-//
+// Carga de sección 
 var seccion = function(pagina){
 	if (paginaactual !== pagina) {
 			$('main#cuerpo').load('../seccion/'+pagina+'.html'); 
@@ -33,6 +33,7 @@ var seccion = function(pagina){
 	};
 }
 
+// Desplaza la página hacia arriba
 var haciaArriba = function(){
 	console.log("Desplazando el sitio hacia arriba.");
 	$('body').animate({scrollTop:0}, 500);

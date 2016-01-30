@@ -28,7 +28,8 @@ module.exports = function(grunt) {
 					cwd: 'img/', 
 					src: ['**/*.{png,jpg,ico}'],
 					dest: 'site/img/'
-				}]
+				}], 
+				options: { cache: false }, 
 			}
 		}, 
 		// Watch task config

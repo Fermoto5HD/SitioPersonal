@@ -56,6 +56,7 @@ $Light: "'Open Sans Light', 'Open Sans Light Back', " + $CadenaFuentes;
 	//-moz-user-select: none;
 	//user-select: none;
 }
+
 /* Reset tipográfico */
 button{
 	font-family: #{$Regular};
@@ -63,6 +64,11 @@ button{
 
 /* Declaración tipográfica en párrafos y footer */
 p, footer{font-family: #{$Light};}
+
+/* Reemplazo del arroba */
+span.at::after {
+	content: "@";
+}
 
 
 /* Encuadre */
@@ -89,11 +95,15 @@ ul li{
 button{
 	margin: 5px;
 	padding: 10px; 
-	border: 1px solid rgba(0, 0, 0, 0.75); border-bottom: 3px solid rgba(0, 0, 0, 0.5);
-	border-radius: 8px;
+	border: 1px solid rgba(0, 0, 0, 0.75); 
 	background-color: #{$ColorFondoBoton};;
 	color: #{$ColorTextoBoton};;
 	cursor: pointer;
+	transition: 0.5s; 
+}
+button:hover{
+	background-color: #{$ColorTextoBoton};;
+	color: #{$ColorFondoBoton};;
 }
 
 /* Elementos ocultos */
@@ -138,4 +148,28 @@ footer{
 	text-align: center;
 	opacity: 0.75;
 	font-size: 13px; 
+}
+
+
+
+
+.video{
+	display: inline-block; 
+	vertical-align: top; 
+	margin: 5px; 
+	width: 375px; 
+	background-color: rgba(0, 0, 0, 0.5); 
+	img{
+		margin: 0; 
+		padding: 0; 
+		width: 375px; 
+		height: 300px; 
+		background-size: cover; 
+		background-position: center; 
+	}
+	.metadata{
+		padding: 5px; 
+		font-size: 14px; 
+		h1{font-size: 18px;}
+	}
 }

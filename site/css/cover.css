@@ -15,11 +15,15 @@
   .cuerpo-landing#curriculum {
     background-image: url(../img/cover/inicio.jpg); }
   .cuerpo-landing#portfolio {
-    background-image: url(../img/cover/inicio.jpg); }
+    background-image: url(../img/cover/portfolio.jpg); }
   .cuerpo-landing#creditos {
     background-image: url(../img/cover/creditos.jpg); }
+  .cuerpo-landing#youtube {
+    background-image: url(../img/cover/youtube.jpg); }
   .cuerpo-landing#contacto {
     background-image: url(../img/cover/contacto.jpg); }
+  .cuerpo-landing#error401 {
+    background-image: url(../img/cover/error404.jpg); }
   .cuerpo-landing#error404 {
     background-image: url(../img/cover/error404.jpg); }
   .cuerpo-landing .landing-sombra {

@@ -1,4 +1,22 @@
 [{
+	"titulo": 					"Próximo Tren", 
+	"periodo": 					"Enero 2016", 
+	"descripcionCorta": 		"Un proyecto propio en el cual decido armar una webapp alternativa a la app oficial de Trenes en Vivo pero con varias mejoras y cambios.", 
+	"descripcion": 				"Se utilizó Unsemantic como framework principal y Bootstrap como framework secundario, junto con MomentJS para el cálculo de tiempos restantes y atrasos de servicios. </p><p>También se implementa una estética cuidada, adaptable al horario actual, con una clara coherencia en las paletas de colores utilizadas y disposición de elementos en las pantallas. </p><p>La marca Nuevos Ferrocarriles Argentinos es propiedad del Ministerio de Transporte de la Nación. ", 
+	"imagen": 					"proximo-tren", 
+	"hashVerMas": 				"proximo-tren", 
+	"linkURL": 					"http://plataforma5.16mb.com/proximo-tren", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/proximo-tren"
+}, {
+	"titulo": 					"Posada Kalua Praia", 
+	"periodo": 					"Enero 2016", 
+	"descripcionCorta": 		"Uno de los sitios de veraneo más concurridos de Brasil requiere la renovación de su sitio web, por lo tanto decido proponer un diseño adaptado a estos últimos años. ", 
+	"descripcion": 				"El sitio es realizado en el tiempo record de un día, implementando Bootstrap y ModernizrJS, escenciales para su visualización en todo tipo de dispositivos. </p><p>Se utiliza un slider, modales para la galería de imágenes, y botones de acción directa para llamar a la posada o contactarse mediante correo con sólo tocar un botón. ", 
+	"imagen": 					"kalua", 
+	"hashVerMas": 				"kalua", 
+	"linkURL": 					"http://Fermoto5HD.xtrweb.com/Kalua", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/Kalua"
+}, {
 	"titulo": 					"Factor RH Creativo", 
 	"periodo": 					"Rebranding Noviembre 2015", 
 	"descripcionCorta": 		"Con motivo de mantener la innovación de la peluquería Factor RH Creativo, decido proponer una actualización de su sitio web. ", 

@@ -2,7 +2,7 @@
 	$.getJSON( "js/portfolio.json", function( data ) {
 	var items = []; 
 	$.each(data, function(index, d){ 
-		items.push("<div class='portfolio'> <img src='img/portfolio/"+d.imagen+".png' /> <div class='portfolio-txt'><h3>"+d.titulo+"</h3><h4>"+d.periodo+"</h4><p>"+d.descripcionCorta+d.descripcion+"</p> <center><a href='"+d.linkURL+"' target='blank'><button>Visitar sitio</button></a> <a href='"+d.linkGitHub+"' target='blank'><button>Ver repositorio</button></a></center></div>");
+		items.push("<div class='portfolio'> <img src='img/portfolio/"+d.imagen+".png' /> <div class='portfolio-txt'><h3>"+d.titulo+"</h3><h4>"+d.periodo+"</h4><p>"+d.descripcionCorta+"</p><p>"+d.descripcion+"</p> <center><a href='"+d.linkURL+"' target='blank'><button>Visitar sitio</button></a> <a href='"+d.linkGitHub+"' target='blank'><button>Ver repositorio</button></a></center></div>");
 	});
 	$('#listado-portfolio').html(items);
 });

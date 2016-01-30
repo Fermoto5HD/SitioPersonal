@@ -40,34 +40,27 @@
   vertical-align: text-top; }
 
 .portfolio {
-  max-width: 600px;
   margin: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   padding: 10px; }
   .portfolio:first-child {
     border-top: none; }
   .portfolio img {
     margin: 10px;
-    width: 225px;
+    width: 375px;
     height: 225px;
     vertical-align: top;
     object-fit: cover; }
 
 .portfolio-img {
   margin: 10px;
-  width: 225px;
+  width: 200px;
   height: 175px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: inline-block;
   vertical-align: top; }
-  .portfolio-img#FactorRHCreativo {
-    background-image: url("../img/portfolio/factorrhcreativo.png"); }
-  .portfolio-img#ClubBaldomero-Home {
-    background-image: url("../img/portfolio/clubbaldomero-test.png"); }
-  .portfolio-img#ClubBaldomero-Forms {
-    background-image: url("../img/portfolio/clubbaldomero-forms.png"); }
 
 .portfolio-txt {
   padding: 10px;

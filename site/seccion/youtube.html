@@ -18,56 +18,70 @@ function getVids(pid){
     $.get(
         "https://www.googleapis.com/youtube/v3/playlistItems",{
         part : 'snippet', 
-        maxResults : 20,
+        maxResults : 6,
         playlistId : pid,
         key: 'AIzaSyAp2-KIKz8vpd0GgObEMpC2vFdAktw7KB0'},
         function(data) {
-            var results;
+            var results = "";
             $.each( data.items, function( i, item ) {
-                results = '<li>'+ item.snippet.title +'</li>';
-                $('#results').append(results);
+                results += '<a href="http://youtu.be/'+ item.snippet.resourceId.videoId +'" target="_blank"><div class="video"><img src="' + item.snippet.thumbnails.high.url + '" /><div class="metadata"><h1>'+ item.snippet.title +'</h1></div></div></a>';
             });
+            $('#youtube-resultados').html(results+'<br/><a href="http://youtube.com/Fermoto5HD" target="_blank"><button>Ver más videos</button></a>');
         }
     );
 }
 </script>
 
-<!--In your HTML -->
-<ul id="results"></ul>
-
-
-<div class="cuerpo-landing" id="contacto">
+<div class="cuerpo-landing" id="youtube">
 	<div class="landing-sombra">
 		<div class="container">
-			<div><h1 style="margin-bottom: 0px;">No te quedes con las dudas. ¡Adelante!</h1>
-			Ponete en contacto y te responderé a la brevedad!</div>
+			<div>
+				<h1 style="margin-bottom: 0px;">YouTube: Una puerta hacia el contenido original</h1>
+				Transporte ferroviario, eventos y más. <br/>
+				Son las temáticas que enfoco en los videos de mi canal, con licencia Creative Commons para que lo reutilices como quieras. 
+			</div>
 		</div>
 	</div>
 </div>
+
 <div class="container">
 	<center>
-		<div class="seccion" id="contacto-redessociales">
-			<h1>Podés contactarte via redes sociales:</h1>
-			<a href="http://facebook.com/Fermoto5HD" target="blank"><button><i class="fa fa-facebook-official fa-2x"></i></button></a>
-			<a href="http://twitter.com/Fermoto5HD" target="blank"><button><i class="fa fa-twitter fa-2x"></i></button></a>
-			<a href="https://plus.google.com/117999670362964140369/" target="blank"><button><i class="fa fa-google-plus fa-2x"></i></button></a>
+		<div class="seccion">
+			<h1>Ultimos videos de la cuenta</h1>
+			<ul id="youtube-resultados">Cargando...</ul>
 		</div>
-		<div class="seccion" id="contacto-formulario">
-			<h1>O si preferís una respuesta por correo electrónico, llená este formulario: </h1>
-			<div id="estado-envio" class="oculto">
-				<p>No se pudo determinar el estado del envío. </p>
-			</div>
-			<form id="formulario-contacto" name="contacto">
-				<input class="campo-texto" id="contacto-nombre" type="text" placeholder="Tu nombre"></input>
-				<input class="campo-texto" id="contacto-correo" type="email" placeholder="Tu correo electrónico"></input>
-				<input class="campo-texto" id="contacto-telefono" type="number" placeholder="Un teléfono si lo deseas (opcional)"></input>
-				<textarea class="campo-texto-extendido" id="contacto-mensaje" placeholder="Y lo que me quieras consultar o proponer!"></textarea>
-				<div class="error-envio" style="display: none;">
-					<h1 class="error-envio-titulo">Revisá bien... algo está provocando que no se pueda enviar el mensaje.</h1>
-					<p class="error-envio-item">No se pudo determinar el error. <br>Si se sigue repitiendo por favor abrí un "issue" en el repositorio del sitio reportando este error. </p>
-				</div>
-				<input id="contacto-enviar" type="button" onclick="RealizarEnvio()" value="¡Enviar mensaje!"></input>
-			</form>
+	</center>
+	<div class="seccion">
+		<center><h1>Calidad del contenido y lineamientos de grabación</h1></center>
+		<p>Mi contenido posee una cierta calidad al momento de cargarse al canal, tanto el material crudo como el material editado. </p>
+		<p>Generalmente la calidad de mi contenido está en 720p. Algunos videos pueden estar en 480p (que son grabados con una Sony Handycam). Si el contenido es editado mediante software se intenta escalarlo a 1080p, y de forma experimental a 60 cuadros por segundo. </p>
+		<br/>
+		<p>Pero no sólo se tiene en cuenta la calidad después de grabar, también se toman ciertos lineamientos antes y durante la grabación: </p>
+		<p>Al grabar se prioriza el encuadre de contenido dentro del área segura 4:3 en caso de ser reutilizado por un medio que transmita el contenido en 4:3 cortando la señal original 16:9 (casos de ejemplo: TN y Canal 26). </p>
+		<p>En caso de ser grabado con el celular se utiliza la aplicación OpenCamera, no sólo por ser una aplicación Open Source, también por la cantidad de datos útiles generados al momento de grabar, como la inclinación del dispositivo vertical y horizontal, y la posibilidad de bloquear la exposición evitando la pérdida de cuadros por segundo. </p>
+		<p>Se prioriza la fluidez del video, excepto en zonas donde no haya luz o predomine oscuridad y se tenga que forzar la exposición automática por parte del celular. En el caso de los videos del subte se priorizan en todos los casos los cuadros por segundo, sacrificando la iluminación del video hasta un cierto punto que considere "muy oscuro".  </p>
+		<p>El contenido grabado no utiliza zoom digital ya que se desperdicia calidad de imágen al hacer un tipo de zoom que no aporta detalle alguno al video. </p>
+		<p>Claro está que en los casos donde tenga la posibilidad de hacer zoom óptico se utilizará este recurso. </p>
+		<br/>
+		<center><h1>¿Que hay en mi canal?</h1></center>
+		<p>En mi canal hay un contenido definido, el cual se centra en el transporte ferroviario, tecnología (la cual incorporaré más adelante), eventos y más. </p>
+		<p>Actualmente mi canal está pasando por el proceso de reestructuración de contenido, donde el contenido anterior (televisión y radio) está siendo transferido hacia otra cuenta, adoptando una imagen e identidad al canal y priorizando el contenido de creación propia en el canal. </p>
+		<p>El canal por el momento está situado en dos grupos de contenidos: </p>
+		<br/>
+		<center><h2>Transporte ferroviario</h2></center>
+		<p>Este material es grabado dentro del Área Metropolitana de Buenos Aires y, en su mayoría, en Capital Federal. </p>
+		<p>Priorizo la grabación del material rodante eléctrico aunque no descarto la grabación del material tractivo diésel y el material remolcado. </p>
+		<p>Intento grabar material de todas las líneas del área, en especial los viajes por dentro ya que no hay demasiado material de éllo en YouTube. </p>
+		<p>Más adelante intentaré hacer reviews especiales de cada material rodante eléctrico del subterráneo. </p>
+		<br/>
+		<center><h2>Eventos y más</h2></center>
+		<p>Aparte del contenido ferroviario, cargo videos de algunos eventos a los que asisto y también de otras temáticas de mi interés. </p>
+	</div>
+	<center>
+		<div class="seccion">
+			<h1>Licenciamiento Creative Commons</h1>
+			<p>Desde el año 2014 decidí establecer a cada video cargado a la cuenta el licenciamiento Creative Commons, permitiendo la reutilización de mi material para cualquier necesidad. </p>
+			<p>Más allá de YouTube, este fue el primer paso para la apertura de mi contenido al mundo. </p>
 		</div>
 	</center>
 </div>
