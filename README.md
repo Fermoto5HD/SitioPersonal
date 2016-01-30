@@ -2,19 +2,26 @@
 Este es el repositorio que muestra el armado integral de mi sitio personal en su 4ta versión. 
 El sitio se creó desde cero, con implementación de HTML5, CSS3, SASS, conceptos de Responsive Design, jQuery, JSON y Ajax. 
 
-## Cambios en esta versión (4.5)
+## Cambios en esta versión (v4.0)
+Sale de fase beta. 
+* Agregado API v3 de YouTube. 
+* Se incorpora la sección "YouTube". 
+* Modificaciónes en secciones. 
+* Portfolio actualizado. 
+
+#Changelog
+## Beta v4.0.5
 * Incorporación de un minificador de imágenes. 
 * Actualización de portfolio. 
 
-#Changelog
-## Beta 4.0.1
+## Beta v4.0.4
 * Mejoras en el código del cover inicial, soporta caídas de respuesta de la API de Instagram. 
 * Nuevo cover para la sección "Créditos". 
 * Retoques parciales en el texto. 
 * Se incorpora la sección "Sobre mí". 
 * Se prepara la incorporación de una sub-sección dentro de "Sobre mí" llamada "Currículum". 
 
-## Beta 3
+## Beta v4.0.3
 * Se utiliza NodeJS para iniciar la instancia de Express. 
 * Se incorpora Grunt como automatizador de tareas y levantar la instancia de Express mediante un único comando. 
 * Se incorpora Foundation v4. 
@@ -23,7 +30,7 @@ El sitio se creó desde cero, con implementación de HTML5, CSS3, SASS, concepto
 * Los portfolios son cargados mediante jQuery. Esto agiliza la incorporación de nuevos sitios al portfolio. 
 * Correción de errores varios, limpieza y optimización de código. 
 
-## Beta 2 
+## Beta v4.0.2 
 * Se compilan los css desde archivos sass. 
 * Se quitan momentáneamente las animaciónes jQuery. 
 * Las páginas son cargadas via jQuery. 
