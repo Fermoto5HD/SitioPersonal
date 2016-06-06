@@ -1,0 +1,45 @@
+<script type="text/javascript">
+	$.getJSON( "js/portfolio.json", function( data ) {
+	var items = []; 
+	$.each(data, function(index, d){ 
+		items.push("<div class='row'>\
+						<div class='small-12 columns portfolio'>\
+							<div class='small-12 medium-6 columns'>\
+								<img src='img/portfolio/"+d.imagen+".png' />\
+							</div>\
+							<div class='small-12 medium-6 columns text-left'>\
+								<h3>"+d.titulo+"</h3>\
+								<h4>"+d.periodo+"</h4>\
+								<p>"+d.descripcionCorta+"</p>\
+								<p>"+d.descripcion+"</p>\
+								<div class='text-center'>\
+									<a href='"+d.linkURL+"' target='blank' class='button'>Visitar sitio</a> \
+									<a href='"+d.linkGitHub+"' target='blank' class='button'>Ver repositorio</a>\
+								</div>\
+							</div>\
+						</div>\
+					</div>");
+	});
+	$('#listado-portfolio').html(items);
+});
+</script>
+<div class="cover" style="background-image: url(img/cover/portfolio.jpg)">
+	<div class="shadow">
+		<div class="row">
+			<div class="row text-center">
+				<h1>Mis trabajos realizados</h1>
+				<h2>Estos trabajos fueron realizados con distintas metodologías. <br/>
+					Foundation, Bootstrap, jQueryUI, entre otros frameworks me sirvieron de ayuda para armar los sitios que se encuentran en este portfolio.</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="contenido" id="portfolio">
+	<div class="row text-center">
+		<section id="inicio-portfolio">
+			<div id="listado-portfolio">
+				Cargando... 
+			</div>
+		</section>
+	</div>
+</div>

@@ -1,15 +1,23 @@
 # Fermoto5HD - Sitio Personal v4.0
 Este es el repositorio que muestra el armado integral de mi sitio personal en su 4ta versión. 
 El sitio se creó desde cero, con implementación de HTML5, CSS3, SASS, conceptos de Responsive Design, jQuery, JSON y Ajax. 
+Su soporte duró desde Junio de 2015 hasta Junio de 2016, durando así un año como sitio principal. 
 
-## Cambios en esta versión (v4.0)
+#Changelog
+## v4.0.5
+Última modificación del sitio v4. 
+* Se modifican un par de elementos. 
+* Se reincorporan las animaciones al scrollear. 
+* Se incorpora la marca del sitio en color blanco. 
+* Se quita el requerimiento de usar Express y Watch. Podés montarlo tranquilamente sobre Xampp o correrlo con Ruby. En caso de querer modificar una parte podés usar Grunt para Sass o para el minificador de imagenes. 
+
+## v4.0
 Sale de fase beta. 
 * Agregado API v3 de YouTube. 
 * Se incorpora la sección "YouTube". 
 * Modificaciónes en secciones. 
 * Portfolio actualizado. 
 
-#Changelog
 ## Beta v4.0.5
 * Incorporación de un minificador de imágenes. 
 * Actualización de portfolio. 
@@ -36,10 +44,6 @@ Sale de fase beta.
 * Las páginas son cargadas via jQuery. 
 * Algunas imágenes se han cambiado. 
 * Se agrega un favicon. 
-
-## Ejecucion del sitio 
-* Correr `npm install` para instalar los modulos necesarios para levantar el sitio sin problemas. 
-* Correr `grunt`. El sitio se emula en `localhost:1234`. 
 
 ## Reutilización de archivos 
 Sentite libre en utilizar los distintos archivos de este repositorio para lo que se te ocurra o para algún proyecto que tengas! 

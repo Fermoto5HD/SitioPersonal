@@ -1,0 +1,78 @@
+<div class="cover" style="background-image: url(img/cover/contacto.jpg)">
+	<div class="shadow">
+		<div class="row">
+			<div class="row text-center">
+				<h1>No te quedes con las dudas. ¡Adelante!</h1>
+				<h2>Ponete en contacto y te responderé a la brevedad!</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row text-center">
+	<section>
+		<h1>Podés contactarte via redes sociales:</h1>
+		<a href="http://facebook.com/Fermoto5HD" target="blank" class="button"><i class="fa fa-facebook-official fa-2x"></i></a>
+		<a href="http://twitter.com/Fermoto5HD" target="blank" class="button"><i class="fa fa-twitter fa-2x"></i></a>
+		<a href="https://plus.google.com/117999670362964140369/" target="blank" class="button"><i class="fa fa-google-plus fa-2x"></i></a>
+	</section>
+	<section>
+		<h1>O si preferís una respuesta por correo electrónico, llená este formulario: </h1>
+		<script type="text/javascript">
+		$(document)
+			// field element is invalid
+			.on("invalid.zf.abide", function(ev,elem) {
+				console.log(elem); 
+				console.log("Field id "+ev.target.id+" is invalid");
+			})
+			// field element is valid
+			.on("valid.zf.abide", function(ev,elem) {
+				console.log("Field name "+elem.attr('name')+" is valid");
+			})
+			// form validation failed
+			.on("forminvalid.zf.abide", function(ev,frm) {
+				console.log("Form id "+ev.target.id+" is invalid");
+			})
+			// form validation passed, form will submit if submit event not returned false
+			.on("formvalid.zf.abide", function(ev,frm) {
+				console.log("Form id "+frm.attr('id')+" is invalid");
+				// ajax post form 
+			})
+			// to prevent form from submitting upon successful validation
+			.on("submit", function(ev) {
+				RealizarEnvio(); 
+				ev.preventDefault();
+				console.log("Submit for form id "+ev.target.id+" intercepted");
+			});
+		</script>
+		<form id="formulario-contacto" name="contacto" data-abide>
+			<div data-abide-error class="success callout" style="display: none;">
+				<p><i class="fi-alert"></i> Hay errores en los campos de texto.</p>
+			</div>
+			<div class="row form">
+				<div class="small-12 medium-6 columns">
+					<div class="small-12 columns">
+						<input id="contacto-nombre" type="text" name="nombre" placeholder="Tu nombre" required></input>
+						<span class="form-error">Necesito saber tu nombre ;)</span>
+					</div>
+					<div class="small-12 columns">
+						<input id="contacto-correo" type="email" name="correo" placeholder="Tu correo electrónico" required></input>
+						<span class="form-error">Necesito una dirección de correo para contactarme con vos.</span>
+					</div>
+					<div class="small-12 columns">
+						<input id="contacto-telefono" type="number" name="telefono" placeholder="Un teléfono si lo deseas (opcional)"></input>
+					</div>
+				</div>
+				<div class="small-12 medium-6 columns" style="min-height: 149px;">
+					<textarea id="contacto-mensaje" name="mensaje" placeholder="Y lo que me quieras consultar o proponer!" rows="5" required></textarea>
+					<span class="form-error">Te está faltando el mensaje a enviar.</span>
+				</div>
+			</div>
+			<div class="error-envio" style="display: none;">
+				<h1 class="error-envio-titulo">Revisá bien... algo está provocando que no se pueda enviar el mensaje.</h1>
+				<p class="error-envio-item">No se pudo determinar el error. <br>Si se sigue repitiendo por favor abrí un "issue" en el repositorio del sitio reportando este error. </p>
+			</div>
+			<button class="button" type="submit" value="Submit">¡Enviar mensaje!</button>
+			<!--<input id="contacto-enviar" type="button" class="button" onclick="RealizarEnvio()" value="¡Enviar mensaje!"></input>-->
+		</form>
+	</section>
+</div>

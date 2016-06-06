@@ -1,0 +1,128 @@
+<script type="text/javascript">
+	$.getJSON( "js/portfolio.json")
+	.success(function(data){
+		var items = []; 
+		$.each(data, function(index, d){ 
+			items.push("<div class='small-12 large-4 columns portfolio'> <img src='img/portfolio/"+d.imagen+".png' /> <div class='portfolio-txt'><h3>"+d.titulo+"</h3><h4>"+d.periodo+"</h4><p>"+d.descripcionCorta+"</p> <a href='"+d.linkURL+"' target='blank' class='button'>Visitar sitio</a> <a href='"+d.linkGitHub+"' target='blank' class='button secondary'>Ver repositorio</a></center></div>");
+				return index < 2;
+		});
+		$('#listado-portfolio .row').html(items); 
+	})
+	.fail(function(){
+		$('#listado-portfolio .row').html('No se pudo cargar el portfolio.'); 
+	});	
+</script>
+<script type="text/javascript">
+	var tituloLanding = '¡Bienvenido a mi página personal!'; 
+	var subtitLanding = '¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />\
+							¡Scrolleá y conoceme mejor!'; 
+
+	var landingOriginal = '<div class="row">\
+								<div class="row text-center">\
+									<h1>¡Bienvenido a mi página personal!</h1>\
+									<h2>¡Hola! Me llamo Fernando Osorio, tengo 21 años, vivo en Buenos Aires, Argentina, y hago desarrollo UX web y aplicaciónes web. <br />\
+										¡Scrolleá y conoceme mejor!</h2> \
+								</div>\
+							</div>'; 
+	$('#instafeed').html('<div class="cover" style="background-image: url(img/cover/inicio.jpg);"><div class="shadow">'+landingOriginal+'</div></div>');
+	var feed = new Instafeed({
+				get: 'user', 
+				userId: '1631184808', 
+				clientId: '3c38d510e4ce43b08f4157fd0ee381fb',
+				limit: 1, 
+				resolution: 'standard_resolution', 
+				target: 'instafeed', 
+				template: '<div class="cover" style="background-image: url({{image}});" onclick="mostrarOcultarTexto()" title="Volvé a hacer click para mostrar el texto inicial.">\
+								<div class="shadow" title="Hacé click para ocultar este texto y ver mejor la foto.">'+landingOriginal+'</div>\
+								<div class="instagram" title="Pie de foto: {{caption}}">\
+									<div class="row">\
+										<i class="fa fa-instagram"></i> {{caption}} | <a href="{{link}}" target="_blank">Miralo en mi Instagram</a> \
+									</div>\
+								</div>\
+							</div>', 
+				success: function () {
+					$('#instafeed').html('');
+				}
+		});
+		feed.run();
+
+	var muestra = false; 
+	var mostrarOcultarTexto = function(){
+		if (muestra) {
+			$('#instafeed .cover .shadow').removeClass('invisible'); 
+			muestra = false; 
+
+		} else {
+			$('#instafeed .cover .shadow').addClass('invisible'); 
+			muestra = true; 
+		};
+	}; 
+</script>
+<div id="instafeed">
+	<div class="cover">
+		<div class="row">
+			<div class="row text-center">
+				<h1>Esperá un momento...</h1>
+				<h2>Se está cargando la página.</h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="contenido" id="home">
+	<div class="row text-center">
+		<section id="reminder-new-version">
+			<h1>Aviso importante</h1>
+			<p>Si estás viendo este sitio te voy avisando que algunos datos pueden estar, o erróneos, o desactualizados. </p>
+			<p>Algunas funciones del sitio también están obsoletas (como el Instafeed que tenía que ser actualizado, pero que decidí no hacerlo para pasar a usar Angular en la versión 5.0).</p>
+			<p>Para ver la información corregida y actualizada al día por favor visitá la versión actual de mi página. </p>
+			<p>Gracias.</p>
+			<a class="button" href="http://Fermoto5HD.16mb.com/">Ir a mi página actual</a>
+		</section>
+		<section id="inicio-resumen">
+			<h1>Yo, resumido en pocos ítems</h1>
+			<div class="row">
+				<div class="small-12 medium-6 large-3 columns items">
+					<div class="circle red"><i class="material-icons">&#xE02F;</i></div>
+					<div class="text">Curso el 2do año en la tecnicatura en Tecnología Ferroviaria, en la UNSAM.</div>
+				</div>
+				<div class="small-12 medium-6 large-3 columns items">
+					<div class="circle yellow"><i class="material-icons">computer</i></div>
+					<div class="text">Programo apps web en HTML5, PHP, CSS3, JS, jQuery, Ajax y más! Estoy en constante crecimiento.</div>
+				</div>
+				<div class="small-12 medium-6 large-3 columns items">
+					<div class="circle green"><i class="material-icons">&#xE7FB;</i></div>
+					<div class="text">Ayudo como voluntario en "Programá tu Futuro", en la sede Distrito Audiovisual.</div>
+				</div>
+				<div class="small-12 medium-6 large-3 columns items">
+					<div class="circle blue"><i class="material-icons">&#xE639;</i></div>
+					<div class="text">Veo animé, busco contenido experimental y leo artículos para ponerme al tanto. </div>
+				</div>
+			</div>
+			<br />
+			<button onclick="seccion('sobre-mi')" class="button">¡Conoceme en detalle!</button>
+		</section>
+		<section id="inicio-portfolio">
+			<h1>Portfolios destacados</h1>
+			<div id="listado-portfolio">
+				<div class="row">
+					Cargando... 
+				</div>
+			</div>
+			<button onclick="seccion('portfolio')" class="button">Ver más trabajos</button>
+		</section>
+		<section id="inicio_contacto">
+			<h1>Sitio de código abierto</h1>
+			<p>Cabe aclarar que el sitio tiene la licencia Creative Commons International 4.0. Conocé más sobre esta licencia <a href="http://creativecommons.org/licenses/by/4.0/" target="blank">acá</a>.</p>
+			<p>Podés ver los archivos utilizados de mi página en el <a href="https://github.com/Fermoto5HD/SitioPersonal" target="blank">repositorio de GitHub</a>.</p>
+		</section>
+		<section>
+			<h1>¡Gracias por visitarme!</h1>
+			<p>Ah, y si tenés una consulta en particular podés contactarme por las redes sociales:</p>
+			<a href="http://facebook.com/Fermoto5HD" target="blank" class="button"><i class="fa fa-facebook-official fa-2x"></i></a><a href="http://twitter.com/Fermoto5HD" target="blank" class="button"><i class="fa fa-twitter fa-2x"></i></a><a href="https://plus.google.com/117999670362964140369/" target="blank" class="button"><i class="fa fa-google-plus fa-2x"></i></a>
+			<p>O podés enviarme un correo desde la página:</p>
+			<center>
+				<button onclick="seccion('contacto')" class="button">Ir al formulario de contacto</button>
+			</center>
+		</section>
+	</div>
+</div>

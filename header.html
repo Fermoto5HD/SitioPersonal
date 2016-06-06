@@ -1,0 +1,63 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".top-bar#principal a").click(function() {
+			var link = this.href; 
+			var reshash = (link.substr(link.indexOf("#"))).substring(1);
+			seccion(reshash);
+			return false;
+		});
+	});
+	// While scrolling down clears some stages
+	$(window).scroll(function() {
+		$('section').each(function(){
+			var sectionPosition = $(this).offset().top;
+			var windowTop = $(window).scrollTop();
+			if (sectionPosition < windowTop+400) {
+				$(this).addClass("stage-cleared");
+			}
+		});
+
+		$('.portfolio').each(function(){
+			var sectionPosition = $(this).offset().top;
+			var windowTop = $(window).scrollTop();
+			if (sectionPosition < windowTop+400) {
+				$(this).addClass("stage-cleared");
+			}
+		});
+
+		$('.youtube').each(function(){
+			var sectionPosition = $(this).offset().top;
+			var windowTop = $(window).scrollTop();
+			if (sectionPosition < windowTop+400) {
+				$(this).addClass("stage-cleared");
+			}
+		});
+	});
+</script>
+<div class="top-bar" id="principal">
+	<div class="row">
+		<div class="top-bar-title">
+			<div class="small-8 medium-12 columns">
+				<a href="#inicio" title="Fernando Javier Osorio Lorenzo"><div class="encabezado-logotipo"></div></a>
+			</div>
+		</div>
+		<div class="hide-for-large-only text-right acceso-responsive" data-responsive-toggle="responsive-menu" data-hide-for="large">
+				<div data-toggle><span class="menu-icon"></span> Secciones</div>
+		</div>
+		<div id="responsive-menu">
+			<div class="top-bar-left">
+			</div>
+			<div class="top-bar-right menu-responsive">
+				<ul class="menu dropdown" data-dropdown-menu>
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#sobre-mi">Sobre mí</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#youtube">YouTube</a></li>
+					<li><a href="#creditos">Créditos</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>$(document).foundation();</script>

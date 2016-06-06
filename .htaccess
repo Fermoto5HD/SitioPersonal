@@ -1,0 +1,43 @@
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:yZuZaz
+ErrorDocument 500 /500.html
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE yZuZaz:ERRORPAGEID
+
+# htaccess custom error pages
+ErrorDocument 500 /500.shtml
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 401 /401.html
+
+# SPECIFY HEADER FILE
+HeaderName /dir/header.html
+
+# SPECIFY FOOTER FILE
+ReadmeName Footer.php
+
+# SET INDEX OPTIONS
+IndexOptions IgnoreCase FancyIndexing FoldersFirst NameWidth=* DescriptionWidth=* SuppressHTMLPreamble
+
+# STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+ order allow,deny
+ deny from all
+</Files>
+
+# FILE DESCRIPTIONS
+AddDescription "<span class='description'>Paquete comprimido</span>" .zip .rar
+AddDescription "<span class='description'>Imagen PNG</span>" .png
+AddDescription "<span class='description'>Página web</span>" .html
+AddDescription "<span class='description'>Ejecutable</span>" .exe
+AddDescription "<span class='description'>Video MP2</span>" .mpg .MPG .mpeg .MPEG
+AddDescription "<span class='description'>Video MP4</span>" .mp4 .mpeg4
+AddDescription "<span class='description'>Video WMV</span>" .wmv
+
+# IGNORE THESE FILES
+IndexIgnore style.css
+
+RewriteEngine On
+RewriteBase /
+
+IndexStyleSheet "/css/directorios.css"
+IndexOptions FancyIndexing
