@@ -1,8 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" ng-app="FM5HD">
 	<head>
-	<!-- Título + metadata -->
 		<title>Fernando Osorio (Fermoto5HD)</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+		<link rel=manifest href="manifest.json">
+		<!-- Chrome for Android theme color -->
+		<meta name="theme-color" content="#282828" />
+		<!-- Tile color for Win8 -->
+		<meta name="msapplication-TileColor" content="#282828">
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="no">
+		<meta name="application-name" content="Fermoto5HD">
+		<link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Fermoto5HD">
+		<link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
+		<!-- Tile icon for Win8 (144x144) -->
+		<meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
+
 		<meta name="description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
 		<meta name="keywords" content="Fernando Osorio Fermoto5HD sitio personal portfolio" />
 		<meta name="author" content="Fernando Osorio (Fermoto5HD)" />
@@ -26,64 +45,130 @@
 		<meta name="twitter:image" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
 		<meta name="twitter:image:width" content="435" />
 		<meta name="twitter:image:height" content="290" />
-	<!-- Charset + estilos -->
-		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-		<meta name="theme-color" content="rgb(75, 75, 75)" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="img/favicon.ico">
-	<!-- Scripts -->
-		<script type="text/javascript" src="js/vendor/jquery-2.2.1.min.js"></script>
-		<script type="text/javascript" src="js/vendor/foundation.min.js"></script>
-		<script type="text/javascript" src="js/vendor/instafeed.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/locale/es.js"></script>
-		<!--<script src="//localhost:35729/livereload.js"></script>-->
-		<script type="text/javascript" src="js/scripts.js"></script>
-		<script type="text/javascript" src="js/contacto.js"></script>
-	<!-- Estilos -->
-		<link rel="stylesheet" type="text/css" media="all" href="css/vendor/foundation.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("header").load("header.html");
-				$("footer").load("footer.html");
-			});
-		</script>
+		<!-- Vendors -->
+		<link href="vendor/fm5strap/css/fm5strap.min.css" rel="stylesheet">
+		<link href="css/FM5HD.css" rel="stylesheet">
+		<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gidole-regular" type="text/css"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 	</head>
 	<body>
-		<header>
-		<noscript>
-			<div class="encuadre" id="header">
-				<div class="encabezado-logotipo" alt="Fermoto5HD"></div>
+		<nav class="navbar navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="#/" title="Fernando Javier Osorio Lorenzo"></a>
+				<button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#responsivemenu" style="font-family: inherit;"><i class="fa fa-bars" aria-hidden="true"></i></button>
+				<ul class="nav navbar-nav pull-xs-right collapse navbar-toggleable-sm" id="responsivemenu">
+					<li class="nav-item">
+						<a class="nav-link" href="#/">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#/about-me">Sobre mí</a>
+					</li>
+					<!--<li class="nav-item">
+						<a class="nav-link" href="#about">Blog</a>
+					</li>-->
+					<li class="nav-item">
+						<a class="nav-link" href="#/portfolio">Portfolio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#/youtube">YouTube</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" nohref data-toggle="modal" data-target="#md-contact">Contacto</a>
+					</li>
+				</ul>
 			</div>
-		</noscript>
-		</header>
-		<main id="cuerpo">
-			<noscript>
-				<div class="cuerpo-landing" id="home">
-					<div class="landing-sombra">
-						<div class="encuadre">
-							<div class="landing-texto" id="home">
-								<h1 style="margin-bottom: 0px;">Tenés los scripts deshabilitados</h1>
-								<p>Para visualizar el sitio correctamente necesitás habilitarlos. </p>
-								<p>Si no sabés cómo hacerlo <a href="http://enable-javascript.com/es/">hacé click acá</a>. </p>
-							</div>
+		</nav>
+		<main class="content-w-fixed-navbar" ng-view autoscroll="true">
+			<div class="jumbotron-container" style="background-image: url(img/jumbotron/default.jpg)">
+				<div class="jumbotron">
+					<div class="container">
+						<h1>Cargando contenido del sitio...</h1>
+						<p>Dicen por ahí que la paciencia es una virtud...</p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h3>Sobre el sitio</h3>
+						<h5>El sitio utiliza:</h5>
+						<ul>
+							<li>FM5strap v1 (basado en Bootstrap)</li>
+							<!--<li><a href="http://Fermoto5HD.github.io/FM5strap" target="blank">FM5strap v1 (basado en Bootstrap) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>-->
+							<li>jQuery v2.2.4</li>
+							<li>Angular v1.5.5</li>
+							<li>Angular Instafeed (integrado directamente)</li>
+						</ul>
+						<a class="btn btn-secondary" href="https://github.com/Fermoto5HD/SitioPersonal" target="_blank">Repositorio en GitHub <i class="fa fa-external-link" aria-hidden="true"></i></a>
+						<br/><br/>
+						<h5>Filosofía <i class="fa fa-creative-commons" aria-hidden="true"></i></h5>
+						El contenido de mi <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Sitio Personal</span> está licenciado bajo <span rel="license">Creative Commons Reconocimiento 4.0 Internacional</span>.<br/>
+						<a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/legalcode" target="blank">Legales para abogados <i class="fa fa-external-link" aria-hidden="true"></i></a>
+						<a class="btn btn-secondary" href="http://creativecommons.org/licenses/by/4.0/" target="blank">Versión resumida <i class="fa fa-external-link" aria-hidden="true"></i></a>
+					</div>
+					<div class="col-md-6">
+						<h3>Presencia en otras redes</h3>
+						<ul>
+							<li><a href="http://facebook.com/Fermoto5HD" target="blank">Facebook</a></li>
+							<li><a href="http://twitter.com/Fermoto5HD" target="blank">Twitter</a></li>
+							<li><a href="https://plus.google.com/+Fermoto5HD/" target="blank">Google+</a></li>
+							<li><a href="http://linkedin.com/in/fermoto5hd" target="blank">LinkedIn</a></li>
+							<li><a href="http://gyrosco.pe/Fermoto5HD" target="blank">Gyroscope</a></li>
+							<li><a href="http://github.com/Fermoto5HD" target="blank">GitHub</a></li>
+						</ul>
+					</div>
+				</div>
+				<br/>
+			</div>
+		</footer>
+		<div class="modal fade" id="md-contact" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2 class="modal-title">Contacto</h2>
+					</div>
+					<div class="modal-body">
+						<h2>No te quedes con las dudas. ¡Adelante!</h2>
+						<p>Ponete en contacto y te responderé a la brevedad!</p>
+						<form>
+							<fieldset class="form-group">
+								<label for="md-frm-name">Ante nada... ¿Cómo te llamás? </label>
+								<input type="text" class="form-control" id="md-frm-name" placeholder="Tu nombre" required>
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="md-frm-email">¿Tenés correo para poder contestarte?</label>
+								<input type="email" class="form-control" id="md-frm-email" placeholder="Tu correo" required>
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="md-frm-tel">¿Querés que te llame en todo caso?</label>
+								<input type="tel" class="form-control" id="md-frm-tel" placeholder="Tu teléfono (campo opcional)">
+							</fieldset>
+							<fieldset class="form-group">
+								<label for="md-frm-message">Ahora sí... te escucho!</label>
+								<textarea class="form-control" id="md-frm-message" rows="3" placeholder="El mensaje" required></textarea>
+							</fieldset>
+							<button type="submit" class="btn btn-primary btn-block">¡Enviar mensaje!</button>
+						</form>
+						<br/>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 						</div>
 					</div>
 				</div>
-			</noscript>
-		</main>
-		<footer>
-			<noscript>
-				Este sitio utiliza Javascript, jQuery y varios Frameworks más. <br />
-				Como no tenés los scripts habilitados se muestra esta página de advertencia.
-			</noscript> 
-		</footer>
-		<script>
-			$(document).foundation();
-		</script>
+			</div>
+		</div>
+		<script src="vendor/jquery/js/jquery.min.js"></script>
+		<script src="vendor/tether/js/tether.min.js"></script>
+		<script src="vendor/fm5strap/js/fm5strap.min.js"></script>
+		<script src="vendor/moment/js/moment.min.js"></script>
+		<script src="vendor/angular/js/angular.min.js"></script>
+		<script src="vendor/angular-route/js/angular-route.min.js"></script>
+		<script src="js/scripts-jqjs.js"></script>
+		<script src="js/scripts-angu.js"></script>
 	</body>
 </html>

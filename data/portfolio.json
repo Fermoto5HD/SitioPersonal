@@ -1,0 +1,86 @@
+[{
+	"title": 					"FM5strap", 
+	"period": 					"Mayo 2016", 
+	"shortDescription": 		"Framework basado en Bootstrap v4 para mis sitios personales, incluyendo este mismo.", 
+	"description": 				"Después de ver que al prototipar para diferentes sitios propios usando Bootstrap v4 usaba los mismos estilos para cada sitio decidí empezar a armar una variante de Bootstrap para usarlo en los demás sitios sin tener que ir copiando todo el tiempo los mismos estilos. Para eso modifiqué varias partes de la estética, y también, de los scripts de compilación para exportar otras características como la marca y los íconos.", 
+	"image": 					"fm5strap", 
+	"linkURL": 					"http://Fermoto5HD.github.io/FM5strap", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/FM5strap"
+},  {
+	"title": 					"Sitio Personal", 
+	"version": 					"v4", 
+	"period": 					"Junio 2015-Junio 2016", 
+	"shortDescription": 		"Renovación desde cero de mi página personal, incorporando elementos interactivos que cambian con el paso del tiempo.", 
+	"description": 				"Se plantea el cambio del framework a Bootstrap (y luego a FM5strap) dado a los resultados que fuí obteniendo en un par de sitios adicionales en paralelo. Trabajé más en usar los datos de las APIs para agregar interacción al sitio y puse más foco en el responsive del sitio para que la experiencia sea aún mejor. ", 
+	"image": 					"sitiopersonal-v4", 
+	"linkURL": 					"http://Fermoto5HD.16mb.com/portfolio/sitiopersonal/v4", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/SitioPersonal"
+}, {
+	"title": 					"Próximo Tren", 
+	"period": 					"Enero 2016", 
+	"shortDescription": 		"Un proyecto propio en el cual decido armar una webapp alternativa a la app oficial de Trenes en Vivo pero con varias mejoras y cambios.", 
+	"description": 				"Se utilizó Unsemantic como framework principal y Bootstrap como framework secundario, junto con MomentJS para el cálculo de tiempos restantes y atrasos de servicios. </p><p>Actualmente se reemplazó totalmente el framework Unsemantic por Bootstrap para simplificar el código y la estructura del sitio. </p><p>También se implementa una estética cuidada, adaptable al horario actual, con una clara coherencia en las paletas de colores utilizadas y disposición de elementos en las pantallas. </p><p>La marca Nuevos Ferrocarriles Argentinos es propiedad del Ministerio de Transporte de la Nación. ", 
+	"image": 					"proximo-tren", 
+	"linkURL": 					"http://plataforma5.16mb.com/proximo-tren", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/proximo-tren"
+}, {
+	"title": 					"Posada Kalua Praia", 
+	"period": 					"Enero 2016", 
+	"shortDescription": 		"Uno de los sitios de veraneo más concurridos de Brasil requiere la renovación de su sitio web, por lo tanto decido proponer un diseño adaptado a estos últimos años. ", 
+	"description": 				"El sitio es realizado en el tiempo record de un día, implementando Bootstrap y ModernizrJS, escenciales para su visualización en todo tipo de dispositivos. </p><p>Se utiliza un slider, modales para la galería de imágenes, y botones de acción directa para llamar a la posada o contactarse mediante correo con sólo tocar un botón. ", 
+	"image": 					"kalua", 
+	"linkURL": 					"http://Fermoto5HD.16mb.com/portfolio/kalua", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/Kalua"
+}, {
+	"title": 					"Factor RH Creativo", 
+	"version": 					"v3", 
+	"period": 					"Noviembre 2015", 
+	"shortDescription": 		"Con motivo de mantener la innovación de la peluquería Factor RH Creativo, decido proponer una actualización de su sitio web. ", 
+	"description": 				"El sitio se realiza desde cero y se van implementando diversas tecnologías. </p><p>Algunas de ellas son la reciente versión 6 de Foundation, ModernizrJS para la diferenciación entre dispositivos, MomentJS para el cálculo de tiempo restante para la apertura o cierre del local, entre otras diversas tecnologías ya utilizadas en proyectos anteriores. ", 
+	"image": 					"factorrhcreativo-v3", 
+	"linkURL": 					"http://FactorRHcreativo.16mb.com", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/RH-v3.0"
+}, {
+	"title": 					"Factor RH Creativo", 
+	"version": 					"v2", 
+	"period": 					"Mayo 2015-Noviembre 2015", 
+	"shortDescription": 		"La peluqueria mas concurrida de Villa del Parque me solicita renovar el primer diseño realizado de su sitio web. ", 
+	"description": 				"Para ello decido basarme en el layout del sitio del club de programación, se adaptaron varios elementos a los colores seleccionados por los clientes. </p><p>Dicho sitio se adaptó correctamente a los lineamientos responsive y se optimizaron varias funciones internas del sitio que antes estaban desordenadas. ", 
+	"image": 					"factorrhcreativo-v2", 
+	"linkURL": 					"http://FactorRHcreativo.16mb.com/v2", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/RH-v2.0"
+}, {
+	"title": 					"Club Baldomero: Tutorial Formularios", 
+	"period": 					"Abril-Mayo 2015", 
+	"shortDescription": 		"El objetivo de este sitio ha sido el de crear un tutorial sencillo para la creación de formularios html para contacto. ", 
+	"description": 				"Este sitio usó como base el mismo layout del sitio principal del Club Baldomero, siendo también un sitio responsive. </p><p>El hecho de que sea responsive permite que el usuario pueda aprender a usar forms incluso desde cualquier dispositivo móvil. ", 
+	"image": 					"clubbaldomero-forms", 
+	"linkURL": 					"http://Fermoto5HD.16mb.com/portfolio/clubbaldomero-forms", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/ClubBaldomero-Formularios"
+}, {
+	"title": 					"Club Baldomero: Sitio de pruebas", 
+	"period": 					"Mayo 2015", 
+	"shortDescription": 		"Este sitio fue propuesto como objetivo para los ingresantes al club de programación por los mentores del club de la Biblioteca Baldomero.", 
+	"description": 				"Este fue uno de los primeros sitios en realizarse bajo un layout desde cero. </p><p>En un principio se realizó el mismo layout propuesto por los mentores. Durante el transcurso de su realización lo transformé en responsive y le dí funcionalidad bajo Ajax. </p><p>Pero más adelante decidí adaptarlo al nuevo diseño del sitio oficial del Gobierno de la Ciudad de Buenos Aires estrenado en mayo de 2015. ", 
+	"image": 					"clubbaldomero-test", 
+	"linkURL": 					"http://Fermoto5HD.16mb.com/portfolio/clubbaldomero-v2.0", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/ClubBaldomero-v2.0"
+},  {
+	"title": 					"Sitio Personal", 
+	"version": 					"v3.5", 
+	"period": 					"Septiembre 2014-Junio 2015", 
+	"shortDescription": 		"Renovación de mi página personal incorporando los nuevos conocimientos de ese entonces.", 
+	"description": 				"En esta etapa estaba perfeccionando mis conocimientos en programación web. Ya incorporaba los conceptos de responsive y refinaba algunos errores que cometía al programar. </p><p>El sitio fue programado en php, con incorporaciones de jQuery y elementos en CSS. </p><p>La particularidad de este sitio es que el archivo index.php se mantuvo durante muchos años. Es decir, el sitio tuvo miles de cambios significativos desde que arrancó como un simple sitio realizado con tablas. ", 
+	"image": 					"sitiopersonal-v3.5", 
+	"linkURL": 					"http://Fermoto5HD.16mb.com/portfolio/sitiopersonal/v3.5", 
+	"linkGitHub": 				"http://github.com/Fermoto5HD/SitioPersonal-v3.5"
+}, {
+	"title": 					"Factor RH Creativo", 
+	"version": 					"v1", 
+	"period": 					"Junio 2014-Mayo 2015", 
+	"shortDescription": 		"La peluqueria de Villa del Parque Factor RH Creativo me solicita realizar una propuesta de sitio web para darse a conocer por Internet. ", 
+	"description": 				"Cabe destacar que recién en ese año empezaba a programar páginas web. No tenía mucha noción sobre el ordenado de carpetas y apenas sabía dos o tres funciones en jQuery. </p><p>El sitio se armó con PHP, con poco Javascript (más precisamente jQuery), CSS aunque desordenado, y no era responsive. </p><p>La siguiente propuesta traería muchos cambios significativos y corrección de estos puntos mencionados. ", 
+	"image": 					"factorrhcreativo-v1", 
+	"linkURL": 					"http://Fermoto5HD.16mb.com/portfolio/RH-v1.0", 
+	"linkGitHub": 				"#"
+}]

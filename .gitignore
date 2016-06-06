@@ -1,2 +1,5 @@
-node_modules 
-.sass-cache
+bower_components
+node_modules
+htaccess
+*.scssc
+*.sassc
