@@ -37,6 +37,61 @@ app
 		});
 	})
 
+	.controller('contactform', function ($scope, $http, $compile) {
+		$scope.modalShow = false;
+		$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
+		$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
+		
+		$scope.addNums = function(){
+			var answer = $scope.md_frm_mathcaptcha;
+			var digit1 = $scope.rand1;
+			var digit2 = $scope.rand2;
+			var sum = digit1 + digit2;
+			if (answer == ""){
+				alert("looks like you forgot something, hint it's the math question");
+				$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
+				$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
+				return false;
+			} else if (answer != sum){
+				alert("do you need a calculator? don't feel bad, math is not for everyone");
+				$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
+				$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
+				return false;
+			} else{
+				return true;
+			}
+		}
+		$scope.sendmail = function() {
+		$scope.success = "";
+			if ($scope.addNums()) {
+				$http({
+					method: 'POST', 
+					url: 'php/mailing.php',
+					data: 'name=:'+ $scope.md_frm_name + '&email=' + $scope.md_frm_email + '&tel=' + $scope.md_frm_tel + '&msj='+$scope.md_frm_message,
+					headers: {'Content-Type': 'application/x-www-form-urlencoded'}	
+				}).	
+				success(function(data, status) {
+					// Set the data of the status
+					$scope.alert = true; 
+					$scope.resultado = data;
+					$scope.md_frm_name = "";
+					$scope.md_frm_email = "";
+					$scope.md_frm_tel = "";
+					$scope.md_frm_message = "";
+					$scope.md_frm_mathcaptcha = "";
+					$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
+					$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
+					$scope.success = "El mensaje fue enviado. Gracias por contactarte conmigo, te contestaré lo más antes posible! ";
+				}).
+				error(function(data, status) {
+					$scope.alert = true; 
+					$scope.data = data || "Request failed";
+					$scope.status = status;
+				});
+			}
+		}
+	})
+
 	.controller('mainctrl', function ($scope) {
 		console.log('Default'); 
 		//$scope.agregar = function(){};

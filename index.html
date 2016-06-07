@@ -135,25 +135,35 @@
 					<div class="modal-body">
 						<h2>No te quedes con las dudas. ¡Adelante!</h2>
 						<p>Ponete en contacto y te responderé a la brevedad!</p>
-						<form>
-							<fieldset class="form-group">
-								<label for="md-frm-name">Ante nada... ¿Cómo te llamás? </label>
-								<input type="text" class="form-control" id="md-frm-name" placeholder="Tu nombre" required>
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="md-frm-email">¿Tenés correo para poder contestarte?</label>
-								<input type="email" class="form-control" id="md-frm-email" placeholder="Tu correo" required>
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="md-frm-tel">¿Querés que te llame en todo caso?</label>
-								<input type="tel" class="form-control" id="md-frm-tel" placeholder="Tu teléfono (campo opcional)">
-							</fieldset>
-							<fieldset class="form-group">
-								<label for="md-frm-message">Ahora sí... te escucho!</label>
-								<textarea class="form-control" id="md-frm-message" rows="3" placeholder="El mensaje" required></textarea>
-							</fieldset>
-							<button type="submit" class="btn btn-primary btn-block">¡Enviar mensaje!</button>
-						</form>
+						<div class="contact-form" ng-controller="contactform">
+							<form ng-submit="sendmail();">
+								<div ng-show="{{alert}}">
+									<div class="alert alert-success">{{success}}</div>
+								</div>
+								<fieldset class="form-group">
+									<label for="md-frm-name" class="required">Ante nada... ¿Cómo te llamás?</label></br>
+									<input type="text" class="form-control" ng-model="md_frm_name" id="md-frm-name" name="md-frm-name" placeholder="Tu nombre" tabindex="1" required>
+								</fieldset>
+								<fieldset class="form-group">
+									<label for="md-frm-email" class="required">¿Tenés correo para poder contestarte?</label>
+									<input type="email" class="form-control" ng-model="md_frm_email" id="md-frm-email" name="md-frm-email" placeholder="Tu correo" tabindex="2" required>
+								</fieldset>
+								<fieldset class="form-group">
+									<label for="md-frm-tel" class="required">¿Querés que te llame en todo caso?</label>
+									<input type="tel" class="form-control" ng-model="md_frm_tel" id="md-frm-tel" name="md-frm-tel" placeholder="Tu teléfono (campo opcional)" tabindex="3">
+								</fieldset>
+								<fieldset class="form-group">
+									<label for="md-frm-message" class="required">Ahora sí... te escucho.</label>
+									<textarea class="form-control" ng-model="md_frm_message" id="md-frm-message" name="md-frm-message" placeholder="El mensaje" rows="3" tabindex="4" required></textarea>
+								</fieldset>
+								<fieldset class="form-inline">
+									<label class="calcule">Matemática para humanos: {{rand1}} + {{rand2}} = </label>
+									<input type="number" class="form-control" ng-model="md_frm_mathcaptcha" id="md-frm-mathcaptcha" name="md-frm-mathcaptcha" placeholder="El resultado" tabindex="5" required></input>
+								</fieldset>
+								<br/>
+								<button type="submit" class="btn btn-primary btn-block" tabindex="6">¡Enviar mensaje!</button>
+							</form>
+						</div>
 						<br/>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
