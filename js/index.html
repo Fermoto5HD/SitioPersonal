@@ -55,7 +55,7 @@
 	<body>
 		<!--<nav class="navbar navbar-fixed-top" scroll ng-class="{onscroll: boolChangeClass}">-->
 		<nav class="navbar navbar-fixed-top">
-			<div class="container-fluid">
+			<div class="container">
 				<a class="navbar-brand" href="/" title="Fernando Javier Osorio Lorenzo"></a>
 				<button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#responsivemenu" style="font-family: inherit;"><i class="fa fa-bars" aria-hidden="true"></i></button>
 				<ul class="nav navbar-nav pull-xs-right collapse navbar-toggleable-sm nav-responsive" id="responsivemenu">
@@ -63,10 +63,10 @@
 						<a class="nav-link" href="/">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/acerca">Sobre mí</a>
+						<a class="nav-link" href="/about-me">Sobre mí</a>
 					</li>
 					<!--<li class="nav-item">
-						<a class="nav-link" href="/blog">Blog</a>
+						<a class="nav-link" href="#about">Blog</a>
 					</li>-->
 					<li class="nav-item">
 						<a class="nav-link" href="/portfolio">Portfolio</a>
@@ -83,7 +83,7 @@
 		<main class="content-w-fixed-navbar" ng-view autoscroll="true">
 			<div class="jumbotron-container" style="background-image: url(img/jumbotron/default.jpg)">
 				<div class="jumbotron">
-					<div class="container-fluid">
+					<div class="container">
 						<h1>Cargando contenido del sitio...</h1>
 						<p>Dicen por ahí que la paciencia es una virtud...</p>
 					</div>
@@ -91,16 +91,16 @@
 			</div>
 		</main>
 		<footer>
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
 						<h3>Sobre el sitio</h3>
 						<h5>El sitio utiliza:</h5>
 						<ul>
-							<li><a href="/FM5strap">FM5strap v1</a></li>
+							<li>FM5strap v1 (basado en Bootstrap)</li>
 							<li>jQuery v2.2.4</li>
 							<li>Angular v1.5.5</li>
-							<li>Angular Instafeed</li>
+							<li>Angular Instafeed (integrado directamente)</li>
 						</ul>
 						<a class="btn btn-secondary" href="https://github.com/Fermoto5HD/SitioPersonal" target="_blank">Repositorio en GitHub <i class="fa fa-external-link" aria-hidden="true"></i></a>
 						<br/><br/>
@@ -184,7 +184,6 @@
 		<script src="vendor/angular-youtube-mb/js/angular-youtube-embed.min.js"></script>
 		<script src="vendor/angular-moment/js/angular-moment.min.js"></script>
 		<script src="js/scripts-jqjs.js"></script>
-		<script src="js/angular/main.js"></script>
-		<script src="js/angular/UNSAM-infra1-tp1.js"></script>
+		<script src="js/scripts-angu.js"></script>
 	</body>
 </html>

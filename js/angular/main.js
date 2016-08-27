@@ -1,30 +1,64 @@
-var app = angular.module('FM5HD', ['ngRoute']);
+var app = angular.module('FM5HD', ['ngRoute', 'ngSanitize', 'angularMoment', 'youtube-embed']);
 var token = ""; 
 app
 	.config(function($routeProvider){
 		$routeProvider
+		// Quick access
+		.when('/about-me',{ 
+			redirectTo: '/acerca'
+		})
+		.when('/about-me/cv',{ 
+			redirectTo: '/acerca/cv'
+		})
+		.when('/curriculum',{ 
+			redirectTo: '/acerca/cv'
+		})
+		.when('/renovaciondevias',{ 
+			redirectTo: '/portfolio/cursadaUNSAM/renovaciondevias'
+		})
+
+		// Normal routes 
 		.when('/',{ 
 			templateUrl:'section/home.html',
 			controller: 'home'
 		})
-		.when('/about-me',{ 
+		.when('/acerca',{ 
 			templateUrl:'section/about-me.html'
 		})
-		.when('/about-me/cv',{ 
+		.when('/acerca/cv',{ 
 			templateUrl:'section/cv.html'
 		})
 		.when('/portfolio',{ 
-			templateUrl:'section/portfolio.html'
+			templateUrl:'section/portfolio/home.html'
 		})
 		.when('/portfolio/lantalks',{ 
-			templateUrl:'section/lantalks.html'
+			templateUrl:'section/portfolio/lantalks.html'
 		})
-		.when('/portfolio/cursadaUNSAM-2016',{ 
-			templateUrl:'section/UNSAM2016.html'
+		.when('/portfolio/cursadaUNSAM',{ 
+			templateUrl:'section/portfolio/UNSAM.html'
+		})
+		.when('/portfolio/cursadaUNSAM/infra1-tp1',{ 
+			templateUrl:'section/portfolio/UNSAM-infra1-tp1.html', 
+			controller: 'UNSAM-infra1-tp1'
+		})
+		.when('/portfolio/cursadaUNSAM/renovaciondevias',{ 
+			templateUrl:'section/portfolio/UNSAM-renovaciondevias.html'
+		})
+		.when('/portfolio/ferroviario',{ 
+			templateUrl:'section/ferroviario.html'
 		})
 		.when('/youtube',{ 
 			templateUrl:'section/youtube.html',
 			controller: 'youtube'
+		})
+		.when('/FM5strap',{ 
+			templateUrl:'section/FM5strap/home.html'
+		})
+		.when('/FM5strap/componentes',{ 
+			templateUrl:'section/FM5strap/components.html'
+		})
+		.when('/FM5strap/ejemplos',{ 
+			templateUrl:'section/FM5strap/examples.html'
 		})
 		.when('/401',{ 
 			templateUrl:'section/401.html' 
@@ -35,6 +69,66 @@ app
 		.otherwise({
 			templateUrl:'section/404.html' 
 		});
+	})
+	.config(function($locationProvider) {
+		$locationProvider.html5Mode(true);
+	})
+
+	.run(function(amMoment) {
+		amMoment.changeLocale('es');
+	})
+
+	.directive("scroll", function ($window) {
+		return function(scope, element, attrs) {
+			angular.element($window).bind("scroll", function() {
+				if (this.pageYOffset >= 25) {
+					scope.boolChangeClass = true;
+					console.log('Scrolled below header.');
+				} else {
+					scope.boolChangeClass = false;
+					console.log('Header is in view.');
+				}
+
+				scope.$watch(function () {
+					return {
+						'h': w.height(), 
+						'w': w.width()
+					};
+				}, function (newValue, oldValue) {
+					scope.windowHeight = newValue.h;
+					scope.windowWidth = newValue.w;
+
+					if (newValue.w >= 768) {
+						//minwidth = true; 
+						console.log("+768")
+					} else {
+						//minwidth = false; 
+						console.log("-768")
+					}
+
+					console.log("h:" + newValue.h + " | w:" + newValue.w + " | Minwidth: kjk "); 
+
+
+					scope.resizeWithOffset = function (offsetH) {
+						scope.$eval(attr.notifier);
+						return { 
+							'height': (newValue.h - offsetH) + 'px'                    
+						};
+					};
+
+				}, true);
+
+
+				scope.$apply();
+			});
+
+			var w = angular.element($window);
+			
+
+			w.bind('resize', function () {
+				scope.$apply();
+			});
+		};
 	})
 
 	.controller('contactform', function ($scope, $http, $compile) {

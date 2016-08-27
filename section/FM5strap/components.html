@@ -1,0 +1,164 @@
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/about-me.jpg)">
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Fermoto5HD</a></li>
+				<li class="breadcrumb-item"><a href="/FM5strap">FM5strap</a></li>
+				<li class="breadcrumb-item active">Componentes</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron w-breadcrumb">
+		<div class="container-fluid">
+			<h1>Componentes</h1>
+			<p>El framework posee tanto elementos modificados de Bootstrap v4, como elementos propios que son utilizados con cierta frecuencia y permiten que los sitios tengan un desarrollo más rápido. </p>
+		</div>
+	</div>
+</div>
+<section class="container-fluid">
+	<h3>Estilo base</h3>
+	<p>Como fuente tipográfica se utiliza, como fuente primaria "Gidole", y como secundaria "Open Sans". Luego continúan las diversas fuentes de sistema, en caso que hayan problemas en bajar las dos primeras fuentes. </p>
+	<p>Los colores son oscuros para facilitar la navegación nocturna o en entornos de baja iluminación.</p>
+	<p>El body tiene un color oscuro como fondo, ya que, en caso de tener un elemento fuera del área de navegación, no generará un fondo blanco al costado. También permite que el footer tenga un efecto "sticky". </p>
+</section>
+<section class="container-fluid">
+	<h3><code>&lt;main&gt;</code> tag</h3>
+	<p>Esta etiqueta, aparte de diferenciar el header y el footer, aplica un tono gris oscuro, diferenciandose del fondo el cual es más oscuro. </p>
+	<p>En caso de que el sitio contenga la clase<code>navbar-fixed-top</code> en el navbar tendrás que agregar la clase <code>content-w-fixed-navbar</code> al <code>&lt;main&gt;</code> para que se adapte en tamaño.</p>
+</section>
+<section class="container-fluid">
+	<h3><code>&lt;footer&gt;</code> tag</h3>
+	<p>El <code>&lt;footer&gt;</code> tiene su estilo. Pensado para albergar una descripción del trabajo, la licencia CC, integrantes, links y datos adicionales. </p>
+	<p>En esta demo no se notará mucho el fondo, ya que está dentro de <code>&lt;main&gt;</code>.</p>
+	Demo: 
+	<footer>
+		<div class="container-fluid">
+			<div class="col-md-4">
+				<h3>Texto descriptivo</h3>
+				<p>
+					Acá podrás poner una descripción del proyecto, o colocar la atribucion de Creative Commons. 
+				</p>
+			</div>
+			<div class="col-md-4">
+				<h3>Listado</h3>
+				<ul>
+					<li>Ítem 1</li>
+					<li>Ítem 2</li>
+					<li>Ítem 3</li>
+					<li>Ítem 4</li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<h3>Links</h3>
+				<ul>
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+					<li><a href="#">Link 4</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	Código: 
+	<pre>&lt;footer&gt;
+	&lt;div class="container-fluid"&gt;
+		&lt;div class="col-md-4"&gt;
+			&lt;h3&gt;Texto descriptivo&lt;/h3&gt;
+			&lt;p&gt;
+				Acá podrás poner una descripción del proyecto, o colocar la atribucion de Creative Commons. 
+			&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-4"&gt;
+			&lt;h3&gt;Listado&lt;/h3&gt;
+			&lt;ul&gt;
+				&lt;li&gt;Ítem 1&lt;/li&gt;
+				&lt;li&gt;Ítem 2&lt;/li&gt;
+				&lt;li&gt;Ítem 3&lt;/li&gt;
+				&lt;li&gt;Ítem 4&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-4"&gt;
+			&lt;h3&gt;Links&lt;/h3&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Ítem 1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Ítem 2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Ítem 3&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Ítem 4&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/footer&gt;</pre>
+</section>
+<section class="container-fluid">
+	<h3>Jumbotron</h3>
+	<p>Es un contenedor que explica, en pocas palabras, una sección o forma de funcionamiento de algo. </p>
+	<p>Su forma de uso es similar al clásico Jumbotron de Bootstrap, sólo que acá se agrega un <code>&lt;jumbotron-container&gt;</code> como elemento superior, haciendo que el <code>&lt;jumbotron&gt;</code> actúe como sombra</p>
+	<strong>Demo:</strong>
+	<div class="jumbotron-container">
+		<div class="jumbotron">
+			<h1>Título de Jumbotron</h1>
+			<p>Y una descripción del mismo.</p>
+		</div>
+	</div>
+	<h4>Combinación con el breadcrumb.</h4>
+	<p>Podés combinarlo con el breadcrumb. </p>
+</section>
+<section class="container-fluid">
+	<h3>Shortcuts</h3>
+	<p>Son accesos directos que contienen un ícono y una descripción corta. </p>
+	<strong>Demo: </strong>
+	<div class="container-fluid">
+		<div class="row row-shortcut">
+			<div class="col-sm-6 col-md-4 shortcut">
+				<span class="circle bg-info">
+					<p id="age">40px</p>
+					<p>font-size</p>
+				</span>
+				<h3>Números</h3>
+				<p>Podés poner un dato dinámico para contabilizar un ítem.</p>
+			</div>
+			<div class="col-sm-6 col-md-4 shortcut">
+				<span class="circle bg-warning">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+				</span>
+				<h3>Ícono</h3>
+				<p>Podés usar un ícono de Font Awesome para señalizar una sección.</p>
+			</div>
+			<div class="col-sm-12 col-md-4 shortcut">
+				<span class="circle" style="background-image: url(img/konodioda.jpg)" title="Esperabas una imagen de ejemplo, pero era yo, Dio!">
+				</span>
+				<h3>Imagen</h3>
+				<p>Si lo preferís podés poner una imagen personalizada.</p>
+			</div>
+		</div>
+	</div>
+	<strong>Código: </strong>
+	<pre>&lt;div class="row row-shortcut"&gt;
+	&lt;div class="col-sm-6 col-md-4 shortcut"&gt;
+		&lt;span class="circle bg-info"&gt;
+			&lt;p id="age"&gt;40px&lt;/p&gt;
+			&lt;p&gt;font-size&lt;/p&gt;
+		&lt;/span&gt;
+		&lt;h3&gt;Números&lt;/h3&gt;
+		&lt;p>Podés poner un dato dinámico para contabilizar un ítem.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="col-sm-6 col-md-4 shortcut"&gt;
+		&lt;span class="circle bg-warning"&gt;
+			&lt;i class="fa fa-map-marker" aria-hidden="true">&lt;/i&gt;
+		&lt;/span>
+		&lt;h3>Ícono&lt;/h3&gt;
+		&lt;p>Podés usar un ícono de Font Awesome para señalizar una sección.&lt;/p&gt;
+	&lt;/div>
+	&lt;div class="col-sm-12 col-md-4 shortcut">
+		&lt;span class="circle" style="background-image: url(img/konodioda.jpg)" title="Esperabas una imagen de ejemplo, pero era yo, Dio!"&gt;
+		&lt;/span&gt;
+		&lt;h3&gt;Imagen&lt;/h3&gt;
+		&lt;p&gt;Si lo preferís podés poner una imagen personalizada.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+</section>
+<section class="container-fluid">
+	<h2>Eso no es todo</h2>
+	<p>¡Podés usar los mismos componentes de Bootstrap con este framework!</p>
+	<a class="btn btn-primary" href="http://v4-alpha.getbootstrap.com/">Ir a Bootstrap</a>
+</section>

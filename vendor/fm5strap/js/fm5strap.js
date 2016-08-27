@@ -1,5 +1,5 @@
 /*
- * FM5strap v1.0.0 (http://Fermoto5HD.16mb.com)
+ * FM5strap v1.1.6 (http://Fermoto5HD.16mb.com)
  * 2016 - Armado por Fernando Osorio (Fermoto5HD)
  * Basado en Bootstrap v4.0.0-alpha.2 - Copyright 2011-2016 Twitter, Inc.
  * Bootstrap está licenciado bajo MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)

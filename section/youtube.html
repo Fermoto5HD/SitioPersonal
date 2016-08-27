@@ -1,21 +1,21 @@
 <div ng-if="ytuploads.data.items[0].snippet.thumbnails.maxres.url === undefined">
 	<div class="jumbotron-container" style="background-image: url({{ytuploads.data.items[0].snippet.thumbnails.high.url}});">
 		<div class="breadcrumb-container">
-			<div class="container">
+			<div class="container-fluid">
 				<ol class="breadcrumb">
-					<li><a href="#/">Fermoto5HD</a></li>
-					<li class="active">YouTube</li>
+					<li class="breadcrumb-item"><a href="/">Fermoto5HD</a></li>
+					<li class="breadcrumb-item active">YouTube</li>
 				</ol>
 			</div>
 		</div>
 		<div class="jumbotron w-breadcrumb">
-			<div class="container">
+			<div class="container-fluid">
 				<h1>YouTube: Una puerta hacia el contenido original</h1>
 				<p>Transporte ferroviario, eventos y más son las temáticas que enfoco en los videos de mi canal, con licencia Creative Commons para que lo reutilices como quieras.</p>
 			</div>
 		</div>
 		<div class="breadcrumb-container">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="breadcrumb">
 					<div class="col-md-9">
 						<i class="fa fa-youtube-play"></i> <span>{{ytuploads.data.items[0].snippet.title}}</span>
@@ -27,11 +27,30 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal fade" id="md-ytvideo" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h2 class="modal-title">{{ytuploads.data.items[0].snippet.title}}</h2>
+				</div>
+				<div class="modal-body">
+					<youtube-video video-id="ytuploads.data.items[0].snippet.resourceId.videoId"></youtube-video>
+					<figcaption><i class="fa fa-picture-o" aria-hidden="true"></i> {{ytuploads.data.items[0].snippet.description}}</figcaption>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div ng-if="ytuploads.data.items[0].snippet.thumbnails.maxres.url !== undefined">
 	<div class="jumbotron-container" style="background-image: url({{ytuploads.data.items[0].snippet.thumbnails.maxres.url}});">
 		<div class="breadcrumb-container">
-			<div class="container">
+			<div class="container-fluid">
 				<ol class="breadcrumb">
 					<li><a href="#/">Fermoto5HD</a></li>
 					<li class="active">YouTube</li>
@@ -39,13 +58,13 @@
 			</div>
 		</div>
 		<div class="jumbotron w-breadcrumb">
-			<div class="container">
+			<div class="container-fluid">
 				<h1>YouTube: Una puerta hacia el contenido original</h1>
 				<p>Transporte ferroviario, eventos y más son las temáticas que enfoco en los videos de mi canal, con licencia Creative Commons para que lo reutilices como quieras.</p>
 			</div>
 		</div>
 		<div class="breadcrumb-container">
-			<div class="container">
+			<div class="container-fluid">
 				<div class="breadcrumb">
 					<div class="col-md-9">
 						<i class="fa fa-youtube-play"></i> <span>{{ytuploads.data.items[0].snippet.title}}</span>
@@ -59,7 +78,7 @@
 	</div>
 </div>
 <section>
-	<div class="container text-xs-center">
+	<div class="container-fluid text-xs-center">
 		<div class="row row-shortcut">
 			<h2>Mi canal en números</h2>
 			<div class="col-sm-6 col-md-3 shortcut">
@@ -90,7 +109,7 @@
 	</div>
 </section>
 <section id="youtube-videos">
-	<div class="container text-xs-center">
+	<div class="container-fluid text-xs-center">
 		<br/>
 		<h2>Últimos videos cargados en mi cuenta</h2>
 		<div class="row">
@@ -127,7 +146,7 @@
 	</div>
 </section>
 <hr>
-<section class="container">
+<section class="container-fluid">
 	<h1 >Calidad del contenido y lineamientos de grabación</h1>
 	<p>Mi contenido posee una cierta calidad al momento de cargarse al canal, tanto el material crudo como el material editado. </p>
 	<p>Generalmente la calidad de mi contenido está en 720p. Algunos videos pueden estar en 480p (que son grabados con una Sony Handycam). Si el contenido es editado mediante software se intenta escalarlo a 1080p, y de forma experimental a 60 cuadros por segundo. </p>
@@ -139,24 +158,24 @@
 	<p>El contenido grabado no utiliza zoom digital ya que se desperdicia calidad de imágen al hacer un tipo de zoom que no aporta detalle alguno al video. </p>
 	<p>Claro está que en los casos donde tenga la posibilidad de hacer zoom óptico se utilizará este recurso. </p>
 </section>
-<section class="container">
+<section class="container-fluid">
 	<h1>¿Que hay en mi canal?</h1>
 	<p>En mi canal hay un contenido definido, el cual se centra en el transporte ferroviario, tecnología (la cual incorporaré más adelante), eventos y más. </p>
 	<p>Actualmente mi canal está pasando por el proceso de reestructuración de contenido, donde el contenido anterior (televisión y radio) está siendo transferido hacia otra cuenta, adoptando una imagen e identidad al canal y priorizando el contenido de creación propia en el canal. </p>
 	<p>El canal por el momento está situado en dos grupos de contenidos: </p>
 </section>
-<section class="container">
+<section class="container-fluid">
 	<h2>Transporte ferroviario</h2>
 	<p>Este material es grabado dentro del Área Metropolitana de Buenos Aires y, en su mayoría, en Capital Federal. </p>
 	<p>Priorizo la grabación del material rodante eléctrico aunque no descarto la grabación del material tractivo diésel y el material remolcado. </p>
 	<p>Intento grabar material de todas las líneas del área, en especial los viajes por dentro ya que no hay demasiado material de éllo en YouTube. </p>
 	<!--<p>Más adelante intentaré hacer reviews especiales de cada material rodante eléctrico del subterráneo. </p>-->
 </section>
-<section class="container">
+<section class="container-fluid">
 	<h2>Eventos y más</h2>
 	<p>Aparte del contenido ferroviario, cargo videos de algunos eventos a los que asisto y también de otras temáticas de mi interés. </p>
 </section>
-<section class="container">
+<section class="container-fluid">
 	<h1>Licenciamiento Creative Commons</h1>
 	<p>Desde el año 2014 decidí establecer a cada video cargado a la cuenta el licenciamiento Creative Commons, permitiendo la reutilización de mi material para cualquier necesidad. </p>
 	<p>Más allá de YouTube, este fue el primer paso para la apertura de mi contenido al mundo. </p>
