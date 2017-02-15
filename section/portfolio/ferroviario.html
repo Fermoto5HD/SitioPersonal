@@ -1,0 +1,45 @@
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/cursadaUNSAM.jpg)">
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Fermoto5HD</a></li>
+				<li class="breadcrumb-item"><a href="/portfolio">Portfolio</a></li>
+				<li class="breadcrumb-item active">Relacionados al ferrocarril</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron w-breadcrumb white-blocks">
+		<div class="container-fluid">
+			<h1>Trabajos relacionados al ferrocarril</h1>
+			<div class="description">
+				<p>Porque creo firmemente que se pueden unir dos pasiones en una.</p><br>
+				<p>Mis proyectos pueden ir desde presentaciones, pasando por datos hasta incluso armar apps alternativas.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<br/>
+<section id="portfolio-portfolio" ng-controller="listPortfolio_ferroviario">
+	<div class="container-fluid">
+		<h2 class="text-xs-center">Mis últimos trabajos realizados</h2>
+		<div class="card" ng-repeat="trabajo in portfolio">
+			<div class="card-block row">
+				<div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 text-xs-center">
+					<img src="https://fermoto5hd.com/_JosephIsBestJojo/assets/cargas/portfolio/{{trabajo.imagen}}" alt="{{trabajo.nombre}}" class="img-fluid img-thumbnail"><br/>
+					<a class="btn btn-primary" href="{{trabajo.url}}" ng-if="(trabajo.url !== null) && (trabajo.link_interno === true)">Visitar sitio</a><a class="btn btn-primary" href="{{trabajo.url}}" ng-if="(trabajo.url !== null) && (trabajo.link_interno !== true)" target="_blank">Visitar sitio <i class="fa fa-external-link" aria-hidden="true" ng-if="trabajo.link_interno !== true"></i></a><a class="btn btn-secondary" href="{{trabajo.url_repo}}" ng-if="trabajo.url_repo !== null" target="_blank">Ir al repositorio <i class="fa fa-external-link" aria-hidden="true"></i></a>
+				</div>
+				<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
+					<div ng-if="trabajo.version === null">
+						<h3>{{trabajo.nombre}}</h3>
+					</div>
+					<div ng-if="trabajo.version !== null">
+						<h3>{{trabajo.nombre}} <span class="text-muted">v{{trabajo.version}}</span></h3>
+					</div>
+					<h4 class="h6"><span class="text-capitalize">{{trabajo.desde | amDateFormat:'MMMM YYYY'}} </span><span ng-if="trabajo.hasta !== null"> hasta <span class="text-capitalize">{{trabajo.hasta | amDateFormat:'MMMM YYYY'}}</span></span></h4>
+					<p>{{trabajo.descripcion_corta}}</p>
+					<div ng-bind-html="trabajo.descripcion"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

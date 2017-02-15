@@ -1,0 +1,83 @@
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/about-me.jpg)">
+	<video id="video-background" preload muted autoplay loop>
+		<source src="vid/APIs.mp4" type="video/mp4">
+		<source src="vid/APIs.ogg" type="video/ogg">
+	</video>
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Fermoto5HD</a></li>
+				<li class="breadcrumb-item"><a href="/APIs">APIs</a></li>
+				<li class="breadcrumb-item active">Privadas</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron w-breadcrumb white-blocks">
+		<div class="container-fluid">
+			<h1>APIs privadas</h1>
+			<div class="description">
+				<p>Estas APIs son especiales y no pueden ser utilizadas libremente por terceros. </p>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	#video-background{ 
+		display: none; 
+	}
+	.breadcrumb-container {
+		padding-top: 68px; 
+	}
+	.breadcrumb-container#jumbotron-caption {
+		padding-top: 0px; 
+	}
+	@media(min-width: 992px){
+		.jumbotron-container{
+			position: relative;
+			overflow: hidden;
+
+			/* Tried setting the height. Didnt work either */
+			/* height: 200px; */
+		}
+		.breadcrumb-container, 
+		.jumbotron {
+			position: relative;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 1;
+		}
+		.breadcrumb-container {
+			background-color: rgba(0, 0, 0, 0.75); 
+		}
+		.jumbotron .container-fluid {
+			position: relative;
+			color: #ffffff;
+			z-index: 2;
+			padding-top: 0px; 
+			padding-bottom: 25px; 
+		}
+
+		#video-background{ 
+			position: absolute;
+			display: block; 
+			height: auto;
+			width: auto;
+			min-height: 100%;
+			min-width: 100%;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate3d(-50%, -50%, 0);
+			transform: translate3d(-50%, -50%, 0);
+			z-index: 1;
+		}
+	}
+</style>
+<section class="container-fluid">
+	<h2>¿Por qué?</h2>
+	<p>Pasa lo siguiente: Necesito funciones que se puedan acceder fácilmente para lograr un propósito (ej: puntuar un post). </p>
+	<p>Para esto debo usar un AJAX request, pero este sólo puede ser levantado por el sitio, no por cualquiera ya que permitiría un abuso de la API alterando la información de la base de datos. </p>
+</section>
+<section class="container-fluid">
+	<h2>Asi que esta sección la armaste para decir que no vas a liberar estos métodos específicos?</h2>
+	<p>Así es!</p>
+	<a href="/APIs" class="btn btn-primary">Ir a los métodos públicos</a>
+</section>

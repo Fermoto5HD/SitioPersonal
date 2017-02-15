@@ -1,16 +1,28 @@
 [
 	{
 		"type": 					["railway", "personal"], 
+		"name": 					"Ferrocarriles Abiertos", 
+		"datefrom": 				"2016-09-11", 
+		"dateto": 					null,
+		"version": 					"v2.2", 
+		"frameworks": 				["FM5strap", "AngularJS", "jQuery"], 
+		"shortDescription": 		"Proyecto que muestra la composición de la flota de ferrocarriles en el AMBA.", 
+		"description": 				"Uno de mis proyectos más recientes y más valorados por mí dado a que quiero concentrar la mayor cantidad de información sobre la flota de los ferrocarriles del Área Metropolitana de Buenos Aires. Junto a ello se van agregando más datos y más funciones para hacer más fácil el encontrar un coche o saber en qué estado está cierta formación. ", 
+		"image": 					"ferrocarrilesabiertos-v2.2", 
+		"link": 					"http://Fermoto5HD.16mb.com/portfolio/ferrocarriles-abiertos", 
+		"repo": 					"http://github.com/Fermoto5HD/ferrocarriles-abiertos"
+	}, {
+		"type": 					["railway", "personal"], 
 		"name": 					"Flota Ferroviaria", 
 		"datefrom": 				"2016-07-01", 
-		"dateto": 					null,
+		"dateto": 					"2016-09-11",
 		"version": 					"v2", 
 		"frameworks": 				["FM5strap", "AngularJS", "jQuery"], 
 		"shortDescription": 		"Proyecto que muestra la composición de la flota de ferrocarriles en el AMBA.", 
 		"description": 				"Uno de mis proyectos más recientes y más valorados por mí dado a que quiero concentrar la mayor cantidad de información sobre la flota de los ferrocarriles del Área Metropolitana de Buenos Aires. Junto a ello se van agregando más datos y más funciones para hacer más fácil el encontrar un coche o saber en qué estado está cierta formación. ", 
 		"image": 					"flota-ferroviaria-v2.0", 
-		"link": 					"http://Fermoto5HD.16mb.com/portfolio/flota-ferroviaria", 
-		"repo": 					"http://github.com/Fermoto5HD/flota-ferroviaria"
+		"link": 					null, 
+		"repo": 					"http://github.com/Fermoto5HD/ferrocarriles-abiertos/tree/v2.x.x"
 	}, {
 		"type": 					"lantalks", 
 		"name": 					"Lantalksify", 
@@ -87,7 +99,7 @@
 		"description": 				"En esta versión la adapté a Polymer, un framework de Google muy reciente con similitudes con Angular. Esta versión fue dada de baja por los distintos problemas de rendimiento y compatibilidad no sólo con browsers externos a WebKit, sino por el propio framework base de Polymer.", 
 		"image": 					"flota-ferroviaria-v1.0", 
 		"link": 					null, 
-		"repo": 					"http://github.com/Fermoto5HD/flota-ferroviaria/tree/v1.x.x"
+		"repo": 					"http://github.com/Fermoto5HD/ferrocarriles-abiertos/tree/v1.x.x"
 	}, {
 		"type": 					["railway"], 
 		"name": 					"Flota Ferroviaria", 

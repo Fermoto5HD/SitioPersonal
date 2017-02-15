@@ -1,7 +1,7 @@
 <?php
 $client_id = '3c38d510e4ce43b08f4157fd0ee381fb';
 $client_secret = '9e2ca782fc3d4d1492b5f325fbefe7cf';
-$redirect_uri = 'http://localhost/sitio-personal-v5.0';
+$redirect_uri = 'https://fermoto5hd.com/';
 $scope = 'basic+likes+comments+relationships';
 
 $url = "https://api.instagram.com/oauth/authorize?client_id=$client_id&redirect_uri=$redirect_uri&scope=$scope&response_type=code";

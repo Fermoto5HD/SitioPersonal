@@ -1,0 +1,48 @@
+<div class="jumbotron-container" style="background-image: url({{ytuploads.data.items[0].snippet.thumbnails.high.url}});">
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Fermoto5HD</a></li>
+				<li class="breadcrumb-item active">Videos</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron w-breadcrumb white-blocks">
+		<div class="container-fluid">
+			<h1>Expresiones audiovisuales</h1>
+			<div class="description">
+				<p>En esta sección voy mostrando las capacidades de edición de diferentes videos, con temáticas o sin temática alguna. Esto sirve bastante al momento de adquirir práctica en esta área. </p>
+			</div>
+		</div>
+	</div>
+</div>
+<section id="youtube-videos">
+	<div class="container-fluid text-xs-center">
+		<br/>
+		<h2>Últimos videos producidos</h2>
+		<div class="row">
+			<div ng-repeat="video in videos | limitTo: 10">
+				<div class="col-xs-12 col-md-4">
+					<div class="card card-inverse">
+						<img class="card-img img-fluid" src="_JosephIsBestJojo/assets/cargas/videos/{{video.imagen}}" alt="{{video.nombre}}">
+						<div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.75)">
+							<h4 class="card-title">{{video.nombre}}</h4>
+							<p class="card-text">{{video.descripcion}}</p>
+							<p class="card-text"><small class="text-muted">Ocurrió el {{video.fecha}}</small></p>
+							<a class="btn btn-primary" href="{{video.url}}" target="_blank">Ver video <i class="fa fa-external-link" aria-hidden="true"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<hr>
+<section class="container-fluid">
+	<h1>¿Por qué edito el día a día?</h1>
+	<p>Esto lo hago para ganar un poco más de práctica al momento de editar un material. No sólo a nivel estético, también a nivel interpretación, midiendo los tiempos de duración por escena y en total. </p>
+</section>
+<section class="container-fluid">
+	<h1>¿Por qué va acá y no en YouTube o en Facebook?</h1>
+	<p>Por motivos (absurdos) de Copyright no puedo subirlo en Facebook o en YouTube. Es una lástima ya que se pierden accesos fáciles a los videos que voy editando, sumado a que obligadamente tengo que ir buscando canciones o temas que no infrinjan con el Copyright, o tengo que ir recurriendo a cargarlo en esta página para evitarme problemas en dichos sitios. </p>
+</section>

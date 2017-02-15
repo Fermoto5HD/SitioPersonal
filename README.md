@@ -2,9 +2,16 @@
 Este es el repositorio que muestra el armado integral de mi sitio personal en su 5ta versión. 
 El sitio se creó desde cero, implementando FM5strap, mi framework basado en Bootstrap v4, junto con Angular y las tecnologías aplicadas en la v4. 
 
-## En esta versión (v5.0.0-beta2) 
-
 ## Changelog
+Prometo en las próximas versiones separar el Changelog de este readme. ;) 
+
+### v5.5.0 (versión actual)
+* FM5strap v2. 
+* Funciones en Angular refinadas. 
+* Seccion blog. 
+* Interacción directa con una API creada en Codeigniter. 
+* Corrección de bugs.
+
 ### v5.0.0
 Versión estable del sitio 
 * Estilos: Creado archivo sass para estilos del sitio. 

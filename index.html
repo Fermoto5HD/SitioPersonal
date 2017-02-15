@@ -8,9 +8,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 		<link rel=manifest href="manifest.json">
 		<!-- Chrome for Android theme color -->
-		<meta name="theme-color" content="#282828" />
+		<meta name="theme-color" content="#f47921" />
 		<!-- Tile color for Win8 -->
-		<meta name="msapplication-TileColor" content="#282828">
+		<meta name="msapplication-TileColor" content="#f47921">
 		<!-- Add to homescreen for Chrome on Android -->
 		<meta name="mobile-web-app-capable" content="no">
 		<meta name="application-name" content="Fermoto5HD">
@@ -22,19 +22,19 @@
 		<link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
 		<!-- Tile icon for Win8 (144x144) -->
 		<meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
-
+		<meta name="fragment" content="!">
 		<meta name="description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
 		<meta name="keywords" content="Fernando Osorio Fermoto5HD sitio personal portfolio" />
 		<meta name="author" content="Fernando Osorio (Fermoto5HD)" />
-		<meta name="thumbnail" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta name="thumbnail" content="https://Fermoto5HD.com/img/meta-840x560.jpg" />
 		<!-- Meta og -->
 		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
 		<meta property="og:site_name" content="Sitio personal de Fermoto5HD" />
 		<meta property="og:title" content="Sitio personal de Fermoto5HD" />
 		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".' />
 		<meta property="og:locale" content="es_AR" />
-		<meta property="og:url" content="http://Fermoto5HD.16mb.com/" />
-		<meta property="og:image" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta property="og:url" content="https://Fermoto5HD.com/" />
+		<meta property="og:image" content="https://Fermoto5HD.com/img/meta-840x560.jpg" />
 		<meta property="og:type" content="website" />
 		<!-- Meta Twitter -->
 		<meta name="twitter:title" content="Sitio personal de Fermoto5HD" />
@@ -42,14 +42,13 @@
 		<meta name="twitter:card" content="photo" />
 		<meta name="twitter:site" content="@Fermoto5HD" />
 		<meta name="twitter:creator" content="@Fermoto5HD" />
-		<meta name="twitter:url" content="http://Fermoto5HD.16mb.com/" />
-		<meta name="twitter:image" content="http://Fermoto5HD.16mb.com/img/meta-840x560.jpg" />
+		<meta name="twitter:url" content="https://Fermoto5HD.com/" />
+		<meta name="twitter:image" content="https://Fermoto5HD.com/img/meta-840x560.jpg" />
 		<meta name="twitter:image:width" content="435" />
 		<meta name="twitter:image:height" content="290" />
 		<!-- Vendors -->
 		<link href="vendor/fm5strap/css/fm5strap.min.css" rel="stylesheet">
 		<link href="css/FM5HD.css" rel="stylesheet">
-		<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gidole-regular" type="text/css"/>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 	</head>
 	<body>
@@ -57,35 +56,43 @@
 		<nav class="navbar navbar-fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/" title="Fernando Javier Osorio Lorenzo"></a>
-				<button class="navbar-toggler hidden-md-up pull-xs-right" type="button" data-toggle="collapse" data-target="#responsivemenu" style="font-family: inherit;"><i class="fa fa-bars" aria-hidden="true"></i></button>
-				<ul class="nav navbar-nav pull-xs-right collapse navbar-toggleable-sm nav-responsive" id="responsivemenu">
+				<button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#responsivemenu" style="font-family: inherit;"><i class="fa fa-bars" aria-hidden="true"></i></button>
+				<ul class="nav navbar-nav float-xs-right collapse navbar-toggleable-sm nav-responsive" id="responsivemenu">
 					<li class="nav-item">
 						<a class="nav-link" href="/">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/acerca">Sobre mí</a>
-					</li>
-					<!--<li class="nav-item">
-						<a class="nav-link" href="/blog">Blog</a>
-					</li>-->
-					<li class="nav-item">
-						<a class="nav-link" href="/portfolio">Portfolio</a>
+						<a class="nav-link" href="acerca">Sobre mí</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/youtube">YouTube</a>
+						<a class="nav-link" href="blog">Blog</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" nohref data-toggle="modal" data-target="#md-contact">Contacto</a>
+						<a class="nav-link" href="portfolio">Portfolio</a>
+					</li>
+					<!--li class="nav-item">
+						<a class="nav-link" href="APIs">APIs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="videos">Videos</a>
+					</li-->
+					<li class="nav-item">
+						<a class="nav-link" href="youtube">YouTube</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#md-contact">Contacto</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 		<main class="content-w-fixed-navbar" ng-view autoscroll="true">
 			<div class="jumbotron-container" style="background-image: url(img/jumbotron/default.jpg)">
-				<div class="jumbotron">
+				<div class="jumbotron white-blocks">
 					<div class="container-fluid">
 						<h1>Cargando contenido del sitio...</h1>
-						<p>Dicen por ahí que la paciencia es una virtud...</p>
+						<div class="description">
+							<p>Dicen por ahí que la paciencia es una virtud...</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -97,7 +104,7 @@
 						<h3>Sobre el sitio</h3>
 						<h5>El sitio utiliza:</h5>
 						<ul>
-							<li><a href="/FM5strap">FM5strap v1</a></li>
+							<li><a href="/FM5strap">FM5strap v2</a></li>
 							<li>jQuery v2.2.4</li>
 							<li>Angular v1.5.5</li>
 							<li>Angular Instafeed</li>
@@ -132,13 +139,13 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 						<h2 class="modal-title">Contacto</h2>
+						<h3>No te quedes con las dudas. ¡Adelante!</h3>
+						<p>Ponete en contacto y te responderé a la brevedad!</p>
 					</div>
 					<div class="modal-body">
-						<h2>No te quedes con las dudas. ¡Adelante!</h2>
-						<p>Ponete en contacto y te responderé a la brevedad!</p>
 						<div class="contact-form" ng-controller="contactform">
 							<form ng-submit="sendmail();">
-								<div ng-show="{{alert}}">
+								<div ng-show="alert">
 									<div class="alert alert-success">{{success}}</div>
 								</div>
 								<fieldset class="form-group">
@@ -158,6 +165,9 @@
 									<textarea class="form-control" ng-model="md_frm_message" id="md-frm-message" name="md-frm-message" placeholder="El mensaje" rows="3" tabindex="4" required></textarea>
 								</fieldset>
 								<fieldset class="form-inline">
+									<div ng-show="error_alert">
+										<div class="alert alert-warning">{{error_msg}}</div>
+									</div>
 									<label class="calcule">Matemática para humanos: {{rand1}} + {{rand2}} = </label>
 									<input type="number" class="form-control" ng-model="md_frm_mathcaptcha" id="md-frm-mathcaptcha" name="md-frm-mathcaptcha" placeholder="El resultado" tabindex="5" required></input>
 								</fieldset>
@@ -173,6 +183,11 @@
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			if(navigator.appVersion.indexOf("MSIE")!=-1){
+				console.log("You're using IE? That's weird bro..."); 
+			}
+		</script>
 		<script src="vendor/jquery/js/jquery.min.js"></script>
 		<script src="vendor/tether/js/tether.min.js"></script>
 		<script src="vendor/fm5strap/js/fm5strap.min.js"></script>
@@ -185,6 +200,12 @@
 		<script src="vendor/angular-moment/js/angular-moment.min.js"></script>
 		<script src="js/scripts-jqjs.js"></script>
 		<script src="js/angular/main.js"></script>
+		<script src="js/angular/home.js"></script>
+		<script src="js/angular/about.js"></script>
+		<script src="js/angular/youtube.js"></script>
+		<script src="js/angular/portfolio.js"></script>
+		<script src="js/angular/blog.js"></script>
+		<script src="js/angular/videos.js"></script>
 		<script src="js/angular/UNSAM-infra1-tp1.js"></script>
 	</body>
 </html>
