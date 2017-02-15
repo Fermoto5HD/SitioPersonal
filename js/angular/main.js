@@ -23,10 +23,18 @@ app
 			controller: 'home'
 		})
 		.when('/acerca',{ 
-			templateUrl:'section/about-me.html'
+			templateUrl:'section/about-me.html',
+			controller: 'about'
 		})
 		.when('/acerca/cv',{ 
 			templateUrl:'section/cv.html'
+		})
+		.when('/blog',{ 
+			templateUrl:'section/blog/blog.html'
+		})
+		.when('/blog/:id',{ 
+			templateUrl:'section/blog/post.html', 
+			controller: 'blog_post'
 		})
 		.when('/portfolio',{ 
 			templateUrl:'section/portfolio/home.html'
@@ -45,17 +53,27 @@ app
 			templateUrl:'section/portfolio/UNSAM-renovaciondevias.html'
 		})
 		.when('/portfolio/ferroviario',{ 
-			templateUrl:'section/ferroviario.html'
+			templateUrl:'section/portfolio/ferroviario.html'
 		})
 		.when('/youtube',{ 
 			templateUrl:'section/youtube.html',
 			controller: 'youtube'
+		})
+		.when('/videos',{ 
+			templateUrl:'section/videos.html',
+			controller: 'videos'
 		})
 		.when('/FM5strap',{ 
 			templateUrl:'section/FM5strap/home.html'
 		})
 		.when('/FM5strap/componentes',{ 
 			templateUrl:'section/FM5strap/components.html'
+		})
+		.when('/APIs',{ 
+			templateUrl:'section/APIs/home.html'
+		})
+		.when('/APIs/privadas',{ 
+			templateUrl:'section/APIs/private.html'
 		})
 		.when('/FM5strap/ejemplos',{ 
 			templateUrl:'section/FM5strap/examples.html'
@@ -71,7 +89,7 @@ app
 		});
 	})
 	.config(function($locationProvider) {
-		$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(true).hashPrefix('#');
 	})
 
 	.run(function(amMoment) {
@@ -142,12 +160,14 @@ app
 			var digit2 = $scope.rand2;
 			var sum = digit1 + digit2;
 			if (answer == ""){
-				alert("looks like you forgot something, hint it's the math question");
+				$scope.error_alert = true; 
+				$scope.error_msg = "Falta verificar si sos humano o no, para eso te pido que resuelvas esta cuenta. ";
 				$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
 				$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
 				return false;
 			} else if (answer != sum){
-				alert("do you need a calculator? don't feel bad, math is not for everyone");
+				$scope.error_alert = true; 
+				$scope.error_msg = "Resultado incorrecto. Intentalo de nuevo.";
 				$scope.rand1 = Math.floor(Math.random() * 10) + 1; 
 				$scope.rand2 = Math.floor(Math.random() * 10) + 1; 
 				return false;
@@ -156,7 +176,8 @@ app
 			}
 		}
 		$scope.sendmail = function() {
-		$scope.success = "";
+			$scope.success = "";
+			$scope.error_alert = false; 
 			if ($scope.addNums()) {
 				$http({
 					method: 'POST', 
@@ -165,6 +186,7 @@ app
 					headers: {'Content-Type': 'application/x-www-form-urlencoded'}	
 				}).	
 				success(function(data, status) {
+					console.log(data); 
 					// Set the data of the status
 					$scope.alert = true; 
 					$scope.resultado = data;
@@ -178,6 +200,7 @@ app
 					$scope.success = "El mensaje fue enviado. Gracias por contactarte conmigo, te contestaré lo más antes posible! ";
 				}).
 				error(function(data, status) {
+					console.error("Error"); 
 					$scope.alert = true; 
 					$scope.data = data || "Request failed";
 					$scope.status = status;
@@ -188,79 +211,17 @@ app
 
 	.controller('mainctrl', function ($scope) {
 		console.log('Default'); 
-		//$scope.agregar = function(){};
 	})
 
-	.controller('home', ['$http', '$scope', 'fact_youtube', function ($http, $scope, fact_youtube) {
-		console.log('Home'); 
-		var d = new Date();
-		var year = d.getFullYear();
-		var birth = moment("1994-11-05");
-		var birthday = moment(year+"-11-05");
-		var todaysdate = moment();
-		$scope.age = todaysdate.diff(birth, 'years');
-		$scope.nextbirthday = birthday.diff(todaysdate, 'days');
-		$scope.nextage = todaysdate.diff(birth, 'years')+1;
-
-		fact_youtube.getPlaylists("Fermoto5HD").then(function (response) {
-			$scope.$apply(function () {
-				$scope.playlists = response.items;
-			})
-		})
-
-		fact_youtube.getPlaylistVideos('UUBnPjaDK2VBKTtPOeNF-GIQ').then(function (response) {
-			$scope.ytuploads = response;
-			console.log(response); 
-		})
-		fact_youtube.getChannelInfo("Fermoto5HD").then(function (response) {
-			$scope.ytchannelinfo = response;
-			console.log(response); 
-		});
-
-		$scope.getPlaylistVideos = function (selection) {
-			fact_youtube.getPlaylistVideos(selection.snippets.id).then(function (response) {
-				$scope.playlistvideos = response.data.items;
-			});
-		}
-	}])
-
-	.controller('youtube', ['$http', '$scope', 'fact_youtube', function ($http, $scope, fact_youtube) {
-		//console.log('YouTube'); 
-		//fact_youtube.getPlaylists('UCBnPjaDK2VBKTtPOeNF-GIQ').then(function (response) {
-		//  $scope.$apply(function () {
-		//    $scope.playlists = response.items;
-		//	})
-		//});
-
-		fact_youtube.getPlaylists("Fermoto5HD").then(function (response) {
-			$scope.$apply(function () {
-				$scope.playlists = response.items;
-			})
-		})
-
-		fact_youtube.getPlaylistVideos('UUBnPjaDK2VBKTtPOeNF-GIQ').then(function (response) {
-			$scope.ytuploads = response;
-			console.log(response); 
-		})
-		fact_youtube.getChannelInfo("Fermoto5HD").then(function (response) {
-			$scope.ytchannelinfo = response;
-			console.log(response); 
-		});
-
-		$scope.getPlaylistVideos = function (selection) {
-			fact_youtube.getPlaylistVideos(selection.snippets.id).then(function (response) {
-				$scope.playlistvideos = response.data.items;
-			});
-		}
-	}])
+	
 
 	.factory('fact_InstagramAPI', ['$http', function($http) {
 		return {
 			fetchPhotos : function(callback) {
-				var tokenURL = 'https://www.instagram.com/oauth/authorize/?client_id=3c38d510e4ce43b08f4157fd0ee381fb&redirect_uri=http://localhost/&response_type=token';
-				$http.jsonp(tokenURL).success(function(response) {
-					token = response.data;
-				});
+				//var tokenURL = 'https://www.instagram.com/oauth/authorize/?client_id=3c38d510e4ce43b08f4157fd0ee381fb&redirect_uri=http://fermoto5hd.com/&response_type=token';
+				//$http.jsonp(tokenURL).success(function(response) {
+				//	token = response.data;
+				//});
 				var endpoint = 'https://api.instagram.com/v1/users/1631184808/media/recent/?count=1&access_token=1631184808.3c38d51.06928053fc3a4bacb7562a6b2a5e0245&callback=JSON_CALLBACK';
 				$http.jsonp(endpoint).success(function(response) {
 					callback(response.data);
@@ -269,15 +230,6 @@ app
 				});
 			}
 		}
-	}])
-	.factory('fact_portfolioList', ['$http', function($http) {
-		return {
-			listPortfolio: function(callback) {
-				$http.get('data/portfolio.json').success(function(data){
-					callback(data);
-				});
-			}
-		};
 	}])
 	.factory('fact_youtube', ['$http', function ($http) {
 		//var channelId = "UCBnPjaDK2VBKTtPOeNF-GIQ"; 
@@ -325,10 +277,4 @@ app
 				$scope.pics = data;
 			}
 		});
-	})
-	.controller('listPortfolio', ['$scope', 'fact_portfolioList', function ($scope, fact_portfolioList) {
-		$scope.portfolio = []; 
-		fact_portfolioList.listPortfolio(function(data) {
-			$scope.portfolio = data;
-		});
-	}]); 
+	}); 

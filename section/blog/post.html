@@ -1,0 +1,77 @@
+<div class="jumbotron-container" style="background-image: url(img/cover/default.jpg);">
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Fermoto5HD</a></li>
+				<li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+				<li class="breadcrumb-item active">{{post.titulo}}</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron w-breadcrumb white-blocks">
+		<div class="container-fluid">
+			<h1>{{post.titulo}}</h1>
+			<div class="description">
+				<p>{{post.copete}}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<section>
+	<div class="container-fluid">
+		<div class="col-md-8 offset-md-2">
+			<span ng-bind-html="post.cuerpo"></span>
+		</div>
+	</div>
+</section>
+<section class="container-fluid text-xs-center">
+	<div ng-hide="voteoptions">
+		<h2>¿Te gustó lo que redacté?</h2>
+		<div class="btn-group">
+			<a href="#" ng-click="vote(1)" class="btn btn-secondary">Seh!</a>
+			<a href="#" ng-click="vote(2)" class="btn btn-secondary">Maso maso...</a>
+			<a href="#" ng-click="vote(3)" class="btn btn-secondary">Nah!</a>
+		</div>
+	</div>
+	<div ng-show="voting">
+		<div class="container">
+			<div class="alert alert-warning">
+				<strong>Procesando...</strong>
+				<p>Puede tardar un poco... ahí estamos... </p>
+			</div>
+		</div>
+	</div>
+	<div ng-show="voted">
+		<div class="container">
+			<div class="alert alert-success">
+				<strong>¡Gracias!</strong>
+				<p>Tu opinión la tendré en cuenta para los próximos posts. ;)</p>
+			</div>
+		</div>
+	</div>
+</section>
+<section ng-controller="blog_posts">
+	<div class="container-fluid text-xs-center">
+		<br/>
+		<h2>Últimas publicaciones</h2>
+		<div class="row">
+			<div ng-repeat="post in posts | limitTo: 10">
+				<div ng-if="$index > 0"></div>
+				<div class="col-xs-12 col-md-4">
+					<div class="card">
+						<!--div class="card-header">
+							<div ng-if="post.imagen !== undefined">
+								<img class="img-fluid" src="_josephisbestjojo/assets/cargas/{{post.imagen}}" />
+							</div>
+						</div-->
+						<div class="card-block">
+							<h4>{{post.titulo.trunc(68)}}</h4>
+							<p>{{post.copete.trunc(167)}}</p>
+							<a class="btn btn-primary" href="blog/{{post.slug}}">Seguí leyendo</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

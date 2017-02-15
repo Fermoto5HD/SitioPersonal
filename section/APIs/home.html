@@ -1,0 +1,89 @@
+<div class="jumbotron-container" style="background-image: url(img/jumbotron/about-me.jpg)">
+	<video id="video-background" preload muted autoplay loop>
+		<source src="vid/APIs.mp4" type="video/mp4">
+		<source src="vid/APIs.ogg" type="video/ogg">
+	</video>
+	<div class="breadcrumb-container">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Fermoto5HD</a></li>
+				<li class="breadcrumb-item active">APIs</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron w-breadcrumb white-blocks">
+		<div class="container-fluid">
+			<h1>APIs</h1>
+			<div class="description">
+				<p>En esta sección te explico cómo usar las APIs que permiten mostrar la información en forma dinámica en este sitio. </p><br>
+				<p>Podés utilizarla si querés. No hay problema. </p>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	#video-background{ 
+		display: none; 
+	}
+	.breadcrumb-container {
+		padding-top: 68px; 
+	}
+	.breadcrumb-container#jumbotron-caption {
+		padding-top: 0px; 
+	}
+	@media(min-width: 992px){
+		.jumbotron-container{
+			position: relative;
+			overflow: hidden;
+
+			/* Tried setting the height. Didnt work either */
+			/* height: 200px; */
+		}
+		.breadcrumb-container, 
+		.jumbotron {
+			position: relative;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 1;
+		}
+		.breadcrumb-container {
+			background-color: rgba(0, 0, 0, 0.75); 
+		}
+		.jumbotron .container-fluid {
+			position: relative;
+			color: #ffffff;
+			z-index: 2;
+			padding-top: 0px; 
+			padding-bottom: 25px; 
+		}
+
+		#video-background{ 
+			position: absolute;
+			display: block; 
+			height: auto;
+			width: auto;
+			min-height: 100%;
+			min-width: 100%;
+			left: 50%;
+			top: 50%;
+			-webkit-transform: translate3d(-50%, -50%, 0);
+			transform: translate3d(-50%, -50%, 0);
+			z-index: 1;
+		}
+	}
+</style>
+<section class="container-fluid">
+	<h2>Comenzamos</h2>
+	<p>Para armar una API se necesita tener una buena base de PHP y Codeigniter. </p>
+	<p>Las APIs permiten realizar consultas desde un sitio para obtener datos y utilizarlos para cierto fin, sea una app alterna, como para el desarrollo de funciones para un proyecto en específico. </p>
+	<p>Un buen ejemplo de API armado con Codeigniter es "Trenes en Vivo" desarrollado por la SOFSE (Operadora Ferroviaria Sociedad del Estado / Trenes Argentinos). Y un ejemplo de buena implementación de API está en un proyecto colectivo llamado "Lantalks" en el cual sus datos están disponibles en lantalks.com/APIs </p>
+	<p>En este caso, decidí liberar una API que permite obtener datos del blog y del portfolio. </p>
+	<p>El uso es totalmente libre, por lo cual agregué el header para el Cross Origin para que su uso sea ilimitado. </p>
+	<hr>
+	<p>En esta primera versión es muy fácil usarlas. Hay 4 métodos, dos para el blog y dos para el portfolio. </p>
+	<ul>
+		<li>Con el método "blog" obtenés el listado de los posts publicados. </li>
+		<li>Con el método "blog_post/[id] obtenés un post específico. En caso de no encontrarlo, arrojará un array vacío. </li>
+		<li>Con el método "portfolio" obtenés el listado de los trabajos realizados. </li>
+		<li>Con el método "portfolio_item/[id] obtenés un trabajo específico. En caso de no encontrarlo, arrojará un array vacío. </li>
+	</ul>
+</section>
