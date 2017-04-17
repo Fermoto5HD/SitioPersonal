@@ -5,8 +5,6 @@ $.ajaxSetup ({
 function checkwidth(){
 	var winw = window.innerWidth; 
 	var winh = window.innerHeight;
-	console.log(winw); 
-	console.log(winh); 
 	var scroll = $(document).scrollTop(); 
 	if (winw >= 768) {
 		if (scroll <= 25){
@@ -37,5 +35,8 @@ function(n){
 	return this.length>n ? this.substr(0,n-1)+'...' : this.toString();
 };
 
-$(document).ready(checkwidth()); 
+$(function(){checkwidth();}); 
 $(window).resize(function(){checkwidth()});
+
+// Welcome guest!
+console && console.log('%cBienvenido a mi página personal!\n%cPodés revisar los scripts y funciones que realiza mi página.\n\nGracias por visitarme!', 'font-size:2em;font-family:"Gotham","Helvetica","Arial","sans-serif;','font-family:"Gotham","Helvetica","Arial","sans-serif;');

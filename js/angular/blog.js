@@ -34,7 +34,6 @@ angular.module('FM5HD')
 				data: serialize(data), 
 				headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'X-Requested-With' :'XMLHttpRequest'}
 			}).success(function(data) {
-				console.log(data); 
 				$scope.voting = false; 
 				$scope.voteoptions = true; 
 				$scope.voted = true; 

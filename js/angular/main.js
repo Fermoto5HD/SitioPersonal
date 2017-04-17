@@ -101,10 +101,8 @@ app
 			angular.element($window).bind("scroll", function() {
 				if (this.pageYOffset >= 25) {
 					scope.boolChangeClass = true;
-					console.log('Scrolled below header.');
 				} else {
 					scope.boolChangeClass = false;
-					console.log('Header is in view.');
 				}
 
 				scope.$watch(function () {
@@ -118,10 +116,8 @@ app
 
 					if (newValue.w >= 768) {
 						//minwidth = true; 
-						console.log("+768")
 					} else {
-						//minwidth = false; 
-						console.log("-768")
+						//minwidth = false; }
 					}
 
 					scope.resizeWithOffset = function (offsetH) {
@@ -204,9 +200,7 @@ app
 		}
 	})
 
-	.controller('mainctrl', function ($scope) {
-		console.log('Default'); 
-	})
+	.controller('mainctrl', function ($scope) {})
 
 	
 

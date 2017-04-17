@@ -1,6 +1,5 @@
 angular.module('FM5HD')
 	.controller('about', ['$http', '$scope', function ($http, $scope) {
-		console.log('about'); 
 		var d = new Date();
 		var year = d.getFullYear();
 		var birth = moment("1994-11-05");
@@ -16,7 +15,6 @@ angular.module('FM5HD')
 			$scope.textbirthday = "Hoy es mi cumple! Wiii~"; 
 		} else if (birthday.diff(todaysdate, 'days')+1 === 1) {
 			$scope.textbirthday = "Mañana cumplo "+nextage+" años"; 
-			console.log(birthday.diff(todaysdate, 'days')); 
 		} else if (birthday.diff(todaysdate, 'days')+1 > 0) {
 			$scope.textbirthday = "En "+ nextbirthday+" días cumplo "+nextage; 
 		} else {

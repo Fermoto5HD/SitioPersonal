@@ -39,7 +39,6 @@ angular.module('FM5HD').controller('UNSAM-infra1-tp1', function ($scope, $http, 
 			});
 
 			$('select#trocha').change(function(){
-				console.log('trocha'); 
 				trocha.tipo = $('select#trocha').val(); 
 				switch(trocha.tipo){
 					case "Ancha": 
@@ -64,7 +63,6 @@ angular.module('FM5HD').controller('UNSAM-infra1-tp1', function ($scope, $http, 
 				verifcampos(); 
 			}); 
 			$('select#riel-tipo').change(function(){
-				console.log('rieltipo'); 
 				riel.tipo = $('select#riel-tipo').val(); 
 				switch(riel.tipo){
 					case "100BS": 
@@ -89,26 +87,22 @@ angular.module('FM5HD').controller('UNSAM-infra1-tp1', function ($scope, $http, 
 			$('select#eclisas-agujeros').change(function(){
 				campos.eclisasagujeros = true; 
 				agujeroseclisas = $('select#eclisas-agujeros').val(); 
-				console.log('eclisas'); 
 				verifcampos(); 
 			}); 
 
 			$('input#riel-largobarra').on('input', function(){
-				console.log('largobarra'); 
 				if ($('input#riel-largobarra').val() !== "") {
 					campos.largobarra = true;
 				} else {campos.largobarra = false};
 				verifcampos(); 
 			}); 
 			$('input#durmiente-cantporkmvia').on('input', function(){
-				console.log('cantporkmvia'); 
 				if ($('input#durmiente-cantporkmvia').val() !== "") {
 					campos.durmientesporkmporvia = true;
 				} else {campos.durmientesporkmporvia = false;}
 				verifcampos(); 
 			}); 
 			$('input#longitud-via').on('input', function(){
-				console.log('longitudvia'); 
 				if ($('input#longitud-via').val() !== "") {
 					campos.longitudvia = true;
 				} else {campos.longitudvia = false;}
@@ -192,8 +186,6 @@ angular.module('FM5HD').controller('UNSAM-infra1-tp1', function ($scope, $http, 
 					resultado.arandelasbulones = resultado.eclisas*agujeroseclisas; 
 					$('#calculo-arandelasbulones').text(resultado.eclisas + " unidades x " + agujeroseclisas + " agujeros = "); 
 					$('#resultado-arandelasbulones').text(resultado.arandelasbulones); 
-				console.log(resultado.ocupacionbalastotrapecio); 
-				console.log(resultado.balasto); 
 				$('[data-toggle="popover"]').popover(); 
 				$('[data-toggle="tooltip"]').tooltip(); 
 				$('#explicacion-pendiente-1').popover({
@@ -211,7 +203,6 @@ angular.module('FM5HD').controller('UNSAM-infra1-tp1', function ($scope, $http, 
 		$(function () {$('[data-toggle="tooltip"]').tooltip()})
 
 	$scope.mostrarcalculos = function(valor) {
-		console.log(valor); 
 		if (valor) {
 			$('.calculo').prop('hidden', ''); 
 			$('.btn.btn-primary#calculos').prop('ng-click', 'mostrarcalculos()').text('Ocultar cálculos'); 
