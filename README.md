@@ -5,7 +5,11 @@ El sitio se creó desde cero, implementando FM5strap, mi framework basado en Boo
 ## Changelog
 Prometo en las próximas versiones separar el Changelog de este readme. ;) 
 
-### v5.5.0 (versión actual)
+### v5.5.0.1-4  (versión actual)
+* Remoción de console.log y reemplazado por uno de bienvenida. 
+* Cambios mínimos. 
+
+### v5.5.0
 * FM5strap v2. 
 * Funciones en Angular refinadas. 
 * Seccion blog. 
