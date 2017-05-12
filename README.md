@@ -1,48 +1,28 @@
-# Fermoto5HD - Sitio Personal v5.0
-Este es el repositorio que muestra el armado integral de mi sitio personal en su 5ta versión. 
-El sitio se creó desde cero, implementando FM5strap, mi framework basado en Bootstrap v4, junto con Angular y las tecnologías aplicadas en la v4. 
+# SitioPersonal
 
-## Changelog
-Prometo en las próximas versiones separar el Changelog de este readme. ;) 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 
-### v5.5.0.1-4  (versión actual)
-* Remoción de console.log y reemplazado por uno de bienvenida. 
-* Cambios mínimos. 
+## Development server
 
-### v5.5.0
-* FM5strap v2. 
-* Funciones en Angular refinadas. 
-* Seccion blog. 
-* Interacción directa con una API creada en Codeigniter. 
-* Corrección de bugs.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### v5.0.0
-Versión estable del sitio 
-* Estilos: Creado archivo sass para estilos del sitio. 
-* Layout: El `container` pasa a ser `container-fluid`. 
-* Scripts: HTML5 routing. Cambio de rutas y redirect de links viejos. 
-* Portfolio: Modificación del controller, unificación de los JSON de los distintos portfolios en uno sólo, junto con filtros en las 3 subsecciones. 
-* Portfolio: Webapp del TP N°1 de Infraestructura 1 integrado en el sitio. 
+## Code scaffolding
 
-### v5.0.0-beta2
-* Se corrije el error del botón "Ver más..." en el home, que abría la sección de YouTube en una ventana nueva. 
-* Se corrijen los links de la sección de trabajos prácticos de la UNSAM. 
-* Se le agrega la funcionalidad que le faltaba al formulario mediante Angular, aunque falta realizar el alert de success y de error. De paso se agrega un cálculo para humanos para evitar spam. 
-* Se reemplazan los covers de la sección Portfolios y la subsección Lantalks por el cover por defecto. 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
 
-### v5.0.0-beta1
-* El repositorio del sitio v4 pasa a ser el repositorio principal para las versiones de mi sitio personal. En caso que quieras ver el armado de la 4ta versión podés buscarlo en este mismo repositorio en el branch "v4". 
-* Gracias a los "genios" de Instagram y sus políticas para usar su API, tengo que usar temporalmente un token para mostrar la última foto cargada a mi cuenta. Más adelante implemento un bypass o similar. 
-* Más interacciones con la API de YouTube. 
-* Actualizado el JSON de portfolios. 
-* El formulario de contacto pasa a estar dentro de un modal. 
+## Build
 
-## Al modificar el sitio 
-* Correr `npm install` para instalar los módulos necesarios. 
-* Correr `grunt` para actualizar dependencias y copiarlas en vendor. 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Reutilización de archivos 
-Sentite libre en utilizar los distintos archivos de este repositorio para lo que se te ocurra o para algún proyecto que tengas! 
+## Running unit tests
 
-# Licencia 
-El contenido del repositorio está bajo una Licencia Creative Commons Atribución 4.0 Internacional.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

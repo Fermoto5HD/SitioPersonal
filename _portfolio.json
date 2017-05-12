@@ -1,0 +1,314 @@
+{
+  "name": "FM5strap",
+  "version": "3.0",
+  "description_excerpt": "Framework basado en Bootstrap v4 para mis sitios personales, incluyendo este mismo.",
+  "description_full": "Después de ver que al prototipar para diferentes sitios propios usando Bootstrap v4 usaba los mismos estilos para cada sitio decidí empezar a armar una variante de Bootstrap para usarlo en los demás sitios sin tener que ir copiando todo el tiempo los mismos estilos. Para eso modifiqué varias partes de la estética, y también, de los scripts de compilación para exportar otras características como la marca y los íconos.",
+  "is_internal": true,
+  "url": "https://fermoto5HD.com/FM5strap/",
+  "url_repo": "http://github.com/Fermoto5HD/FM5strap/tree/v1.x.x",
+  "image": "portfolio_22.png",
+  "date_from": "2017-05-15",
+  "date_to": false
+},
+{
+  "name": "Sitio Personal",
+  "version": "5.5",
+  "description": {
+    "excerpt": "Renovación desde cero de mi página personal, incorporando elementos interactivos que cambian con el paso del tiempo.",
+    "full": "Se plantea el cambio del framework a Bootstrap (y luego a FM5strap) dado a los resultados que fuí obteniendo en un par de sitios adicionales en paralelo. Trabajé más en usar los datos de las APIs para agregar interacción al sitio y puse más foco en el responsive del sitio para que la experiencia sea aún mejor.",
+  },
+  "is_internal": false,
+  "url": "https://fermoto5hd.com/cloud/sitiopersonal/v5.5",
+  "url_repo": "https://github.com/Fermoto5HD/SitioPersonal/tree/v5.5",
+  "image": "portfolio_17.png",
+  "date_from": "2016-12-10",
+  "date_to": "2017-05-15"
+},
+{
+  "name": "FM5strap",
+  "version": "2.0",
+  "description_excerpt": "Framework basado en Bootstrap v4 para mis sitios personales, incluyendo este mismo.",
+  "description_full": "Después de ver que al prototipar para diferentes sitios propios usando Bootstrap v4 usaba los mismos estilos para cada sitio decidí empezar a armar una variante de Bootstrap para usarlo en los demás sitios sin tener que ir copiando todo el tiempo los mismos estilos. Para eso modifiqué varias partes de la estética, y también, de los scripts de compilación para exportar otras características como la marca y los íconos.",
+  "is_internal": true,
+  "url": "https://fermoto5HD.com/FM5strap/",
+  "url_repo": "http://github.com/Fermoto5HD/FM5strap/tree/v2.x.x",
+  "image": "portfolio_21.png",
+  "date_from": "2017-05-15",
+  "date_to": false
+},
+{
+  "name": "Ferrocarriles Abiertos",
+  "version": "2.2",
+  "description": {
+    "excerpt": "Proyecto que muestra la composición de la flota de ferrocarriles en el AMBA.",
+    "full": "Uno de mis proyectos más recientes y más valorados por mí dado a que quiero concentrar la mayor cantidad de información sobre la flota de los ferrocarriles del Área Metropolitana de Buenos Aires. Junto a ello se van agregando más datos y más funciones para hacer más fácil el encontrar un coche o saber en qué estado está cierta formación.",
+  },
+  "is_internal": false,
+  "url": "http://plataforma5.16mb.com/ferrocarrilesabiertos",
+  "url_repo": "http://github.com/Fermoto5HD/ferrocarriles-abiertos",
+  "image": "portfolio_20.png",
+  "date_from": "2016-09-01",
+  "date_to": null
+},
+{
+  "name": "Flota Ferroviaria",
+  "version": "2.0",
+  "description": {
+    "excerpt": "Proyecto que muestra la composición de la flota de ferrocarriles en el AMBA.",
+    "full": "Uno de mis proyectos más recientes y más valorados por mí dado a que quiero concentrar la mayor cantidad de información sobre la flota de los ferrocarriles del Área Metropolitana de Buenos Aires. Junto a ello se van agregando más datos y más funciones para hacer más fácil el encontrar un coche o saber en qué estado está cierta formación.",
+  },
+  "is_internal": false,
+  "url": null,
+  "url_repo": null,
+  "image": "portfolio_19.png",
+  "date_from": "2016-06-01",
+  "date_to": "2016-09-01"
+},
+{
+  "name": "Lantalksify",
+  "version": "1.0",
+  "description": {
+    "excerpt": "Llevo a cabo un proyecto ambicioso para unificar y homogeneizar los sitios del multimedio.",
+    "full": "Al igual que FM5strap, se realiza tomando la base de Bootstrap-sass v3 y se van adaptando los elementos según las necesidades que tenemos en el multimedio.",
+  },
+  "is_internal": false,
+  "url": "http://lantalks.com/webmedia/lantalksify/",
+  "url_repo": "http://sum1.lantalkswebmedia.xyz/lt-webmedia/lantalksify",
+  "image": "portfolio_18.png",
+  "date_from": "2016-06-01",
+  "date_to": null
+},
+{
+  "name": "Sitio Personal",
+  "version": "5.0",
+  "description": {
+    "excerpt": "Renovación desde cero de mi página personal, incorporando elementos interactivos que cambian con el paso del tiempo.",
+    "full": "Se plantea el cambio del framework a Bootstrap (y luego a FM5strap) dado a los resultados que fuí obteniendo en un par de sitios adicionales en paralelo. Trabajé más en usar los datos de las APIs para agregar interacción al sitio y puse más foco en el responsive del sitio para que la experiencia sea aún mejor.",
+  },
+  "is_internal": false,
+  "url": "https://fermoto5hd.com/cloud/sitiopersonal/v5",
+  "url_repo": "https://github.com/Fermoto5HD/SitioPersonal/tree/v5",
+  "image": "portfolio_17.png",
+  "date_from": "2016-06-01",
+  "date_to": "2016-12-10"
+},
+{
+  "name": "Transporte 2 - T.P. final",
+  "version": null,
+  "description": {
+    "excerpt": "En este trabajo se puntualizó en el gran potencial que tiene el NOA y el protagonismo que puede tener el Belgrano Cargas para su economía.",
+    "full": "Fue realizado con Reveal.js, un framework que permite realizar presentaciones interactivas en el browser y agregar material audiovisual en el slide.",
+  },
+  "is_internal": false,
+  "url": "http://fermoto5hd.github.io/transporte2-tpfinal",
+  "url_repo": "http://github.com/Fermoto5HD/transporte2-tpfinal",
+  "image": "portfolio_16.png",
+  "date_from": "2016-06-01",
+  "date_to": null
+},
+{
+  "name": "Administración de Servicios de Cargas - T.P. N°2",
+  "version": null,
+  "description": {
+    "excerpt": "Segundo trabajo práctico digitalizado en formato webapp. ",
+    "full": "Se trabajó la parte analítica mediante jQuery y variables con objetos para almacenar una distinta cantidad de grupos de variables.",
+  },
+  "is_internal": true,
+  "url": "https://fermoto5hd.com/cloud/cursadaUNSAM/admcargas-tp2",
+  "url_repo": null,
+  "image": "portfolio_15.png",
+  "date_from": "2016-05-01",
+  "date_to": null
+},
+{
+  "name": "FM5strap",
+  "version": "1.0",
+  "description_excerpt": "Framework basado en Bootstrap v4 para mis sitios personales, incluyendo este mismo.",
+  "description_full": "Después de ver que al prototipar para diferentes sitios propios usando Bootstrap v4 usaba los mismos estilos para cada sitio decidí empezar a armar una variante de Bootstrap para usarlo en los demás sitios sin tener que ir copiando todo el tiempo los mismos estilos. Para eso modifiqué varias partes de la estética, y también, de los scripts de compilación para exportar otras características como la marca y los íconos.",
+  "is_internal": "1",
+  "url": "https://fermoto5HD.com/FM5strap/",
+  "url_repo": "http://github.com/Fermoto5HD/FM5strap/tree/v1.x.x",
+  "image": "portfolio_15.png",
+  "date_from": "2016-05-01",
+  "date_to": "2016-12-01"
+},
+{
+  "name": "Infraestructura 1 - T.P. N°1",
+  "version": null,
+  "description_excerpt": "Trabajo práctico de la materia Infraestructura 1 transformado en webapp. ",
+  "description_full": "Este fue mi primer trabajo práctico digitalizado en formato webapp. Se trabajó mucho con las funciones de cálculo por jQuery y la interacción por medio de tooltips y popovers para explicar de donde provienen algunos resultados. \r\nMás tarde fue integrado en mi sitio personal con motivo de la unificación de sitios.",
+  "is_internal": true,
+  "url": "/portfolio/UNSAM/infra-tp1",
+  "url_repo": false,
+  "image": "portfolio_13.png",
+  "date_from": "2016-04-01",
+  "date_to": null
+},
+{
+  "name": "Flota Ferroviaria",
+  "version": "1.0",
+  "description_excerpt": "Proyecto que muestra la composición de la flota de ferrocarriles en el AMBA.",
+  "description_full": "En esta versión la adapté a Polymer, un framework de Google muy reciente con similitudes con Angular. Esta versión fue dada de baja por los distintos problemas de rendimiento y compatibilidad no sólo con browsers externos a WebKit, sino por el propio framework base de Polymer.",
+  "is_internal": false,
+  "url": false,
+  "url_repo": "http://github.com/Fermoto5HD/ferrocarriles-abiertos/tree/v1.x.x",
+  "image": "portfolio_12.png",
+  "date_from": "2016-05-01",
+  "date_to": "2016-07-01",
+  "estado": "1"
+},
+{
+  "name": "Flota Ferroviaria",
+  "version": "0.5",
+  "description_excerpt": "Proyecto que muestra la composición de la flota de ferrocarriles en el AMBA.",
+  "description_full": "Fue creado con una base simple en jQuery, con acceso mediante hashes aunque bastante rústico. Un mes más tarde lo pasaría a Polymer. ",
+  "is_internal": null,
+  "url": null,
+  "url_repo": null,
+  "image": "portfolio_11.png",
+  "date_from": "2016-04-01",
+  "date_to": "2016-05-01",
+  "estado": "1"
+},
+{
+  "trabajo_id": "10",
+  "name": "Próximo Tren",
+  "version": "1.0",
+  "description_excerpt": "Un proyecto propio en el cual decido armar una webapp alternativa a la app oficial de Trenes en Vivo pero con varias mejoras y cambios.",
+  "description_full": "Se utilizó Unsemantic como framework principal y Bootstrap como framework secundario, junto con MomentJS para el cálculo de tiempos restantes y atrasos de servicios.\r\nActualmente se reemplazó totalmente el framework Unsemantic por Bootstrap para simplificar el código y la estructura del sitio.\r\n\r\nTambién se implementa una estética cuidada, adaptable al horario actual, con una clara coherencia en las paletas de colores utilizadas y disposición de elementos en las pantallas.\r\n\r\nLa marca Nuevos Ferrocarriles Argentinos es propiedad del Ministerio de Transporte de la Nación.",
+  "is_internal": "1",
+  "url": "https://fermoto5hd.com/proximotren",
+  "url_repo": "",
+  "image": "portfolio_10.png",
+  "date_from": "2016-02-01",
+  "date_to": null,
+  "estado": "1"
+},
+{
+  "trabajo_id": "9",
+  "name": "Posada Kalua Praia",
+  "version": null,
+  "description_excerpt": "Uno de los sitios de veraneo más concurridos de Brasil requiere la renovación de su sitio web, por lo tanto decido proponer un diseño adaptado a estos últimos años.",
+  "description_full": "El sitio es realizado en el tiempo record de un día, implementando Bootstrap y ModernizrJS, escenciales para su visualización en todo tipo de dispositivos.\r\nSe utiliza un slider, modales para la galería de imágenes, y botones de acción directa para llamar a la posada o contactarse mediante correo con sólo tocar un botón.",
+  "is_internal": "0",
+  "url": "http://fermoto5hd.com/cloud/kalua",
+  "url_repo": "http://github.com/Fermoto5HD/kalua",
+  "image": "portfolio_9.png",
+  "date_from": "2016-01-01",
+  "date_to": "2016-12-01",
+  "estado": "1"
+},
+{
+  "trabajo_id": "8",
+  "name": "Factor RH Creativo",
+  "version": "3.0",
+  "description_excerpt": "Con motivo de mantener la innovación de la peluquería Factor RH Creativo, decido proponer una actualización de su sitio web.",
+  "description_full": "El sitio se realiza desde cero y se van implementando diversas tecnologías.\r\nAlgunas de ellas son la reciente versión 6 de Foundation, ModernizrJS para la diferenciación entre dispositivos, MomentJS para el cálculo de tiempo restante para la apertura o cierre del local, entre otras diversas tecnologías ya utilizadas en proyectos anteriores.",
+  "is_internal": "0",
+  "url": "http://factorrhcreativo.com/v3",
+  "url_repo": "",
+  "image": "portfolio_8.png",
+  "date_from": "2015-11-01",
+  "date_to": null,
+  "estado": "1"
+},
+
+
+
+
+
+
+
+
+
+
+{
+  "name": "Sitio Personal",
+  "version": "3.5",
+  "description": {
+    "excerpt": "Renovación de mi página personal incorporando los nuevos conocimientos de ese entonces.",
+    "full": "En esta etapa estaba perfeccionando mis conocimientos en programación web. Ya incorporaba los conceptos de responsive y refinaba algunos errores que cometía al programar.\r\nEl sitio fue programado en php, con incorporaciones de jQuery y elementos en CSS.\r\n\r\nLa particularidad de este sitio es que el archivo index.php se mantuvo durante muchos años. Es decir, el sitio tuvo miles de cambios significativos desde que arrancó como un simple sitio realizado con tablas."
+  },
+  "is_internal": null,
+  "url": null,
+  "url_repo": null,
+  "image": "portfolio_2.png",
+  "date_from": "2014-09-01",
+  "date_to": "2015-06-01"
+},
+
+
+
+
+
+
+{
+  "name": "Club Baldomero: Sitio de pruebas",
+  "version": null,
+  "description": {
+    "excerpt": "Este sitio fue propuesto como objetivo para los ingresantes al club de programación por los mentores del club de la Biblioteca Baldomero.",
+    "full": "Este fue uno de los primeros sitios en realizarse bajo un layout desde cero.\r\n\r\nEn un principio se realizó el mismo layout propuesto por los mentores. Durante el transcurso de su realización lo transformé en responsive y le dí funcionalidad bajo Ajax.\r\n\r\nPero más adelante decidí adaptarlo al nuevo diseño del sitio oficial del Gobierno de la Ciudad de Buenos Aires estrenado en mayo de 2015."
+  },
+  "is_internal": false,
+  "url": null,
+  "url_repo": null,
+  "image": "portfolio_3.png",
+  "date_from": ISODate("2015-05-01T00:00:00.000Z"),
+  "date_to": null
+},
+{
+  "name": "Club Baldomero: Tutorial Formularios",
+  "version": null,
+  "description": {
+    "excerpt": "El objetivo de este sitio ha sido el de crear un tutorial sencillo para la creación de formularios html para contacto.",
+    "full": "Este sitio usó como base el mismo layout del sitio principal del Club Baldomero, siendo también un sitio responsive.\r\nEl hecho de que sea responsive permite que el usuario pueda aprender a usar forms incluso desde cualquier dispositivo móvil."
+  },
+  "is_internal": false,
+  "url": null,
+  "url_repo": null,
+  "image": "portfolio_4.png",
+  "date_from": ISODate("2015-04-01T00:00:00.000Z"),
+  "date_to": ISODate("2015-05-01T00:00:00.000Z"),
+},
+{
+  "name": "Factor RH Creativo",
+  "version": "2.0",
+  "description": {
+    "excerpt": "La peluqueria mas concurrida de Villa del Parque me solicita renovar el primer diseño realizado de su sitio web.",
+    "full": "Para ello decido basarme en el layout del sitio del club de programación, se adaptaron varios elementos a los colores seleccionados por los clientes.\r\nDicho sitio se adaptó correctamente a los lineamientos responsive y se optimizaron varias funciones internas del sitio que antes estaban desordenadas."
+  },
+  "is_internal": false,
+  "url": "http://factorrhcreativo.com/v2",
+  "url_repo": "http://github.com/Fermoto5HD/RH-v2.0",
+  "image": "portfolio_5.png",
+  "date_from": "2015-05-01",
+  "date_to": "2015-11-01"
+},
+{
+  "name": "Sitio Personal",
+  "version": "4.0",
+  "description": {
+    "excerpt": "Renovación total de mi página personal, dejando atrás un layout con más de dos años de modificaciones básicas y sin un ordenamiento determinado.",
+    "full": "Decido renovar la estructura de mi sitio personal, haciéndolo más serio y que explique mejor quién soy yo y que es lo que hago. En un principio utilicé Foundation v5 y apenas salió Foundation v6 decidí migrar la estructura a esa nueva versión del Framework, junto con algunas incorporaciones como la sección de YouTube entre otras."
+  },
+  "is_internal": false,
+  "url": null,
+  "url_repo": null,
+  "image": "portfolio_6.png",
+  "date_from": "2015-06-01",
+  "date_to": "2016-06-01"
+},
+{
+  "name": "Loop Radio",
+  "version": "2.0",
+  "description": {
+    "excerpt": "Llevo a cabo el armado del sitio de Loop Radio, implementando un diseño apto para móviles y con un fuerte foco en el streaming.",
+    "full": "Para llevar a cabo la maquetación del sitio, Emiliano Fazzolari me pasa un boceto realizado en Photoshop para empezar a armar el layout base. Se usa Foundation v5 por usar estilos planos, ideales para este caso. Trabajé en la API de Airtime, modificando el script original e implementando una personalización para comunicar el back-end con el front-end."
+  },
+  "is_internal": false,
+  "url": "",
+  "url_repo": "",
+  "image": "portfolio_7.png",
+  "date_from": "2015-09-01",
+  "date_to": null
+}

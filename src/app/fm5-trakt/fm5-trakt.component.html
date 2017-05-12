@@ -1,0 +1,23 @@
+<section class="jumbotron jumbotron-fluid jumbotron-full-height flex-center-vertical p-0">
+	<div class="d-flex align-items-center">
+    <div *ngIf="last.type === 'movie'; then movieTemplate else showTemplate"></div>
+	</div>
+</section>
+
+
+
+<ng-template #movieTemplate>
+  <div class="col-md-12">
+    <label class="label label-primary">Película</label>
+    <h1>{{last.movie.title}} ({{last.movie.year}})</h1>
+    <p class="lead">-</p>
+  </div>
+</ng-template>
+
+<ng-template #showTemplate>
+  <div class="col-md-12">
+    <label class="label label-primary">Serie</label>
+    <h1>{{last.show.title}} ({{last.show.year}})</h1>
+    <p class="lead">Episodio #{{last.episode.number}}: "{{last.episode.title}}"</p>
+  </div>
+</ng-template>
