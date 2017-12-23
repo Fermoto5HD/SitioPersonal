@@ -1,0 +1,151 @@
+<FM5-jumbotron 
+	image="assets/img/covers/default.jpg"
+	video="assets/vid/landing.min.mp4"
+
+	align="left"
+	column_container="col-md-8"
+	title="Una renovación que trasciende lo estético"
+	lead="Renové mi página personal, con otro lineamiento gráfico, aunque lo más importante entra por donde no se ve, por las tecnologías implementadas."
+	description="Se hizo un transpaso del stack LAMP al novedoso formato MEAN, junto con un aprendizaje con Docker."
+	description_2="El desarrollo demandó más de 8 meses de investigación, práctica y desarrollo, y en todo ese tiempo dió sus frutos, los suficientes como para contarte la experiencia vivida."
+	
+	url_int="allbrandnew" url_int_text="Continuá leyendo">
+</FM5-jumbotron>
+<section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<h1>¡Bienvenido a mi página!</h1>
+				<p>Soy Fernando Osorio. Me desempeño como programador frontend (y con algo de backend) para el desarrollo de sitios web y aplicaciones interactivas. </p>
+				<p>¡Te invito a que me conozcas mejor!</p>
+			</div>
+		</div>
+		<hr>
+		<h2 class="text-center">4 ítems rápidos sobre mí</h2>
+		<div class="row shortcuts pb-2">
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<p id="age">{{age}}</p>
+						<p>años</p>
+					</span>
+					<h3>Edad actual</h3>
+					<p>Nací el 05/11/1994. {{textbirthday}}.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<i class="far fa-map-marker-alt"></i>
+					</span>
+					<h3>Ubicación</h3>
+					<p>Villa del Parque, Ciudad de Buenos Aires, Argentina.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<i class="far fa-graduation-cap"></i>
+					</span>
+					<h3>Estudios</h3>
+					<p>Tecnicatura en Programación en la UNSAM a partir de 2018.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<i class="far fa-briefcase"></i>
+					</span>
+					<h3>Trabajo</h3>
+					<p>Programador front-end en Esto Es Vixnet desde Junio 2016.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row pt-2 pb-4">
+			<div class="col-md-12">
+				<a class="btn btn-outline-primary btn-block btn-lg" routerLink="about">¡Conoceme mejor!</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<hr>
+<section class="py-5">
+	<div class="container-fluid">
+		<div class="row text-center pb-2">
+			<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Últimos trabajos realizados</h2>
+		</div>
+		<FM5-portfolio size="small" limit="6">
+			<p>Cargando últimos trabajos...</p>
+		</FM5-portfolio>
+	</div>
+</section>
+
+<!--hr>
+<section class="py-5">
+	<div class="container-fluid">
+		<div class="row text-center pb-2">
+			<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Última actividad en GitHub</h2>
+		</div>
+		<FM5-repositories size="small" limit="3"></FM5-repositories>
+	</div>
+</section-->
+
+<section class="py-5">
+	<div class="container-fluid">
+		<div class="row text-center pb-2">
+			<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Actividad en las redes</h2>
+		</div>
+		<div class="row text-center">
+			<div class="col-lg-4 col-sm-6 py-2 mb-4">
+				<h3>Flickr</h3>
+				<p>Fotos en calidad original</p>
+				<div class="card" *ngIf="flickr">
+					<a href="https://www.flickr.com/photos/Fermoto5HD/{{flickr?.id}}" target="_blank">
+						<img class="card-img-top" *ngIf="flickr" src="https://farm{{flickr?.farm}}.staticflickr.com/{{flickr?.server}}/{{flickr?.id}}_{{flickr?.secret}}_b.jpg" alt="{{flickr?.title}}" />
+					</a>
+					<div class="card-body">
+						<div class="btn-group">
+							<a href="https://www.flickr.com/photos/Fermoto5HD/{{flickr?.id}}" target="_blank" class="btn btn-primary btn-outline-primary">Verlo en Flickr</a>
+							<a routerLink="flickr" class="btn btn-primary btn-outline-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 py-2 mb-4">
+				<h3>Instagram</h3>
+				<p>Seguime en @Fermoto5HD.</p>
+				<div class="card" *ngIf="instagram">
+					<a *ngIf="instagram[0]?.type === 'image'" href="{{instagram[0]?.link}}" target="_blank"><img class="card-img-top" src="{{instagram[0]?.images.standard_resolution.url}}" alt="{{instagram[0]?.caption.text}}" /></a>
+					<video controls preload="none" *ngIf="instagram[0]?.type === 'video'" poster="{{instagram[0]?.images?.standard_resolution.url}}" class="embed-responsive embed-responsive-16by9">
+					<source src="{{instagram[0]?.videos?.standard_resolution.url}}" type="video/mp4">
+					</video>
+					<div class="card-body">
+						<p class="card-text mb-0">{{instagram[0]?.caption.text}}</p>
+						<div class="btn-group">
+							<a href="{{instagram[0]?.link}}" target="_blank" class="btn btn-primary btn-outline-primary">Verlo en Instagram</a>
+							<a routerLink="instagram" class="btn btn-primary btn-outline-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-12 py-2 mb-4">
+				<h3>YouTube</h3>
+				<p>Suscribite al canal.</p>
+				<div class="card" *ngIf="youtube_iframe">
+					<div class="card-img-top embed-responsive embed-responsive-16by9">
+						<iframe width="100%" height="auto" [src]="youtube_iframe" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="card-body">
+						<p class="card-text mb-0">{{youtube?.title}}</p>
+						<div class="btn-group">
+							<a [href]="youtube_url" target="_blank" class="btn btn-primary btn-outline-primary">Verlo en YouTube</a>
+							<a routerLink="youtube" class="btn btn-primary btn-outline-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

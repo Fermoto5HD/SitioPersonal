@@ -1,0 +1,31 @@
+/* Container with ia */
+.container-with-ia .main-container, 
+.container-with-ia .ad-container {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.container-with-ia .main-container {
+	width: calc(100% - 330px);
+}
+.container-with-ia .ia-container {
+	width: 330px;
+}
+
+@media screen and (max-width: 991px) {
+	.container-with-ia .main-container, 
+	.container-with-ia .ia-container {
+		width: 100%;
+	}
+}
+
+/* Footer */
+footer {background-color: #282828; background-repeat: repeat-x; background-image: linear-gradient(45deg, #f47921, #fdbf10);}
+footer a, footer i {color: white;}
+footer h3 {text-transform: uppercase;font-weight: 900;color:rgba(255, 255, 255, 0.75);}
+footer h3 i {color:rgba(255, 255, 255, 0.75);}
+footer a.btn {color: inherit;}
+
+footer h1:after, footer h2:after, footer h3:after, footer h4:after, footer h5:after, footer h6:after {
+	width: inherit;
+}

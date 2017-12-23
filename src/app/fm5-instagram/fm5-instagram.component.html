@@ -1,0 +1,55 @@
+<section *ngIf="items" class="jumbotron-container jumbotron-full-height jumbotron-video jumbotron-has-breadcrumb" [style.backgroundImage]="'url('+ items[0]?.images.standard_resolution.url +')'">
+	<div class="jumbotron video-overlay jumbotron-fluid d-flex flex-center-vertical">
+		<video *ngIf="items[0]?.type === 'video'" poster="{{items[0]?.images.standard_resolution.url}}" muted video autobuffer loop autoplay>
+			<source src="{{items[0].videos?.standard_resolution.url}}" type="video/mp4">
+		</video>
+		<div class="d-flex align-items-center">
+			<div class="col-md-8">
+				<div>
+					<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">{{section.cover_title}}</h1>
+				</div>
+				<p class="lead">{{section.lead}}</p>
+				<p>{{section.description}}</p>
+				<a href="https://instagram.com/Fermoto5HD" target="_blank" class="btn btn-outline-light">Ir a la cuenta</a>
+				<a *ngIf="items"  href="{{items[0]?.link}}" target="_blank" class="btn btn-outline-light">
+					<span *ngIf="items[0]?.type === 'image'">Ver la foto</span>
+					<span *ngIf="items[0]?.type === 'video'">Ver el video</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="items" class="breadcrumb-container bottom">
+		<div class="container-fluid">
+			<div class="breadcrumb row px-0">
+				<div class="col-md-12">
+					<div class="white-block">
+						<i class="fab fa-instagram"></i> {{items[0]?.caption.text}}
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section *ngIf="items">
+	<div class="container-fluid">
+		<div class="card-columns">
+			<div class="card" *ngFor="let item of items;">
+				<a *ngIf="item?.type === 'image'" href="{{item?.link}}" target="_blank"><img class="card-img-top" src="{{item?.images.standard_resolution.url}}" alt="{{item?.caption.text}}" /></a>
+				<video controls preload="none" *ngIf="item?.type === 'video'" poster="{{item?.images?.standard_resolution.url}}" class="embed-responsive embed-responsive-16by9">
+					<source src="{{item?.videos?.standard_resolution.url}}" type="video/mp4">
+				</video>
+				<a href="{{item?.link}}" class="card-no-link" target="_blank">
+					<div class="card-body">
+						<p class="card-text m-0">{{item?.caption.text}}</p>						
+					</div>
+				</a>
+				<div class="card-footer">
+					<p *ngIf="item?.location" class="text-muted m-0"><i class="far fa-map-marker-alt"></i> {{item?.location?.name}}</p>
+					<p class="text-muted m-0">
+						<i class="far fa-heart"></i> {{item?.likes?.count}} • <i class="far fa-comments"></i> {{item?.comments?.count}}
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

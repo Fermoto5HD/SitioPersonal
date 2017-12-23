@@ -1,0 +1,499 @@
+<section class="jumbotron jumbotron-fluid jumbotron-full-height jumbotron-video flex-center-vertical p-0">
+	<div class="video-overlay d-flex align-items-center">
+		<video preload="" muted="" autoplay="" loop="">
+		<source src="assets/vid/home.min.mp4" type="video/mp4">
+		<source src="http://mediakit.infobae.com/wp-content/uploads/2016/09/MEDIAKIT.mov" type="video/ogg">
+		</video>
+		<div class="col-md-8">
+			<div>
+				<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">API SOFSE - Documentación no oficial</h1>
+			</div>
+			<p class="lead">Endpoints y variables para utilizar la API.</p>
+			<p>Comprendé el funcionamiento de las diferentes partes de la API y contribuí con el desarrollo de soluciones y alternativas a las aplicaciones oficiales.</p>
+		</div>
+	</div>
+</section>
+<section class="py-5">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto" style="display:inline-block">Aclaraciones antes de leer</h2>
+    </div>
+    <p>Ante nada, aclaro que esta documentación NO ES OFICIAL, es un rejunte de todo el funcionamiento que logré interpretar hasta el día de hoy.</p>
+    <p>La documentación va a comprender pocos aspectos pero escenciales que te van a ayudar a obtener datos específicos, como los minutos restantes, el destino y las paradas intermedias, número de servicio y formación, pero nada más allá de eso, ya que el resto de los datos están disponibles con otras key de acceso y son diferentes a las públicas.</p>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto" style="display:inline-block">Endpoints</h2>
+    </div>
+    <h3>Estación</h3>
+    <strong>URL: </strong><pre>http://trenes.sofse.gob.ar/v2_pg/lcd_public/ajax_arribos_andenes.php</pre>
+    <strong>HTTP Verb: </strong><pre>GET</pre>
+    <strong>Parametros: </strong>
+    <ul>
+      <li><strong>key: </strong><a href="#">Ver variables.</a></li>
+      <li><strong>estacion:</strong><pre>INT</pre> (ver tabla)</li>
+      <li><strong>ramal: </strong><pre>INT</pre> (ver tabla)</li>
+    </ul>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto" style="display:inline-block">Endpoints</h2>
+    </div>
+    <h3>Tabla de ramales</h3>
+    <p>Están identificadas por un número, el cual representa un recorrido determinado y un sentido de circulación específico. </p>
+    <p>En selectos casos pueden compartir estaciones de otro ramal (como ejemplo está la línea Mitre y los ramales Mitre y J.L. Suárez). </p>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Línea</th>
+            <th>Ramal</th>
+            <th>Sentido</th>
+            <th>Datos disponibles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Línea Sarmiento</td>
+            <td>Plaza Once-Moreno</td>
+            <td>Hacia Moreno</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Línea Sarmiento</td>
+            <td>Plaza Once-Moreno</td>
+            <td>Hacia Plaza Once</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Línea Mitre</td>
+            <td>Retiro-Tigre</td>
+            <td>Hacia Tigre</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Línea Mitre</td>
+            <td>Retiro-Tigre</td>
+            <td>Hacia Retiro</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Línea Mitre</td>
+            <td>Retiro-Bartolomé Mitre</td>
+            <td>Hacia Bartolomé Mitre</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>Línea Mitre</td>
+            <td>Retiro-Bartolomé Mitre</td>
+            <td>Hacia Retiro</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>Línea Mitre</td>
+            <td>Retiro-José León Suárez</td>
+            <td>Hacia José León Suárez</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>Línea Mitre</td>
+            <td>Retiro-José León Suárez</td>
+            <td>Hacia Retiro</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-La Plata</td>
+            <td>Hacia La Plata</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-La Plata</td>
+            <td>Hacia Plaza Constitución</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">13</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Bosques</td>
+            <td>Hacia Bosques</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">14</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Bosques</td>
+            <td>Hacia Plaza Constitución</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">15</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Claypole</td>
+            <td>Hacia Claypole</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">16</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Claypole</td>
+            <td>Hacia Plaza Constitución</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">17</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Alejandro Korn</td>
+            <td>Hacia Alejandro Korn</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">18</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Alejandro Korn</td>
+            <td>Hacia Plaza Constitución</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">19</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Ezeiza</td>
+            <td>Hacia Ezeiza</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">20</th>
+            <td>Línea Roca</td>
+            <td>Plaza Constitución-Ezeiza</td>
+            <td>Hacia Plaza Constitución</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">21</th>
+            <td>Línea Belgrano Sur</td>
+            <td>Buenos Aires-Marinos del Crucero General Belgrano</td>
+            <td>Hacia Marinos del Crucero General Belgrano</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">22</th>
+            <td>Línea Belgrano Sur</td>
+            <td>Buenos Aires-Marinos del Crucero General Belgrano</td>
+            <td>Hacia Buenos Aires</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">23</th>
+            <td>Línea Belgrano Sur</td>
+            <td>Puente Alsina-Aldo Bonzi</td>
+            <td>Hacia Aldo Bonzi</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">24</th>
+            <td>Línea Belgrano Sur</td>
+            <td>Puente Alsina-Aldo Bonzi</td>
+            <td>Hacia Puente Alsina</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">25</th>
+            <td>Línea Belgrano Sur</td>
+            <td>Buenos Aires-Gonzalez Catán</td>
+            <td>Hacia Gonzalez Catán</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">26</th>
+            <td>Línea Belgrano Sur</td>
+            <td>Buenos Aires-Gonzalez Catán</td>
+            <td>Hacia Buenos Aires</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">27</th>
+            <td>Línea Roca</td>
+            <td>Haedo-Temperley</td>
+            <td>Hacia Haedo</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">28</th>
+            <td>Línea Roca</td>
+            <td>Haedo-Temperley</td>
+            <td>Hacia Temperley</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">29</th>
+            <td>Línea Roca</td>
+            <td>Claypole-Gutiérrez</td>
+            <td>Hacia Gutiérrez</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">30</th>
+            <td>Línea Roca</td>
+            <td>Claypole-Gutiérrez</td>
+            <td>Hacia Claypole</td>
+            <th>Limitado</th>
+          </tr>
+          <tr>
+            <th scope="row">31</th>
+            <td>Línea San Martín</td>
+            <td>Retiro-Dr. Domingo Cabred</td>
+            <td>Hacia Dr. Domingo Cabred</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">32</th>
+            <td>Línea San Martín</td>
+            <td>Retiro-Dr. Domingo Cabred</td>
+            <td>Hacia Retiro</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">33</th>
+            <td>Línea Mitre</td>
+            <td>Victoria-Capilla del Señor</td>
+            <td>Hacia Capilla del Señor</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">34</th>
+            <td>Línea Mitre</td>
+            <td>Victoria-Capilla del Señor</td>
+            <td>Hacia Victoria</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">35</th>
+            <td>Línea Mitre</td>
+            <td>Villa Ballester-Zárate</td>
+            <td>Hacia Zárate</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">36</th>
+            <td>Línea Mitre</td>
+            <td>Villa Ballester-Zárate</td>
+            <td>Hacia Villa Ballester</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">37</th>
+            <td>Línea Roca</td>
+            <td>Ezeiza-Cañuelas</td>
+            <td>Hacia Cañuelas</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">37</th>
+            <td>Línea Roca</td>
+            <td>Ezeiza-Cañuelas</td>
+            <td>Hacia Ezeiza</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">39</th>
+            <td>Tren Universitario (La Plata)</td>
+            <td>Estación-Policlínico</td>
+            <td>Hacia Policlínico</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">40</th>
+            <td>Tren Universitario (La Plata)</td>
+            <td>Estación-Policlínico</td>
+            <td>Hacia Estación</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">41</th>
+            <td>Tren de la Costa</td>
+            <td>Maipú-Delta</td>
+            <td>Hacia Delta</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">42</th>
+            <td>Tren de la Costa</td>
+            <td>Maipú-Delta</td>
+            <td>Hacia Maipú</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">51</th>
+            <td>Línea Sarmiento</td>
+            <td>Moreno-Mercedes</td>
+            <td>Hacia Mercedes</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">52</th>
+            <td>Línea Sarmiento</td>
+            <td>Moreno-Mercedes</td>
+            <td>Hacia Moreno</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">53</th>
+            <td>Línea Sarmiento</td>
+            <td>Merlo-Lobos</td>
+            <td>Hacia Lobos</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">54</th>
+            <td>Línea Sarmiento</td>
+            <td>Merlo-Lobos</td>
+            <td>Hacia Merlo</td>
+            <th>Todos</th>
+          </tr>
+          <tr>
+            <th scope="row">61</th>
+            <td>Línea Belgrano Norte</td>
+            <td>Retiro-Villa Rosa</td>
+            <td>Hacia Retiro</td>
+            <th>Estación y Terminal</th>
+          </tr>
+          <tr>
+            <th scope="row">62</th>
+            <td>Línea Belgrano Norte</td>
+            <td>Retiro-Villa Rosa</td>
+            <td>Hacia Villa Rosa</td>
+            <th>Estación y Terminal</th>
+          </tr>
+          <tr>
+            <th scope="row">71</th>
+            <td>Línea Urquiza</td>
+            <td>Federico Lacroze-General Lemos</td>
+            <td>Hacia General Lemos</td>
+            <th>Estación y Terminal</th>
+          </tr>
+          <tr>
+            <th scope="row">72</th>
+            <td>Línea Urquiza</td>
+            <td>Federico Lacroze-General Lemos</td>
+            <td>Hacia Federico Lacroze</td>
+            <th>Estación y Terminal</th>
+          </tr>
+          <tr>
+            <th scope="row">101</th>
+            <td>Larga Distancia</td>
+            <td>Plaza Constitución-Mar del Plata</td>
+            <td>Hacia Mar del Plata</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">102</th>
+            <td>Larga Distancia</td>
+            <td>Plaza Constitución-Mar del Plata</td>
+            <td>Hacia Plaza Constitución</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">111</th>
+            <td>Larga Distancia</td>
+            <td>Plaza Once-General Pico</td>
+            <td>Hacia General Pico</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">112</th>
+            <td>Larga Distancia</td>
+            <td>Plaza Once-General Pico</td>
+            <td>Hacia Plaza Once</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">131</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Rufino</td>
+            <td>Hacia Rufino</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">132</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Rufino</td>
+            <td>Hacia Retiro</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">141</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Rosario Norte</td>
+            <td>Hacia Rosario Norte</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">142</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Rosario Norte</td>
+            <td>Hacia Retiro</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">151</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Córdoba</td>
+            <td>Hacia Córdoba</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">152</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Córdoba</td>
+            <td>Hacia Retiro</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">161</th>
+            <td>Regionales</td>
+            <td>Cipoletti-Neuquén</td>
+            <td>Hacia Cipoletti</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">162</th>
+            <td>Regionales</td>
+            <td>Cipoletti-Neuquén</td>
+            <td>Hacia Neuquén</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">171</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Tucumán</td>
+            <td>Hacia Tucumán</td>
+            <th>Estación</th>
+          </tr>
+          <tr>
+            <th scope="row">171</th>
+            <td>Larga Distancia</td>
+            <td>Retiro-Tucumán</td>
+            <td>Hacia Retiro</td>
+            <th>Estación</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

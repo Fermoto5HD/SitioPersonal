@@ -1,0 +1,53 @@
+<div *ngIf="repositories; then reposTrue else reposFalse"></div>
+
+
+<ng-template #reposTrue>
+	<div *ngIf="size === 'small'; then reposSmall else reposLarge"></div>
+</ng-template>
+
+<ng-template #reposFalse>
+  No hay repositorios aún.
+</ng-template>
+
+<ng-template #reposSmall>
+	<div class="row">
+		<div class="col-sm-12 col-md-4 mt-4" *ngFor="let item of repositories;">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title heading-uppercase">{{item.name}} <span *ngIf="item.isFork" class="badge badge-secondary">Fork</span></h4>
+					<p class="card-text">{{item.description}}</p>
+					<div class="btn-group">
+						<a href="https://github.com/Fermoto5HD/{{item.name}}" target="_blank" class="btn btn-primary btn-outline-primary">Ver repositorio</a>
+						<a *ngIf="item.homepageUrl" href="{{item.homepageUrl}}" target="_blank" class="btn btn-primary btn-outline-primary">Ir al sitio</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mt-4">
+		<div class="col-md-12">
+			<a class="btn btn-outline-primary btn-block btn-lg" routerLink="github">Ver más repositorios</a>
+		</div>
+	</div>
+</ng-template>
+
+<ng-template #reposLarge>
+	<div class="container-fluid">
+		<div class="col-md-8 offset-md-2">
+			<div class="card my-3" *ngFor="let item of repositories">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9 mt-4">
+							<h1>{{item.name}} <span *ngIf="item.isFork" class="badge badge-secondary">Fork</span></h1>
+							<p>{{item.description}}</p>
+							<div class="btn-group">
+								<a href="https://github.com/Fermoto5HD/{{item.url}}" target="_blank" class="btn btn-primary btn-outline-primary">Ver trabajo</a>
+								<a *ngIf="item.homepageUrl" href="{{item.homepageUrl}}" target="_blank" class="btn btn-primary btn-outline-primary">Ir al sitio</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>

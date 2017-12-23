@@ -1,0 +1,9 @@
+<div *ngIf="slug; then disqusTrue else disqusFalse"></div>
+
+<ng-template #disqusTrue>
+	<disqus [identifier]="path" [url]="url" [title]="title"></disqus>
+</ng-template>
+
+<ng-template #disqusFalse>
+	<p>Por el momento no se pueden realizar comentarios sobre este contenido.</p>
+</ng-template>

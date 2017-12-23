@@ -1,48 +1,31 @@
-# Fermoto5HD - Sitio Personal v5.0
-Este es el repositorio que muestra el armado integral de mi sitio personal en su 5ta versión. 
-El sitio se creó desde cero, implementando FM5strap, mi framework basado en Bootstrap v4, junto con Angular y las tecnologías aplicadas en la v4. 
+# Sitio Personal
+El repositorio donde publico las distintas versiones de mi página personal. 
+Comenzó desde un simple sitio con JS, luego agrandé el funcionamiento desde la 4ta versión, en la 5ta se mejora, y en esta 6ta versión se reestructura todo el funcionamiento. 
+En esta versión se programa mucho más que un sitio personal, se desarrolla todo un desafío.
 
-## Changelog
-Prometo en las próximas versiones separar el Changelog de este readme. ;) 
+## Nuevos aprendizajes
+A partir de la 6ta versión del sitio se comienza a implementar el MEAN stack, presentando un desafío interesante a cumplir. Junto con ello se implementa el aprendizaje de Docker para el montaje de sitios en un mismo servidor.
 
-### v5.5.0.1-4  (versión actual)
-* Remoción de console.log y reemplazado por uno de bienvenida. 
-* Cambios mínimos. 
+## ¿Qué se usó?
+* Angular-CLI: Para crear rápidamente los componentes, junto con la base de Angular 4.
+* Angular: Para desarrollar el sitio web basado en componentes dinámicos.
+* MongoDB: Para utilizar una base de datos escalable. 
+* Express: Para el montaje del sitio. 
+* Node: Para montar las dependencias mencionadas (junto con otras más) y rutear la API que conecta con MongoDB.
 
-### v5.5.0
-* FM5strap v2. 
-* Funciones en Angular refinadas. 
-* Seccion blog. 
-* Interacción directa con una API creada en Codeigniter. 
-* Corrección de bugs.
+## Algunas dependencias utilizadas 
+* Angular Universal: Permite el facil crawling de los buscadores. Actúa del lado servidor. 
 
-### v5.0.0
-Versión estable del sitio 
-* Estilos: Creado archivo sass para estilos del sitio. 
-* Layout: El `container` pasa a ser `container-fluid`. 
-* Scripts: HTML5 routing. Cambio de rutas y redirect de links viejos. 
-* Portfolio: Modificación del controller, unificación de los JSON de los distintos portfolios en uno sólo, junto con filtros en las 3 subsecciones. 
-* Portfolio: Webapp del TP N°1 de Infraestructura 1 integrado en el sitio. 
+## ¿Cómo verlo?
+* Clonar/Bajar proyecto. 
+* En el directorio, abrir la consola y ejecutar npm install (5-10 minutos aprox.). 
+* Configurar archivos restantes. 
+* npm start - El sitio se verá en localhost:3000
+* Para verlo en modo producción, correr `set NODE_ENV=production`
 
-### v5.0.0-beta2
-* Se corrije el error del botón "Ver más..." en el home, que abría la sección de YouTube en una ventana nueva. 
-* Se corrijen los links de la sección de trabajos prácticos de la UNSAM. 
-* Se le agrega la funcionalidad que le faltaba al formulario mediante Angular, aunque falta realizar el alert de success y de error. De paso se agrega un cálculo para humanos para evitar spam. 
-* Se reemplazan los covers de la sección Portfolios y la subsección Lantalks por el cover por defecto. 
+## Changelog 
+Desde esta versión se separará el changelog del readme. 
+Podrás encontrar todos los cambios realizados [acá](https://github.com/Fermoto5HD/CHANGELOG.md).
 
-### v5.0.0-beta1
-* El repositorio del sitio v4 pasa a ser el repositorio principal para las versiones de mi sitio personal. En caso que quieras ver el armado de la 4ta versión podés buscarlo en este mismo repositorio en el branch "v4". 
-* Gracias a los "genios" de Instagram y sus políticas para usar su API, tengo que usar temporalmente un token para mostrar la última foto cargada a mi cuenta. Más adelante implemento un bypass o similar. 
-* Más interacciones con la API de YouTube. 
-* Actualizado el JSON de portfolios. 
-* El formulario de contacto pasa a estar dentro de un modal. 
-
-## Al modificar el sitio 
-* Correr `npm install` para instalar los módulos necesarios. 
-* Correr `grunt` para actualizar dependencias y copiarlas en vendor. 
-
-## Reutilización de archivos 
-Sentite libre en utilizar los distintos archivos de este repositorio para lo que se te ocurra o para algún proyecto que tengas! 
-
-# Licencia 
-El contenido del repositorio está bajo una Licencia Creative Commons Atribución 4.0 Internacional.
+## Desarrollo contínuo y abierto
+El sitio se continuará actualizando y también podés cooperar a mejorarlo. Todo lo que ves en el repositorio lo podrás ver en [Fermoto5HD.com](https://fermoto5hd.com).

@@ -1,0 +1,41 @@
+<FM5-jumbotron 
+	align="left"
+	column_container="col-md-8"
+	title="Un apartado personal en Internet"
+	lead="En esta sección vas a poder leer algunos posts que voy haciendo, tratando de diversos temas, no sólo de la programación web, también otras cosas más."
+	image="assets/img/covers/default.jpg"
+	video="assets/vid/blog.mp4">
+</FM5-jumbotron>
+
+<section class="container-fluid">
+	<div class="row container-with-ia">
+		<div class="main-container py-1">
+			<div class="row">
+				<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Últimos posts</h2>
+			</div>
+
+			<div *ngIf="posts; then blogTrue else blogFalse"></div>
+
+			<ng-template #blogTrue>
+				<div class="container-fluid">
+					<div class="card my-3" *ngFor="let item of posts">
+						<div class="card-body">
+							<h1>{{item.title}}</h1>
+							<p class="lead">{{item.excerpt}}</p>
+							<div class="btn-group">
+								<a routerLink="/blog/{{item.slug}}" class="btn btn-primary btn-outline-primary">Seguir leyendo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ng-template>
+
+			<ng-template #blogFalse>
+				No hay posts aún.
+			</ng-template>
+		</div>
+		<div class="ia-container">
+			<FM5-ias></FM5-ias>
+		</div>
+	</div>
+</section>
