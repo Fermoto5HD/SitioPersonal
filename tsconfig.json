@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
+    "outDir": "./_dist/out-tsc",
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
@@ -16,5 +16,10 @@
       "es2016",
       "dom"
     ]
+  },
+  "angularCompilerOptions": {                         
+     "genDir": "./_dist/ngfactory",
+     "entryModule": "./src/app/app.module#AppModule",
+    "preserveWhitespaces": false
   }
 }

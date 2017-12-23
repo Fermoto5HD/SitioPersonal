@@ -1,28 +1,31 @@
-# SitioPersonal
+# Sitio Personal
+El repositorio donde publico las distintas versiones de mi página personal. 
+Comenzó desde un simple sitio con JS, luego agrandé el funcionamiento desde la 4ta versión, en la 5ta se mejora, y en esta 6ta versión se reestructura todo el funcionamiento. 
+En esta versión se programa mucho más que un sitio personal, se desarrolla todo un desafío.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
+## Nuevos aprendizajes
+A partir de la 6ta versión del sitio se comienza a implementar el MEAN stack, presentando un desafío interesante a cumplir. Junto con ello se implementa el aprendizaje de Docker para el montaje de sitios en un mismo servidor.
 
-## Development server
+## ¿Qué se usó?
+* Angular-CLI: Para crear rápidamente los componentes, junto con la base de Angular 4.
+* Angular: Para desarrollar el sitio web basado en componentes dinámicos.
+* MongoDB: Para utilizar una base de datos escalable. 
+* Express: Para el montaje del sitio. 
+* Node: Para montar las dependencias mencionadas (junto con otras más) y rutear la API que conecta con MongoDB.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Algunas dependencias utilizadas 
+* Angular Universal: Permite el facil crawling de los buscadores. Actúa del lado servidor. 
 
-## Code scaffolding
+## ¿Cómo verlo?
+* Clonar/Bajar proyecto. 
+* En el directorio, abrir la consola y ejecutar npm install (5-10 minutos aprox.). 
+* Configurar archivos restantes. 
+* npm start - El sitio se verá en localhost:3000
+* Para verlo en modo producción, correr `set NODE_ENV=production`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+## Changelog 
+Desde esta versión se separará el changelog del readme. 
+Podrás encontrar todos los cambios realizados [acá](https://github.com/Fermoto5HD/CHANGELOG.md).
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Desarrollo contínuo y abierto
+El sitio se continuará actualizando y también podés cooperar a mejorarlo. Todo lo que ves en el repositorio lo podrás ver en [Fermoto5HD.com](https://fermoto5hd.com).

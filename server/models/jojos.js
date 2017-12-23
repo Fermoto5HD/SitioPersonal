@@ -1,8 +1,12 @@
-var mongoose = require( 'mongoose' );
+/*var mongoose = require( 'mongoose' );
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
 var jojoSchema = new mongoose.Schema({
+  local            : {
+        email        : String,
+        password     : String,
+    },
   email: {
     type: String,
     unique: true,
@@ -39,3 +43,31 @@ jojoSchema.methods.generateJwt = function() {
 };
 
 mongoose.model('Jojos', jojoSchema);
+*/
+
+
+// app/models/user.js
+// load the things we need
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var bcrypt   = require('bcrypt-nodejs');
+
+// define the schema for our user model
+var jojoSchema = new Schema({
+  username: String,
+  passcode: String
+}, { versionKey: false, collection: 'Jojos' });
+
+// methods ======================
+// generating a hash
+jojoSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+// checking if password is valid
+jojoSchema.methods.validPassword = function(passcode) {
+    return bcrypt.compareSync(passcode, this.passcode);
+};
+
+// create the model for users and expose it to our app
+module.exports = mongoose.model('Jojos', jojoSchema);

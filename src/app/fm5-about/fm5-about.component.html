@@ -1,65 +1,40 @@
-<section class="jumbotron jumbotron-fluid jumbotron-full-height flex-center-vertical p-0" style="background-image: url('assets/img/Fermoto5HD.jpg')">
-	<div class="d-flex align-items-center">
-		<div class="col-md-8">
-			<h1>Te cuento un poco más</h1>
-			<p class="lead">Acá podrás saber un poco más en detalle varios aspectos de mí.</p>
-			<p>Desde mis datos escenciales, pasando por la experiencia adquirida, hasta los lugares en donde estoy involucrado.</p>
-		</div>
-	</div>
-</section>
-<section>
+<FM5-jumbotron 
+	image="assets/img/covers/about.jpg"
+	align="left"
+	column_container="col-md-8"
+
+	title="¡Conoceme mejor!"
+	lead="Me llamo Fernando Javier Osorio Lorenzo, aunque me llaman Fer, tengo {{age}} años, y soy un programador frontend, aunque de a momentos puedo ser backend."
+	description="Además de esa mini introducción vas a poder conocerme no sólo en cuanto a lo técnico, también en cuanto a experiencia y personalidad del día a día."
+	description_2="Entre otros datos de color como mis predilectos gustos en la animación experimental y el animé, junto con mis preferencias musicales al momento de programar o transitar la ciudad."
+
+	url_ext_1="static/files/cv_fernando-osorio.pdf" url_ext_1_text="Descargá mi CV"
+	>
+</FM5-jumbotron>
+<section class="py-5">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-8 offset-md-2 text-center">
-				<h1>¡Bienvenido a mi página!</h1>
-				<p>Soy Fernando Osorio. Me desempeño como programador frontend (y con algo de backend) para el desarrollo de sitios web y aplicaciones interactivas. </p>
-				<p>¡Te invito a que me conozcas mejor!</p>
+		<div class="row container-with-ia">
+			<div class="main-container py-1">
+				<h2>¡Acá hay una foto de mí!</h2>
+				<p class="lead">Upd: Noviembre 2017</p>
+				<img class="img-fluid img-thumbnail" src="assets/img/profile/2017-11.jpg">
+				<hr>
+				<br>
+				<h2>¿Por qué soy programador y cómo terminé siéndolo?</h2>
+				<p>Fácil, desde chico vengo acompañado de una computadora, y siempre me intrigó querer cambiar cosas del sistema. De ahí viene el origen de todo.</p>
+				<p>En 2013 me empiezan a dar clases de programación web en la secundaria, y mientras toda la clase empezaba a conocer el HTML, yo ya me estaba informando sobre el responsive design, por lo que en ese entonces empecé a programar mi camino a ser un... bueno, intento de programador? Por así decirlo.</p>
+				<p>Y para 2014/2015 empezaba a encarrilarme definitivamente hacia la programación web, haciendo de CSS y JS mis principales fuertes para programar páginas web.</p>
+				<p>Ah, prácticamente todo fue por autodidactismo, y hasta el día de hoy sigo haciéndolo de esa forma.</p>
+				<hr>
+				<h2>Experiencia en el área</h2>
+				<p>Recién estoy haciendo el camino profesional. </p>
+				<p>Estoy profundamente agradecido con Esto Es, una agencia de publicidad y software factory que presenta innovación y soluciones de llave en mano, quienes confiaron y siguen confiando en mí para producir productos de alta calidad a los clientes finales. Gracias a éllos estoy logrando adquirir herramientas de muy buen nivel para producir y crear mejores trabajos tanto en la empresa como en los proyectos propios.</p>
+				<hr>
+				<h2>Proyección a futuro</h2>
+				<p>A futuro quiero establecerme como un desarrollador full-stack, manejando proyectos más complejos de la mano de stacks MEAN para escalarlos fácilmente.</p>
 			</div>
-		</div>
-		<hr>
-		<h2 class="text-center">4 ítems rápidos sobre mí</h2>
-		<div class="row shortcuts pb-2">
-			<a href="#componentes" class="col-md-3">
-				<div class="shortcut">
-					<span class="circle bg-info">
-						<p id="age">22</p>
-						<p>años</p>
-					</span>
-					<h3>Edad actual</h3>
-					<p>Nací el 05/11/1994. En 182 días cumplo 23.</p>
-				</div>
-			</a>
-			<a href="#componentes" class="col-md-3">
-				<div class="shortcut">
-					<span class="circle bg-info">
-						<i class="fa fa-map-marker" aria-hidden="true"></i>
-					</span>
-					<h3>Ubicación</h3>
-					<p>Villa del Parque, Ciudad de Buenos Aires, Argentina.</p>
-				</div>
-			</a>
-			<a href="#componentes" class="col-md-3">
-				<div class="shortcut">
-					<span class="circle bg-info">
-						<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-					</span>
-					<h3>Estudios</h3>
-					<p>Carrera terciaria de Tecnología Ferroviaria en la UNSAM.</p>
-				</div>
-			</a>
-			<a href="#componentes" class="col-md-3">
-				<div class="shortcut">
-					<span class="circle bg-info">
-						<i class="fa fa-briefcase" aria-hidden="true"></i>
-					</span>
-					<h3>Trabajo</h3>
-					<p>Programador front-end en Esto Es Vixnet desde Junio 2016.</p>
-				</div>
-			</a>
-		</div>
-		<div class="row pt-2 pb-4">
-			<div class="col-md-12">
-				<a href="#portfolio" class="btn btn-primary btn-block btn-lg">¡Conoceme mejor!</a>
+			<div class="ia-container">
+				<FM5-ias></FM5-ias>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,100 @@
+<section *ngIf="items" class="jumbotron-container jumbotron-full-height jumbotron-video jumbotron-has-breadcrumb" [style.backgroundImage]="'url('+ items[0]?.snippet.thumbnails.maxres.url +')'">
+	<div class="jumbotron video-overlay jumbotron-fluid d-flex flex-center-vertical">
+		<div class="d-flex align-items-center">
+			<div class="col-md-8">
+				<div>
+					<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">{{section.cover_title}}</h1>
+				</div>
+				<p class="lead">{{section.lead}}</p>
+				<p>{{section.description}}</p>
+				<a href="https://instagram.com/Fermoto5HD" target="_blank" class="btn btn-outline-light">Ir a la cuenta</a>
+				<a *ngIf="items[0]" href="https://youtu.be/{{items[0]?.snippet.resourceId.videoId}}" target="_blank" class="btn btn-outline-light">
+					Ver el video
+				</a>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="items" class="breadcrumb-container bottom">
+		<div class="container-fluid">
+			<div class="breadcrumb row px-0">
+				<div class="col-md-12">
+					<div class="white-block">
+						<i class="fab fa-youtube"></i> {{items[0]?.snippet.title}}
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--section>
+	<div class="container-fluid">
+		<div class="row shortcuts pb-2">
+			<a href="#componentes" class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<p>Desde</p>
+						<p>2010</p>
+					</span>
+				</div>
+			</a>
+			<a href="#componentes" class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<p>{{stats.viewCount}}</p>
+						<p>reproducciones</p>
+					</span>
+				</div>
+			</a>
+			<a href="#componentes" class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<p>{{stats.subscriberCount}}</p>
+						<p>subscripciones</p>
+					</span>
+				</div>
+			</a>
+			<a href="#componentes" class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-info">
+						<p>{{stats.videoCount}}</p>
+						<p>videos</p>
+					</span>
+				</div>
+			</a>
+		</div>
+	</div>
+</section-->
+<section *ngIf="items">
+  <div class="container-fluid">
+	<div class="row">
+	  <div class="col-md-4 py-2" *ngFor="let item of items;">
+		<div class="card">
+		  <a href="https://youtu.be/{{item?.snippet.resourceId.videoId}}" target="_blank"><img class="card-img-top" src="{{item?.snippet.thumbnails.maxres.url}}" alt="{{item?.snippet.title}}" /></a>
+		  <div class="card-body">
+			<p class="card-text">{{item?.snippet.title}}</p>
+			<div class="btn-group">
+			  <a href="https://youtu.be/{{item?.snippet.resourceId.videoId}}" target="_blank" class="btn btn-primary btn-outline-primary">Ver video</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+</section>
+
+<section>
+	<div class="container-fluid">
+		<h2>Producción del material</h2>
+		<p>El material cargado siempre tendrá la mejor calidad posible de producción.</p>
+		<p>Actualmente el material se está cargando en 1080@60p, dando más detalle y definición a cada video cargado.</p>
+		<p>Se evita el uso del zoom digital ya que se desperdicia imagen. En caso de tener disponible un zoom optico se utilizará este recurso.</p>
+		<hr>
+		<h2>Contenido</h2>
+		<p>Las filmaciones son más que nada en las inmediaciones de los ferrocarriles metropolitanos y subterráneos de la ciudad.</p>
+		<p>Priorizo la grabación del material rodante eléctrico aunque no descarto la grabación del material tractivo diésel y el material remolcado.</p>
+		<p>Intento grabar material de todas las líneas del área, en especial los viajes por dentro ya que no hay demasiado material de éllo en YouTube.</p>
+		<hr>
+		<h2>Creative Commons</h2>
+		<p>Desde el año 2014 decidí establecer a cada video cargado a la cuenta el licenciamiento Creative Commons, permitiendo la reutilización de mi material para cualquier necesidad.</p>
+	</div>
+</section>

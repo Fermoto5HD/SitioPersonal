@@ -1,0 +1,21 @@
+<section class="container-fluid text-center pt-5">
+	<div class="row py-5">
+		<div class="col-md-12">
+			<h1 class="heading-uppercase heading-uppercase-full display-inline-block" style="display:inline-block">Página no encontrada</h1>
+		</div>
+		<div class="col-md-8 text-left">
+			<p>Quizás no encontraste lo que buscabas, pero podés ayudar a encontrar a {{people?.data?.nombre}} {{people?.data?.apellido}}</p>
+			<p>Tiene {{people?.data?.edad}} años y es de {{people?.data?.residencia}}</p>
+			<p>Desapareció el {{people?.data?.fecha_desaparicion}}. En la foto de referencia tenía {{people?.data?.edad_foto}} años.</p>
+			<p>Si tenés información, por favor comunicate al 142, línea gratuita nacional.</p>
+		</div>
+		<div class="col-md-4">
+			<img style="max-height: 250px;" class="img-thumbnail" src="//static.noencontrado.org/img/{{people?.data?.id}}.jpg" alt="{{people?.data?.nombre}} {{people?.data?.apellido}}">
+		</div>
+	</div>
+</section>
+<section class="container-fluid text-center">
+	<div class="alert alert-info">
+		<p class="mb-0">Información provista por NoEncontrado.org </p>
+	</div>
+</section>

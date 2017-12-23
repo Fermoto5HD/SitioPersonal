@@ -1,6 +1,6 @@
-var passport = require('passport');
-var mongoose = require('mongoose');
-var Jojo = mongoose.model('Jojos');
+const passport = require('passport');
+const mongoose = require('mongoose');
+const Jojo = mongoose.model('Jojos');
 
 var sendJSONresponse = function(res, status, content) {
   res.status(status);
@@ -66,3 +66,12 @@ module.exports.whoareyou = function(req, res) {
   })(req, res);
 
 };
+
+module.exports.list = function(req, res) {
+    Jojo.find({}, '-_id', {sort: {date_from: -1}}, function(err, stand_users) {
+      if (err) throw err;
+
+      res.status(200).json(stand_users);
+      return;
+    });
+  }

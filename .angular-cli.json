@@ -6,10 +6,11 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "_dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.png",
+        "service-worker.js"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,9 +20,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "assets/css/FM5strap.min.css",
+        "assets/css/FM5HD-website.css",
+        "assets/css/fontawesome-all.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/popper.js/dist/umd/popper.js",
+        "assets/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

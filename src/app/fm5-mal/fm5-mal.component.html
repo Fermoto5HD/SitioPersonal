@@ -1,0 +1,101 @@
+<section class="jumbotron-container jumbotron-full-height jumbotron-video">
+	<div class="jumbotron video-overlay jumbotron-fluid d-flex flex-center-vertical">
+		<div class="d-flex align-items-center">
+			<div class="col-md-8">
+				<div>
+					<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">{{section.cover_title}}</h1>
+				</div>
+				<p class="lead">{{section.lead}}</p>
+				<p>{{section.description}}</p>
+				<a href="https://myanimelist.net/profile/Fermoto5HD" target="_blank" class="btn btn-outline-light">Ir al perfil</a>
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Animé</h2>
+				<div class="list-group" *ngIf="items_anime">
+					<a href="https://myanimelist.net{{item?.anime_url}}" target="_blank" *ngFor="let item of items_anime;" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="d-flex w-100 justify-content-between">
+							<h5 class="mb-1">
+								{{item?.anime_title}}
+								<br>
+								<span *ngIf="item?.anime_mpaa_rating_string === 'R'" class="badge badge-warning">Tiene contenido fuerte</span>
+								<span *ngIf="item?.anime_mpaa_rating_string === 'Rx'" class="badge badge-danger">HOT +18!</span>
+							</h5>
+							<span>
+								<span *ngIf="item?.anime_airing_status === 1" class="badge badge-warning">En emisión</span>
+								<span *ngIf="item?.status === 1" class="badge badge-info">La estoy viendo</span>
+								<span *ngIf="item?.status === 2" class="badge badge-success">La terminé</span>
+								<span *ngIf="item?.status === 3" class="badge badge-warning">La pausé</span>
+								<span *ngIf="item?.status === 4" class="badge badge-danger">La colgué</span>
+								<span *ngIf="item?.status === 6" class="badge badge-secondary">La tengo en cuenta</span>
+							</span>
+						</div>
+						<!--p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p-->
+						<small *ngIf="item?.num_watched_episodes === 0">No ví ningún episodio por ahora.</small>
+						<small *ngIf="item?.num_watched_episodes !== 0">
+							<span *ngIf="item?.num_watched_episodes === 1">
+								<span *ngIf="item?.num_watched_episodes !== item?.anime_num_episodes">
+									Ví apenas {{item?.num_watched_episodes}} episodio<span *ngIf="item?.anime_num_episodes > 1"> de los {{item?.anime_num_episodes}}</span> en total.
+								</span>
+							</span>
+							<span *ngIf="item?.num_watched_episodes > 1">
+								<span *ngIf="item?.num_watched_episodes !== item?.anime_num_episodes">
+									Ví {{item?.num_watched_episodes}} episodios<span *ngIf="item?.anime_num_episodes > 1"> de los {{item?.anime_num_episodes}}</span> en total.
+								</span>
+							</span>
+						</small>
+					</a>
+				</div>
+				<a href="https://myanimelist.net/animelist/fermoto5hd" target="_blank" class="btn btn-outline-primary btn-block mt-3">Ver más series trackeadas</a>
+			</div>
+			<div class="col-md-6">
+				<h2>Manga</h2>
+				<div class="list-group" *ngIf="items_manga">
+					<a href="https://myanimelist.net{{item?.manga_url}}" target="_blank" *ngFor="let item of items_manga;" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="d-flex w-100 justify-content-between">
+							<h5 class="mb-1">
+								{{item?.manga_title}}
+								<br>
+								<span *ngIf="item?.manga_media_type_string === 'Doujinshi'" class="badge badge-danger">HOT!</span>
+							</h5>
+							<span>
+								<span *ngIf="item?.manga_publishing_status === 1" class="badge badge-warning">En publicación</span>
+								<span *ngIf="item?.status === 1" class="badge badge-info">Lo estoy siguiendo</span>
+								<span *ngIf="item?.status === 2" class="badge badge-success">Lo terminé</span>
+								<span *ngIf="item?.status === 3" class="badge badge-warning">Lo pausé</span>
+								<span *ngIf="item?.status === 4" class="badge badge-danger">Lo colgué</span>
+								<span *ngIf="item?.status === 6" class="badge badge-secondary">Lo tengo en cuenta</span>
+							</span>
+						</div>
+						<!--p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+						<small>Donec id elit non mi porta.</small-->
+						<small *ngIf="item?.num_read_volumes === 0">Aún no comencé a leerlo.</small>
+						<small *ngIf="item?.num_read_volumes !== 0">
+							<span *ngIf="item?.num_read_volumes !== item?.manga_num_volumes">
+								<span *ngIf="item?.num_read_volumes === 1">Leí 1 sólo tomo</span>
+								<span *ngIf="item?.num_read_volumes !== 1">Leí {{item?.num_read_volumes}} tomos</span>
+								<span *ngIf="item?.manga_num_volumes !== 0"> de {{item?.manga_num_volumes}}</span>
+								<span *ngIf="item?.num_read_chapters !== 0">
+									<span *ngIf="item?.num_read_chapters === 1">
+										<span *ngIf="item?.num_read_chapters !== item?.manga_num_chapters">, aunque estoy recién en el 1er capítulo<span *ngIf="item?.manga_num_chapters > 1">. Me faltan {{item?.manga_num_chapters}}</span> en total</span>
+									</span>
+									<span *ngIf="item?.num_read_chapters > 1">
+										<span *ngIf="item?.num_read_chapters !== item?.manga_num_chapters">, con {{item?.num_read_chapters}} capítulos leídos<span *ngIf="item?.manga_num_chapters > 1"> de los {{item?.manga_num_chapters}}</span> en total</span>
+									</span>
+								</span>.
+							</span>
+						</small>
+					</a>
+				</div>
+				<a href="https://myanimelist.net/mangalist/fermoto5hd" target="_blank" class="btn btn-outline-primary btn-block mt-3">Ver más mangas trackeados</a>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Fm5TraktComponent } from './fm5-trakt.component';
+import { FM5TraktComponent } from './fm5-trakt.component';
 
-describe('Fm5TraktComponent', () => {
-  let component: Fm5TraktComponent;
-  let fixture: ComponentFixture<Fm5TraktComponent>;
+describe('FM5TraktComponent', () => {
+  let component: FM5TraktComponent;
+  let fixture: ComponentFixture<FM5TraktComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Fm5TraktComponent ]
+      declarations: [ FM5TraktComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Fm5TraktComponent);
+    fixture = TestBed.createComponent(FM5TraktComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

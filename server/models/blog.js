@@ -9,7 +9,12 @@ var BlogSchema = new Schema({
   excerpt: String,
   content: String,
   image: String,
-  created: Date
+  created: Date,
+  vote: {
+  	y: Number,
+  	k: Number,
+  	n: Number
+  }
 }, { versionKey: false, collection: 'Blog' });
 
 // the schema is useless so far

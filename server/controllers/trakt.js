@@ -54,5 +54,42 @@ module.exports = {
       res.status(200).json(JSON.parse(body));
       return;
     });
-  }
+  },
+  imdb_config: function(req, res) {
+    request({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/configuration?api_key=b5650a58c68b60cd2cd97c5f11e39070',
+      headers: {
+        'Content-Type': 'application/json'
+      }}, function (error, response, body) {
+      //console.log('Status:', response.statusCode);
+      //console.log('Headers:', JSON.stringify(response.headers));
+      //console.log('Response:', body);
+      if (error) throw error;
+
+      res.status(200).json(JSON.parse(body));
+      return;
+    });
+  },
+  cover_movie: function(req, res) {
+    let id = req.params.id;
+    if (!id) {
+      res.status(500).json(JSON.parse({status:"error"}));
+      return;
+    }
+    request({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/movie/'+id+'?api_key=b5650a58c68b60cd2cd97c5f11e39070',
+      headers: {
+        'Content-Type': 'application/json'
+      }}, function (error, response, body) {
+      //console.log('Status:', response.statusCode);
+      //console.log('Headers:', JSON.stringify(response.headers));
+      //console.log('Response:', body);
+      if (error) throw error;
+
+      res.status(200).json(JSON.parse(body));
+      return;
+    });
+  },
 };
