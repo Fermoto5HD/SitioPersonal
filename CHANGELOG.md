@@ -6,6 +6,10 @@ al mismo tiempo, adherido a [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [6.1.1] - 2017-12-23
+### Modificado
+- Corrección de link de changelog.
+
 ## [6.1.0] - 2017-12-23
 ### Nuevo
 - APIs de Facebook y Twitter (no integrados aún en el sitio).
@@ -26,5 +30,6 @@ al mismo tiempo, adherido a [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Todo el sitio - First commit!
 - Archivo CHANGELOG.md (este).
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v6.1.0...HEAD
+[Unreleased]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.1.1...HEAD
+[6.1.1]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.1.0...v6.1.1
 [6.1.0]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.0.0...v6.1.0
