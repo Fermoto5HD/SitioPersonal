@@ -4,7 +4,7 @@
 var LocalStrategy   = require('passport-local').Strategy;
 
 // load up the user model
-var Jojos            = require('../models/jojos');
+var dollarMember = require('../models/thedollars');
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -22,7 +22,7 @@ module.exports = function(passport) {
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
-        Jojos.findById(id, function(err, user) {
+        dollarMember.findById(id, function(err, user) {
             done(err, user);
         });
     });
@@ -43,7 +43,7 @@ module.exports = function(passport) {
 
         // find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
-        Jojos.findOne({ 'local.username' :  username }, function(err, user) {
+        dollarMember.findOne({ 'local.username' :  username }, function(err, user) {
             // if there are any errors, return the error
             if (err)
                 return done(err);
@@ -55,7 +55,7 @@ module.exports = function(passport) {
 
                 // if there is no user with that email
                 // create the user
-                var newUser            = new Jojos();
+                var newUser = new dollarMember();
 
                 console.log(newUser); 
 
@@ -90,10 +90,13 @@ module.exports = function(passport) {
     function(req, username, password, done) { // callback with email and password from our form
         // find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
-        Jojos.findOne({
-            "username": username
-        }, function(err, user) {
+        dollarMember.findOne({"username": username}, '+passcode', function(err, user) {
             // if there are any errors, return the error before anything else
+            console.log("passport.js");
+            console.log(req.body);
+            console.log(username);
+            console.log(password);
+            console.log("fin passport.js");
             if (err) {
                 return done(err);
             }
@@ -114,7 +117,5 @@ module.exports = function(passport) {
             // all is well, return successful user
             return done(null, user);
         });
-
     }));
-
 };

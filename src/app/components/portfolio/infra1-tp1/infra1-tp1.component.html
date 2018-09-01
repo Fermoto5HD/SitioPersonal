@@ -1,0 +1,88 @@
+<FM5-jumbotron 
+	image="assets/img/covers/about.jpg"
+	align="left"
+	column_container="col-md-8"
+
+	maintitle="Infraestructura - Trabajo Práctico N°1"
+	lead="Acá podrás obtener los resultados y ecuaciónes del primer trabajo práctico de Infraestructura."
+	description="Desde el peso de todas las barras de riel, pasando por los durmientes, balasto hasta las eclisas y tirafondos."
+	description_2="Basado en los apuntes y normativas de CNRT y Ferrocarriles Argentinos S.E."
+>
+
+<section class="py-5">
+	<div class="container-fluid">
+		<div class="row text-center">
+			<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Ingresá los datos</h2>
+		</div>
+		<div class="row text-center pb-2">
+			<p>Después de seleccionar e ingresar todos los datos se activará el botón para mostrar los resultados.</p>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Trocha</h3>
+				<div class="row">
+					<label class="col-md-2" for="trocha">Tipo</label>
+					<div class="col-md-10">
+						<select name="trocha" id="trocha" class="form-control">
+							<option disabled selected hidden>Seleccioná un tipo</option>
+							<option value="1">Ancha</option>
+							<option value="2">Media</option>
+							<option value="3">Angosta</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h3>Balasto</h3>
+				<div class="alert alert-info">
+					<strong>Atención</strong>
+					<p>Son valores fijos por defecto.</p>
+				</div>
+				<p><strong>Tipo:</strong> Piedra granel partida</p>
+				<p><strong>Peso específico:</strong> 1.6 ton/m³</p>
+			</div>
+			<div class="col-md-6">
+				<h3>Durmientes</h3>
+				<div class="alert alert-info">
+					<strong>Atención</strong>
+					<p>Son valores fijos por defecto.</p>
+				</div>
+				<p><strong>Tipo:</strong> Madera de quebracho colorado</p>
+				<p><strong>Alto:</strong> {{durmientes_alto}} m</p>
+				<p><strong>Ancho:</strong> {{durmientes_ancho}} m</p>
+				<div class="row">
+					<label for="durmiente-cantporvia" class="col-md-2">Cantidad por km de vía</label>
+					<div class="input-group">
+						<input type="number" class="form-control" id="durmiente-cantporkmvia" required>
+						<span class="input-group-addon">durmientes</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 offset-md-2">
+		<button class="btn btn-outline-primary btn-block" (click)="calc()">Mostrar resultados</button>
+	</div>
+</section>
+<section class="py-5">
+	<div class="container-fluid">
+		<div class="row text-center">
+			<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Resultados obtenidos</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label><strong>Cantidad total de balasto a utilizar: </strong><span id="resultado-balasto"></span> tns.</label>
+				<span class="calculo" hidden id="calculo-balasto"></span>
+				<label><strong>Cantidad total de durmientes: </strong><span class="calculo" hidden id="calculo-durmientestotales"></span><span id="resultado-durmientestotales"></span> unidades.</label>
+				<label><strong>¿Cuánto ocupa el durmiente?: </strong><span class="calculo" hidden id="calculo-ocupaciondurmiente"></span><span id="resultado-ocupaciondurmiente"></span>m³.</label>
+				<label><strong>Área de todos los <span id="resultado-durmientestotales"></span> durmientes: </strong><span class="calculo" hidden id="calculo-ocupaciondurmientetodos"></span><span id="resultado-ocupaciondurmientetodos"></span>m³.</label>
+				<label><strong>Cantidad total de rieles: </strong><span class="calculo" hidden id="calculo-rielesbarras"></span><span id="resultado-rielesbarras"></span> unidades.</label>
+				<label><strong>Peso por barra: </strong><span class="calculo" hidden id="calculo-pesobarra"></span><span id="resultado-pesobarra"></span>kg.</label>
+				<label><strong>Peso de todas las <span id="resultado-rielesbarras"></span> barras: </strong><span class="calculo" hidden id="calculo-rielespeso"></span><span id="resultado-rielespeso"></span> tns.</label>
+				<label><strong>Cantidad total de tirafondos: </strong><span class="calculo" hidden id="calculo-tirafondos"></span><span id="resultado-tirafondos"></span> unidades.</label>
+				<label><strong>Cantidad total de eclisas: </strong><span class="calculo" hidden id="calculo-eclisas"></span><span id="resultado-eclisas"></span> unidades.</label>
+				<label><strong>Cantidad total de bulones y arandelas de eclisas: </strong><span class="calculo" hidden id="calculo-arandelasbulones"></span><span id="resultado-arandelasbulones"></span> unidades cada una.</label>
+			</div>
+		</div>
+	</div>
+</section>

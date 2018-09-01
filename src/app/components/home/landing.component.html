@@ -1,0 +1,149 @@
+<FM5-jumbotron *ngIf="home"
+	image="{{home.image}}"
+	video="{{home.video}}"
+	align="{{home.align}}"
+	column_container="{{home.column_container}}"
+	maintitle="{{home.title}}"
+	lead="{{home.lead}}"
+	description="{{home.text[0]}}"
+	description_2="{{home.text[1]}}"
+	description_2="{{home.text[1]}}"
+	url_int="{{home.buttons[0].link}}"
+	url_int_text="{{home.buttons[0].text}}"
+	url_ext_1="{{home.buttons[1].link}}"
+	url_ext_1_text="{{home.buttons[1].text}}"
+	url_ext_2="{{home.buttons[2].link}}"
+	url_ext_2_text="{{home.buttons[2].text}}">
+</FM5-jumbotron>
+<section>
+	<div class="container-fluid">
+		<!--div class="row">
+			<div class="col-md-8 offset-md-2 text-center">
+				<h1>¡Bienvenido a mi página!</h1>
+				<p>Soy Fernando Osorio. Me desempeño como programador frontend (y con algo de backend) para el desarrollo de sitios web y aplicaciones interactivas. </p>
+				<p>¡Te invito a que me conozcas mejor!</p>
+			</div>
+		</div>
+		<hr-->
+		<h2 class="text-center">4 ítems rápidos sobre mí</h2>
+		<div class="row shortcuts pb-2">
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-dark">
+						<p id="age">{{age}}</p>
+						<p>años</p>
+					</span>
+					<h3>Edad actual</h3>
+					<p>Nací el 05/11/1994. {{textbirthday}}.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-dark">
+						<i class="far fa-map-marker-alt"></i>
+					</span>
+					<h3>Ubicación</h3>
+					<p>Villa del Parque, Ciudad de Buenos Aires, Argentina.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-dark">
+						<i class="far fa-briefcase"></i>
+					</span>
+					<h3>Trabajo</h3>
+					<p>Programador front-end en Esto es Vixnet desde Junio 2016.</p>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div class="shortcut">
+					<span class="circle bg-dark">
+						<i class="far fa-coffee"></i>
+					</span>
+					<h3>Post-trabajo</h3>
+					<p>Voy a cafés y hago research de tecnologías de desarrollo web.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row pt-2 pb-4">
+			<div class="col-md-12">
+				<a class="btn btn-outline-dark btn-block btn-lg" routerLink="about">¡Conoceme mejor!</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<hr>
+<section class="py-5">
+	<div class="container-fluid">
+		<div class="row text-center pb-2">
+			<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Últimos trabajos realizados</h2>
+		</div>
+		<portfolio-items size="small" limit="6">
+			<p>Cargando últimos trabajos...</p>
+		</portfolio-items>
+	</div>
+</section>
+
+<section class="py-5">
+	<div class="container-fluid">
+		<div class="row text-center pb-2">
+			<h2 class="display-inline-block heading-uppercase heading-uppercase-full mx-auto">Actividad en las redes</h2>
+		</div>
+		<div class="row text-center">
+			<div class="col-lg-4 col-sm-6 py-2 mb-4">
+				<i class="fab fa-flickr fa-3x" title="Flickr"></i>
+				<div class="card" *ngIf="flickr">
+					<a href="https://www.flickr.com/photos/Fermoto5HD/{{flickr?.id}}" target="_blank">
+						<img class="card-img-top" *ngIf="flickr" src="https://farm{{flickr?.farm}}.staticflickr.com/{{flickr?.server}}/{{flickr?.id}}_{{flickr?.secret}}_b.jpg" alt="{{flickr?.title}}" />
+					</a>
+					<div class="card-body">
+						<div class="btn-group">
+							<a href="https://www.flickr.com/photos/Fermoto5HD/{{flickr?.id}}" target="_blank" class="btn btn-outline-dark">Ver más grande</a>
+							<a routerLink="flickr" class="btn btn-outline-dark">Más fotos</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 py-2 mb-4">
+				<i class="fab fa-instagram fa-3x" title="Instagram"></i>
+				<div class="card" *ngIf="instagram">
+					<a *ngIf="instagram[0]?.type === 'image'" href="{{instagram[0]?.link}}" target="_blank"><img class="card-img-top" src="{{instagram[0]?.images.standard_resolution.url}}" alt="{{instagram[0]?.caption.text}}" /></a>
+					<video controls preload="none" *ngIf="instagram[0]?.type === 'video'" poster="{{instagram[0]?.images?.standard_resolution.url}}" class="embed-responsive embed-responsive-16by9">
+					<source src="{{instagram[0]?.videos?.standard_resolution.url}}" type="video/mp4">
+					</video>
+					<div class="card-body">
+						<p class="card-text mb-0">{{instagram[0]?.caption.text}}</p>
+						<div class="btn-group">
+							<a href="{{instagram[0]?.link}}" target="_blank" class="btn btn-outline-dark">Verlo más grande</a>
+							<a routerLink="instagram" class="btn btn-outline-dark">Más fotos</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-12 py-2 mb-4">
+				<i class="fab fa-youtube fa-3x" title="YouTube"></i>
+				<div class="card" *ngIf="youtube_iframe">
+					<div class="card-img-top embed-responsive embed-responsive-16by9">
+						<iframe width="100%" height="auto" [src]="youtube_iframe" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="card-body">
+						<p class="card-text mb-0">{{youtube?.title}}</p>
+						<div class="btn-group">
+							<a [href]="youtube_url" target="_blank" class="btn btn-outline-dark">Verlo más grande</a>
+							<a routerLink="youtube" class="btn btn-outline-dark">Más videos</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="py-5">
+	<div class="container text-center">
+		<h2>¿Te interesó lo que hice?</h2>
+		<p class="lead">¡Ponete en contacto conmigo y charlamos!</p>
+		<a href="mailto:fermoto5hd@outlook.com" class="btn btn-outline-dark btn-lg">Vía e-mail</a>
+	</div>
+</section>

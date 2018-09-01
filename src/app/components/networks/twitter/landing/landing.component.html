@@ -1,0 +1,202 @@
+<FM5-jumbotron 
+	image="assets/img/covers/about.jpg"
+	align="left"
+	column_container="col-md-8"
+
+	maintitle="El lado más picante de mí, hasta 280 caracteres."
+	lead="¿Querés un resumen de mí? Ok! Acá va:"
+	description='Tengo 23 años, vivo en Capital Federal, soy programador web, veo animé, uso Uber, detesto que corten el tránsito, odio los sindicatos, voté a Cambiemos aunque la están cagando, soy crítico con la política en sí, además de detestar a los fanáticos partidistas. Milei me cae excelente. Y no soy un "troll" porque estoy desde 2010.'
+	description_2="No te alcanza con eso? Seguí scrolleando entonces."
+
+	url_ext_1="https://twitter.com/Fermoto5HD" url_ext_1_text="Mi cuenta"
+>
+</FM5-jumbotron>
+
+<section class="bg-dark text-light py-4 mb-0" *ngIf="about?.profile_pic">
+	<div class="container py-4">
+		<div class="row">
+			<div class="col-md-4">
+				<h2 class="text-uppercase">A dar la cara</h2>
+				<p>Si decías que no daba la cara, acá está. ¿Contento?</p>
+				<p>Bueno, tengo otras más por si no te convence.</p>
+			</div>
+			<div class="col-md-8">
+				<img class="img-fluid img-thumbnail" src="{{about?.profile_pic[0]?.url}}">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-dark text-light py-4 mb-0">
+	<div class="container py-4">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>¿Y por qué a Izaya Orihara de perfil?</h2>
+				<p>Por las dudas, este personaje es de un animé.</p>
+				<ul>
+					<li>Es un irónico de mierda.</li>
+					<li>Domina el escenario de Ikebukuro.</li>
+					<li>Lo odia medio Ikebukuro.</li>
+					<li>Te dice la posta de la forma que menos te va a caer bien.</li>
+					<li>Si quiere te boludea.</li>
+					<li>Su risa es lo más.</li>
+					<li><s>Ama pisar celulares mientras se ríe.</s></li>
+					<li>Es un forrito copado.</li>
+					<li>Es atractivo<s>, al igual que yo.</s></li>
+					<li>Es un narcicista.</li>
+					<li><s>Ama a Shizuo-chan~</s></li>
+				</ul>
+			</div>
+			<div class="col-md-8">
+				<img class="img-fluid img-thumbnail" src="/assets/img/twitter/profile-izaya-orihara.jpg" width="100%">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-info py-4 mb-0" *ngIf="twitter?.created_at">
+	<div class="container text-white py-4">
+		<h2 class="text-center">Si decías que yo era un troll</h2>
+		<p class="text-center">Te tiro tu falacia con datos posta.</p>
+		<div class="row">
+			<div class="col-md-4 offset-md-2">
+				<h4>Estoy desde el:</h4>
+				<p>{{twitter?.created_at}}</p>
+				<p><small>O sea, no se creó ayer.</small></p>
+			</div>
+			<div class="col-md-4">
+				<h4>Tengo tweetteados y retweeteados:</h4>
+				<p>{{twitter?.statuses_count}} y contando</p>
+				<p><small>O sea, ya vengo poniendo boludeces.</small></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-light py-4 mb-0">
+	<div class="container-fluid py-4">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Imbéciles que hablan sin saber</h2>
+				<p>Estas fueron las pelotudeces que me dijeron estos salames en Twitter:</p>
+				<ul>
+					<li>Que mi opinión no cuenta por tener foto de animé.</li>
+					<li>Que soy un facho.</li>
+					<li>Que soy un nazi.</li>
+					<li>Que tengo aires de burgués.</li>
+					<li>Que soy un famoso intocable.</li>
+					<li><i>¡Y acá puede ir la tuya!</i></li>
+				</ul>
+				<p>¡Y más bien que doy los nombres! ¿Qué se pensaban?</p>
+			</div>
+			<div class="col-md-6">
+				<h2>"Que fachit<s>x</s><s>e</s>o que sos chabón"</h2>
+				<p>Soy un "fachite" gracias a los energúmenos de actitudes desagradables que hablan fuerte y como el orto con ese lenguaje villero de mierda.</p>
+				<p>Por Dios, es tán difícil?</p>
+				<!--p>Y no me va el zurdaje ni el Kirchnerismo, tuvieron más de 10 años para arreglar los quilombos y aún tienen la cara de tener "la receta mágica". Ya no más.</p>
+				<p>Los "globertos" por favor abstenerse también. La gestión de Larreta me tiene las pelotas llenas rompiendo veredas que se arreglaron 3 veces, y el Soterramiento del Sarmiento es un terrible error.</p-->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h2>"Ay con eso no se jode"</h2>
+				<p>Con eso SÍ se jode. Fin.</p>
+			</div>
+			<div class="col-md-6">
+				<h2>El lenguaje inclusiv... ¿x? ¿a? ¿w? ¿QUÉ?</h2>
+				<p>Es una poronga esto del "lenguaje inclusivo", ni la RAE acepta lo de las "x".</p>
+				<p>Estos dicen "cuerpa" en vez de "cuerpo"... ¿Cómo pretendés que no me cague de risa con eso?</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-dark text-light py-5">
+	<div class="container py-5">
+		<h2 class="text-uppercase">Usuario de Uber y detestante de los piquetes.</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<p class="lead">Uso Uber para moverme en la ciudad, y por cada ataque que la mafia taxista quiera hacerme, seguiré utilizando aún más la aplicación.</p>
+				<a href="#" class="btn btn-outline-light">Conocé el porqué...</a>
+				<div style="display: none;">
+					<p>La mafia tachera está cagada en las patas por el gran Uber, claro, su círculo de comodidad está en peligro. Ya no podrán boludear a los pasajeros, no podrán cobrar cifras exorbitantes en eventos especiales, no podrán encajar billetes falsos, etc etc.</p>
+					<p>Ni por más grupo privado en Telegram podrán evitar que Uber siga teniendo el éxito que tiene acá.</p>
+					<p>Y ya aclaro, tengo que meter a TODOS los taxistas en la misma bolsa, incluyendo a los de buena fé.</p>
+					<p>¿Por qué? Porque si los honestos no sacan a la mierda mafiosa, entonces lamentablemente tendré que desear que dejen de existir los taxis y se los devoren Uber y Cabify.</p>
+					<p>O el taxi mata a la mafia tachera, o la mafia tachera matará al taxi. Y no hay más discusión que esa. No me vengan a hablar de legalidad porque no los ví protestar, ni por las combis truchas, ni por los 050 de conurbania. Ok?</p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<p class="lead">Detesto los cortes. ¿Por qué me tengo que aguantar un capricho de un problema que ME INTERESA UN HUEVO?</p>
+				<a href="#" class="btn btn-outline-light">Conocé el porqué...</a>
+				<div style="display: none;">
+					<p>Es tan simple, yo no los jodo a todos con mis problemas de programador miserable, por lo que, por favor, hagan un puto favor a la sociedad Y NO JODAN MÁS AL RESTO.</p>
+					<p>Que la lucha, que esto, que lo otro, NO ES EXCUSA PARA CORTAR LOCO! NO HINCHEN LAS PELOTAS A LOS QUE SÍ QUIEREN HACER PROGRESAR EL PAÍS.</p>
+					<p>Y detesto enormemente los sindicatos, siempre me parecieron un retroceso decadente ante cualquier innovación que venga (quisieron impedir el CBTC en la línea H porque "iban a eliminar puestos de trabajo"... ... o el famoso episodio de la "tendinitis"... como para que tengas idea).</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-light py-4 mb-0">
+	<div class="container-fluid py-4">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>En 2015 y 2017 voté a:</h2>
+				<p>Cambiemos</p>
+				<h2>Lo volvería a votar?</h2>
+				<p>Si. Más que nada porque lo otro es un peronismo mediocre y zurdos. Pero si se forma el partido libertario lo más seguro es que los vote a ellos.</p>
+			</div>
+			<div class="col-md-6">
+				<h2>Hoy por hoy mi postura es:</h2>
+				<p>Neutral</p>
+				<p>Hay cosas que no me están agradando de esta gestión. Se mandan cagadas tan pelotudas que <s>parecen</s>son adrede.</p>
+				<p>Y no quiero que el peronismo vuelva a gobernar, tuvieron 12 años para no cagarla como la cagaron.</p>
+			</div>
+			<div class="col-md-6">
+				<h2>¿A favor o en contra del aborto?</h2>
+				<p>Ni/Ni</p>
+				<p>Simplemente quiero que dejen de romper las pelotas con los pañuelos esos del orto. Basta. ¿Por qué me tienen que inundar visualmente de pañuelos? Claro, "si no te gusta no lo mires", estando por Plaza de Mayo. Decime, ¿cómo querés que evite ver algo que sale hasta por la tapa de AySA?</p>
+				<p>Lo único bueno que tengo de esto es que Internet se burla prácticamente por igual de ambos bandos.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg-light py-4">
+	<div class="container">
+		<h2>¡Animé, manga y juegos!</h2>
+		<p class="lead">Al fin algo positivo de esta página, ¿no?</p>
+		<p>Si bien no soy un otaku de arriba a abajo, tengo mis preferencias por el animé y el manga. Destaco estos 3 más que nada:</p>
+		<div class="row">
+			<div class="col-md-4 py-3">
+				<h3>JJBA</h3>
+				<p class="lead">Jojo's Bizarre Adventure</p>
+				<p>Y desde la parte 1 eh! No como los tibios que arrancan en la 3ra. Ahora estoy releyendo el manga (pero al argentino) mientras espero el animé de Vento Aureo.</p>
+			</div>
+			<div class="col-md-4 py-3">
+				<h3>DRRR</h3>
+				<p class="lead">Durarara!!</p>
+				<p>Esta serie me encantó, la historia es una locura de arriba a abajo. Los openings la rompen. Izaya de perfil es la prueba irrefutable de que me encantó.</p>
+			</div>
+			<div class="col-md-4 py-3">
+				<h3>I7</h3>
+				<p class="lead">IDOLiSH7</p>
+				<p>Ah, sabían que me van los idols? Nada, lo conocí comprando un pin cualquiera, lo busqué y me enganché viendolo. Mi favorito es Momo de Re:Vale!</p>
+			</div>
+		</div>
+		<div class="text-center">
+			<a href="https://myanimelist.com/u/fermoto5hd" class="btn btn-outline-dark" target="_blank">Igual veo/leo más cosas</a>
+			<!--a routerLink="/mal" class="btn btn-outline-dark"></a-->
+		</div>
+	</div>
+</section>
+
+<section class="bg-dark text-light py-5">
+	<div class="container text-center py-5">
+		<h2 class="text-uppercase">¡Eso es todo!</h2>
+		<p>Probablemente nunca veas a alguien dedicar toda una página dedicada exclusivamente para visitantes de Twitter.</p>
+		<p class="lead mt-4">¡Gracias por llegar hasta acá!</p>
+	</div>
+</section>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { FM5BlogService } from './../services/fm5-blog.service';
+import { APIService } from './../services/api.service';
 
 @Injectable()
 export class BlogGuard implements CanActivate {
@@ -10,7 +10,7 @@ export class BlogGuard implements CanActivate {
 	
 	constructor(
 		private router: Router,
-		private theService: FM5BlogService
+		private theService: APIService
 	) {
 	}
 
@@ -19,7 +19,7 @@ export class BlogGuard implements CanActivate {
 		state: RouterStateSnapshot
 	): Observable<boolean> | Promise<boolean> | boolean {
 		return new Promise((resolve) => {
-			this.theService.getBlogPost(next.params.slug)
+			this.theService.blogPost(next.params.slug)
 				.subscribe(
 					data => {
 						console.log("Exists.");

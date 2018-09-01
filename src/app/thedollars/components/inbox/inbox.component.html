@@ -1,0 +1,38 @@
+<div class="breadcrumb-container">
+	<div class="container-fluid">
+		<ul class="breadcrumb">
+			<li class="breadcrumb-item"><a routerLink="/thedollars">Ikebukuro</a></li>
+			<li class="breadcrumb-item active">Contacto</li>
+		</ul>
+	</div>
+</div>
+<dollars-userinfo></dollars-userinfo>
+
+<div class="container-fluid pb-4">
+	<h2>Mensajes</h2>
+	<div *ngIf="items; then hasItems else noItems"></div>
+	<ng-template #hasItems>
+		<div class="row">
+			<div class="col-md-4" *ngFor="let item of items">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="card-title">{{item.subject}}</h4>
+					</div>
+					<div class="card-body">
+						<p class="lead">Por {{item.name}} <span class="text-muted">(<span *ngIf="item?.phone"><a href="tel:{{item?.phone}}">{{item?.phone}}</a> | </span><a href="mailto:{{item.email}}">{{item.email}}</a>)</span></p>
+						<p>El {{item.timestamp}}</p>
+						<hr>
+						{{item.message}}
+					</div>
+					<div class="card-footer">
+						<a (click)="remove(item._id)" class="btn btn-secondary"><i class="far fa-trash-alt"></i> Eliminar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ng-template>
+
+	<ng-template #noItems>
+		<p>No hay mensajes emitidos.</p>
+	</ng-template>
+</div>

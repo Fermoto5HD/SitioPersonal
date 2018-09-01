@@ -8,6 +8,8 @@ module.exports = {
 		'_dist/**.css',
 		'_dist/assets/**',
 		'_dist/assets/js/**.js',
-		'_dist/assets/css/**.css'
+		'_dist/assets/css/**.css',
+		'_dist/index.html',
+		'_dist/static/**',
 	]
 };

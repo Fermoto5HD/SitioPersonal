@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from "@angular/platform-browser";
 import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
-import { FM5HamonService } from './../services/fm5-hamon.service';
+import { CeltyService } from './../services/celty.service';
 
 import { FM5Contact } from '../classes/fm5-contact';
 
@@ -23,7 +23,7 @@ export class FM5ContactComponent {
 
 	constructor(
 		private fb: FormBuilder,
-		private theService:FM5HamonService,
+		private theService: CeltyService,
 		meta: Meta, 
 		title: Title
 	) {
@@ -34,9 +34,10 @@ export class FM5ContactComponent {
 			{ name: 'description', content: "Formulario de contacto" }
 		]);
 		this.theForm = fb.group({
-			'name': [null, Validators.compose([Validators.required])],
+			'kimi_no_na_wa': [null, Validators.compose([Validators.required])],
 			'email': [null, Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.email])],
 			'phone': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(15)])],
+			'subject': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(15)])],
 			'message': [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])]
 		});
 	}

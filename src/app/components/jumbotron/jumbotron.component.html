@@ -1,0 +1,32 @@
+<section class="jumbotron-container jumbotron-full-height jumbotron-video" [style.backgroundImage]="'url(' + image + ')'">
+	<div *ngIf="breadcrumb_top" class="breadcrumb-container top">
+		<div class="container-fluid">
+			<ol class="breadcrumb row my-0">
+				<li class="breadcrumb-item" *ngIf="breadcrumb_top_3"><a routerLink="{{breadcrumb_top_3_url}}">{{breadcrumb_top_3}}</a></li>
+				<li class="breadcrumb-item" *ngIf="breadcrumb_top_2"><a routerLink="{{breadcrumb_top_2_url}}">{{breadcrumb_top_2}}</a></li>
+				<li class="breadcrumb-item" *ngIf="breadcrumb_top_1"><a routerLink="{{breadcrumb_top_1_url}}">{{breadcrumb_top_1}}</a></li>
+				<li class="breadcrumb-item active">{{breadcrumb_top_active}}</li>
+			</ol>
+		</div>
+	</div>
+	<div class="jumbotron container-fluid video-overlay jumbotron-fluid d-flex flex-center-vertical w-100">
+		<video *ngIf="video;" poster="{{image}}" muted video autobuffer loop autoplay>
+			<source src="{{video}}" type="video/mp4" muted>
+		</video>
+		<div class="d-flex align-items-center text-{{align}} w-100">
+			<div class="{{column_container}}">
+				<div *ngIf="maintitle;">
+					<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">{{maintitle}}</h1>
+				</div>
+				<p class="lead" *ngIf="lead;">{{lead}}</p>
+				<p *ngIf="description;">{{description}}</p>
+				<p *ngIf="description_2;">{{description_2}}</p>
+				<div class="btn-group">
+					<a *ngIf="url_int;" class="btn btn-outline-light" routerLink="{{url_int}}">{{url_int_text}}</a>
+					<a *ngIf="url_ext_1;" class="btn btn-outline-light" href="{{url_ext_1}}" target="_blank">{{url_ext_1_text}}</a>
+					<a *ngIf="url_ext_2;" class="btn btn-outline-light" href="{{url_ext_2}}" target="_blank">{{url_ext_2_text}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

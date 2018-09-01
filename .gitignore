@@ -42,3 +42,5 @@ Thumbs.db
 
 .dockerignore
 Dockerfile
+
+secrets.json

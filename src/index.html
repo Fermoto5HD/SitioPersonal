@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<title>Fernando Osorio (Fermoto5HD)</title>
@@ -10,23 +10,21 @@
 		<meta name="application-name" content="Fermoto5HD">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Página personal">
-		<link rel="icon" type="image/x-icon" href="/favicon.png">
+		<link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.png">
+		<meta name="msapplication-TileImage" content="/assets/img/favicon/ms-touch-icon-144x144-precomposed.png">
 
-		<!-- Tile icon for Win8 (144x144) -->
-		<!--meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
-		<meta name="fragment" content="!"-->
 		<meta name="description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
 		<meta name="keywords" content="Fernando Osorio Fermoto5HD sitio personal portfolio" />
 		<meta name="author" content="Fernando Osorio (Fermoto5HD)" />
-		<meta name="thumbnail" content="https://Fermoto5HD.com/img/meta-840x560.jpg" />
+		<meta name="thumbnail" content="/assets/img/meta.jpg" />
 		<!-- Meta og -->
 		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".'>
-		<meta property="og:site_name" content="Sitio personal de Fermoto5HD" />
+		<meta property="og:site_name" content="Fermoto5HD" />
 		<meta property="og:title" content="Sitio personal de Fermoto5HD" />
 		<meta property="og:description" content='Sitio personal de Fernando Javier Osorio Lorenzo, más conocido en Internet como "Fermoto5HD".' />
 		<meta property="og:locale" content="es_AR" />
 		<meta property="og:url" content="https://Fermoto5HD.com/" />
-		<meta property="og:image" content="https://Fermoto5HD.com/img/meta-840x560.jpg" />
+		<meta property="og:image" content="/assets/img/meta.jpg" />
 		<meta property="og:type" content="website" />
 		<!-- Meta Twitter -->
 		<meta name="twitter:title" content="Sitio personal de Fermoto5HD" />
@@ -35,26 +33,129 @@
 		<meta name="twitter:site" content="@Fermoto5HD" />
 		<meta name="twitter:creator" content="@Fermoto5HD" />
 		<meta name="twitter:url" content="https://Fermoto5HD.com/" />
-		<meta name="twitter:image" content="https://Fermoto5HD.com/img/meta-840x560.jpg" />
+		<meta name="twitter:image" content="/assets/img/meta.jpg" />
 		<meta name="twitter:image:width" content="435" />
 		<meta name="twitter:image:height" content="290" />
+		<style type="text/css">
+			#site-content {
+				filter: blur(5px);
+				transition-duration: 0.5s;
+			}
+			#site-content.loaded {
+				filter: none;
+			}
+		</style>
 	</head>
-	<body>
+	<body class="night-mode">
+		<div id="site-content">
+			<FM5-site></FM5-site>
+		</div>
+		<div id="loading" style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; opacity: 1; z-index: 1100">
+			<section class="jumbotron jumbotron-fluid jumbotron-full-height jumbotron-video flex-center-vertical p-0 m-0" style="height: 100vh !important; background-color: rgba(0, 0, 0, 0.5);">
+				<div class="video-overlay d-flex align-items-center" style="background-color: transparent;">
+					<div class="col-md-8 offset-md-2 text-center">
+						<div>
+							<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" id="welcome-text" style="display: inline-block">¡Bienvenido!</h1>
+							<p><i class="far fa-spinner fa-pulse fa-2x"></i> Cargando la página...</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript">
+			var the_date = new Date(), the_hour = the_date.getHours(), greeting = "¡Buenas noches!";if (the_hour > 5 && the_hour < 13) {greeting = "¡Buenos días!"} else if (the_hour > 12 && the_hour < 19){greeting = "¡Buenas tardes!"};document.getElementById("welcome-text").innerHTML = greeting;
+			function fadeOut(el){
+				el.style.opacity = 1;
+
+				(function fade() {
+					if ((el.style.opacity -= .1) < 0) {
+						el.style.display = "none";
+					} else {
+						requestAnimationFrame(fade);
+					}
+				})();
+			};
+
+			var layout_auto = true;
+
+			var mode = 'day';
+			var mode_icon = 'sun';
+
+			var layout_timer = setInterval(function() {
+				if (layout_auto) {
+					if (the_hour > 5 && the_hour < 19) {
+						mode = 'day';
+						mode_icon = 'sun';
+					} else {
+						mode = 'night';
+						mode_icon = 'moon';
+					}
+					change_layout();
+				}
+			}, 1500);
+
+			function change_layout() {
+				document.getElementsByTagName("body")[0].classList = [];
+				document.getElementsByTagName("body")[0].classList.add(mode + "-mode");
+				document.getElementById("icon-mode").classList = 'far fa-' + mode_icon;
+			}
+
+			function change_mode() {
+				layout_auto = false;
+				if (mode === 'night') {
+					mode = 'day';
+					mode_icon = 'sun';
+				} else {
+					mode = 'night';
+					mode_icon = 'moon';
+				}
+				change_layout();
+			}
+
+			document.onreadystatechange = function () {
+				if(document.readyState === 'complete') {
+					document.getElementById("loading");
+					fadeOut(document.getElementById("loading"));
+					document.getElementById("site-content").classList.add("loaded");
+
+
+					(function () {
+  
+						// Create variable for setTimeout
+						var delay;
+
+						// Set number of milliseconds for longpress
+						var longpress = 1000;
+
+						var btn_change_mode = document.getElementById('btn-change-mode');
+
+						btn_change_mode.addEventListener('mousedown', function (e) {
+							var _this = this;
+							delay = setTimeout(check, longpress);
+
+							function check() {
+								_this.classList.add('is-selected');
+								if (!layout_auto) {
+									layout_auto = true;
+								}
+							}
+						}, true);
+
+						btn_change_mode.addEventListener('mouseup', function (e) {
+						/* On mouse up, we know it is no longer a longpress */
+							clearTimeout(delay);
+						});
+
+						btn_change_mode.addEventListener('mouseout', function (e) {
+							clearTimeout(delay);
+						});
+					}());
+				}
+			}
+		</script>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM6N2F"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		<FM5-site>
-			<section class="jumbotron jumbotron-fluid jumbotron-full-height jumbotron-video flex-center-vertical p-0 m-0">
-				<div class="video-overlay d-flex align-items-center">
-					<div class="col-md-8 offset-md-2 text-center">
-						<div>
-							<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">¡Bienvenido!</h1>
-						</div>
-						<p class="lead">Cargando el contenido del sitio...</p>
-					</div>
-				</div>
-			</section>
-		</FM5-site>
 	</body>
 </html>

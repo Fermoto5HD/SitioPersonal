@@ -1,0 +1,19 @@
+@media screen and (max-width: 992px) {
+	#navbar-site.navbar-nav {
+		position: fixed;
+		background-color: white;
+		top: 60px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 0%;
+		padding: 0px 20px;
+		text-align: center;
+		overflow: hidden;
+		transition: 0.5s;
+	}
+	#navbar-site.navbar-nav.navbar-toggled {
+		height: 100%;
+		padding: 10px 20px;
+	}
+}

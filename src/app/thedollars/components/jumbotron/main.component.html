@@ -1,0 +1,7 @@
+<div class="jumbotron py-4">
+	<div class="container-fluid">
+		<h1 *ngIf="data.user">{{data.user?.name?.first}} {{data.user?.name?.last}}</h1>
+		<p *ngIf="data.user">@{{data.user?.username}} <span *ngIf="data.user.type === 'dollars-leader'" class="badge badge-light">Admin</span></p>
+		<p *ngIf="!data.user">No hay datos del usuario.</p>
+	</div>
+</div>

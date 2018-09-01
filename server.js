@@ -2,79 +2,38 @@ const express =       require('express'),
       session =       require('express-session'),
       minify =        require('express-minify'),
       useragent =     require('express-useragent'),
-      MongoStore =    require('connect-mongo')(session),
+      /*MongoStore =    require('connect-mongo')(session),
       mongoose =      require('mongoose'),
-      passport =      require('passport'),
+      passport =      require('passport'),*/
       flash =         require('connect-flash'),
       cookieParser =  require('cookie-parser'),
       bodyParser =    require('body-parser'),
       Promise =       require("bluebird"),
       assert =        require('assert'),
-      port =          process.env.PORT || '3000';
-
-const path = require('path');
-const http = require('http');
-const compression = require('compression');
+      port =          process.env.PORT || '3000',
+      path =          require('path'),
+      http =          require('http'),
+      compression =   require('compression');
 
 let app = express();
 
-/*const mongoose = require('mongoose')*/
-//const LocalStrategy = require('passport-local').Strategy
-require('./server/models/db')
-//const configDB = require('./server/config/database.js');
-
-require('./server/config/passport')(passport)
-
-/*passport.use(new LocalStrategy(
-  function (username, password, done) {
-    Jojos.findOne({ username: username }, function (err, user) {
-      if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-  }
-));*/
+/*require('./server/models/db')
+require('./server/config/passport')(passport)*/
 
 // Get our API routes
-let config = require('./server/config');
+//let config = require('./server/config');
 
   /*secret: 'JosephxCaesarBestOTPEver!!1!',*/
 app.use(cookieParser());
-/*app.use(session({
-  secret: 'ShizuoLovesIzaya!!1!',
-  saveUninitialized: true,
-  resave: true,
-  cookie: {
-    secure: true,
-    maxAge: 300000
-  }
-}))*/
-if (process.env.NODE_ENV === 'production') {
-  //const mongoHost = process.env.MONGODB_1_PORT_27017_TCP_ADDR || '127.0.0.1'
-  //const mongoPort = process.env.MONGODB_1_PORT_27017_TCP_PORT || 27017
-  /*const mongoUser = process.env.MONGO_USR || 'root'
+/*if (process.env.NODE_ENV === 'production') {
+  const mongoUser = process.env.MONGO_USR || 'root'
   const mongoPass = process.env.MONGO_PWD || ''
   const mongoHost = process.env.MONGO_HOST || '127.0.0.1'
   const mongobase = process.env.MONGO_BASE
-  dbURI  = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:27017/${mongobase}`*/
-  dbURI = 'mongodb://localhost/FM5HD';
+  dbURI  = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:27017/${mongobase}`
 } else {
   dbURI = 'mongodb://localhost/FM5HD';
 }
-/*app.use(
-  session({
-    store: new SessionStore({
-    url: dbURI,
-    interval: 1200000
-  }),
-  cookie: { maxAge: 1200000 },
-  secret: 'ShizuoLovesIzaya!!1!'
-}))*/
 app.use(session({
     secret: 'ShizuoLovesIzaya!!1!',
     saveUninitialized: false, // don't create session until something stored
@@ -85,11 +44,11 @@ app.use(session({
         collection: 'walkers',
       }
     )
-}));
+}));*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(passport.initialize())
-app.use(passport.session())
+/*app.use(passport.initialize())
+app.use(passport.session())*/
 app.use(flash())
 
 // Point static path to dist
@@ -98,8 +57,11 @@ app.use(minify())
 app.use(useragent.express())
 
 // Set our api routes
-const api = require('./server/routes/api')(app, passport);
-app.use('/api', api);
+/*const api = require('./server/routes/api')(app, passport);
+const webhook = require('./server/routes/webhook')(app, passport);
+app
+  .use('/api', api)
+  .use('/webhook', webhook)*/
 
 // Catch all other routes and return the index file
 app.use(express.static('_dist', {index: false}))
@@ -113,6 +75,12 @@ app.get('*', (req, res) => {
   //  res.sendFile(path.join(__dirname, '/_dist/index.html'));
   //}
 });
+
+if (process.env.NODE_ENV === "production") {
+  console.log("PRODUCTION");
+} else {
+  console.log("Dev/Testing - You can break anything. :)");
+};
 
 // launch ======================================================================
 app.listen(port);

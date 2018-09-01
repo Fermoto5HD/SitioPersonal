@@ -1,9 +1,9 @@
-var passport = require('passport');
-var mongoose = require('mongoose');
-var slugify = require('slugify');
-var Blog = mongoose.model('Blog');
+const passport = require('passport');
+const mongoose = require('mongoose');
+const slugify = require('slugify');
+const Blog = mongoose.model('Blog');
 
-var sendJSONresponse = function(res, status, content) {
+let sendJSONresponse = function(res, status, content) {
   res.status(status);
   res.json(content);
 };
@@ -26,29 +26,28 @@ module.exports.add = function(req, res) {
 
 module.exports.remove = function(req, res, next) {
   passport.authenticate(req.params.provider)(req, res, next);
-  Blog.find({}, function(err, blog_posts) {
+  Blog.find({}, function(err, data) {
     if (err) throw err;
 
-    res.status(200).json(blog_posts);
+    res.status(200).json(data);
     return;
   });
 };
 
 module.exports.list = function (req, res, next) {
   //passport.authenticate(req.params.provider)(req, res, next);
-  Blog.find({}, '-_id', {sort: {date: -1}}, function(err, blog_posts) {
+  Blog.find({visible: true}, '-_id', {sort: {date: -1}}, function(err, data) {
     if (err) throw err;
 
-    res.status(200).json(blog_posts);
+    res.status(200).json(data);
     return;
   });
 };
 module.exports.fulllist = function (req, res, next) {
-  passport.authenticate(req.params.provider)(req, res, next);
-  Blog.find({}, function(err, blog_posts) {
+  Blog.find({}, '-_id', {sort: {date: -1}}, function(err, data) {
     if (err) throw err;
 
-    res.status(200).json(blog_posts);
+    res.status(200).json(data);
     return;
   });
 };
