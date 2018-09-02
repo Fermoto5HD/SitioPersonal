@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -12,101 +13,131 @@ import { Angulartics2GoogleTagManager } from 'angulartics2/gtm';
 
 import { AppComponent } from './main-component/main.component';
 import { FM5AboutComponent } from './fm5-about/fm5-about.component';
-import { FM5BlogComponent } from './fm5-blog/fm5-blog.component';
-import { FM5BlogPostComponent } from './fm5-blog-post/fm5-blog-post.component';
 import { FM5ContactComponent } from './fm5-contact/fm5-contact.component';
-import { FM5HomeComponent } from './fm5-home/fm5-home.component';
-import { FM5TraktComponent } from './fm5-trakt/fm5-trakt.component';
-import { FM5PortfolioComponent } from './fm5-portfolio/fm5-portfolio.component';
-import { FM5FerrocarrilesAbiertosComponent } from './fm5-ferrocarrilesabiertos/fa-main/fm5-ferrocarrilesabiertos.component';
-import { FAApiSofseComponent } from './fm5-ferrocarrilesabiertos/fa-api-sofse/fa-api-sofse.component';
+import { HomeComponent } from './components/home/landing.component';
 import { FM5UXComponent } from './fm5-ux/fm5-ux.component';
-import { FM5Infra1Tp1Component } from './fm5-infra1-tp1/fm5-infra1-tp1.component';
-import { FM5ProximotrenComponent } from './fm5-proximotren/fm5-proximotren.component';
-import { FM5LoginComponent } from './fm5-login/fm5-login.component';
-import { FM5Error404Component } from './fm5-error404/fm5-error404.component';
-import { FM5InstagramComponent } from './fm5-instagram/fm5-instagram.component';
-import { FM5FlickrComponent } from './fm5-flickr/fm5-flickr.component';
-import { FM5AllbrandnewComponent } from './fm5-allbrandnew/fm5-allbrandnew.component';
+import { Error404Component } from './components/error404/landing.component';
+import { AllbrandnewComponent } from './components/allbrandnew/landing.component';
 import { FM5WebsiteComponent } from './fm5-website/fm5-website.component';
-import { FM5YoutubeComponent } from './fm5-youtube/fm5-youtube.component';
 import { FM5LoadingComponent } from './fm5-loading/fm5-loading.component';
-import { FM5DollarsIkebukuroComponent } from './fm5-dollars-ikebukuro/fm5-dollars-ikebukuro.component';
-import { FM5GithubComponent } from './fm5-github/fm5-github.component';
-import { FM5DollarsBlogComponent } from './fm5-dollars-blog/fm5-dollars-blog.component';
-import { FM5NetworksComponent } from './fm5-networks/fm5-networks.component';
-import { FM5MALComponent } from './fm5-mal/fm5-mal.component';
 import { FM5OpenSourceComponent } from './fm5-opensource/fm5-opensource.component';
-import { FM5TwitterComponent } from './fm5-twitter/fm5-twitter.component';
+
+import { FM5BlogComponent } from './components/blog/list/fm5-blog.component';
+import { FM5BlogPostComponent } from './components/blog/post/fm5-blog-post.component';
+
+import { PortfolioFerrocarrilesAbiertosComponent } from './components/portfolio/ferrocarrilesabiertos/ferrocarrilesabiertos.component';
+import { PortfolioProximotrenComponent } from './components/portfolio/proximotren/proximotren.component';
+import { FM5Infra1Tp1Component } from './components/portfolio/infra1-tp1/infra1-tp1.component';
+
+import { FM5TraktComponent } from './components/networks/fm5-trakt/fm5-trakt.component';
+import { NetworkInstagramComponent } from './components/networks/instagram/instagram.component';
+import { NetworkFlickrComponent } from './components/networks/flickr/flickr.component';
+
+import { NetworkYouTubeLandingComponent } from './components/networks/youtube/landing/landing.component';
+
+import { NetworkFacebookLandingComponent } from './components/networks/facebook/landing/landing.component';
+
+import { FM5NetworksComponent } from './components/networks/fm5-networks/fm5-networks.component';
+import { FM5GithubComponent } from './components/networks/fm5-github/fm5-github.component';
+import { FM5MALComponent } from './components/networks/fm5-mal/fm5-mal.component';
+import { NetworkTwitterListComponent } from './components/networks/twitter/list/list.component';
+import { FM5TwitterComponent } from './components/networks/fm5-twitter/fm5-twitter.component';
+import { NetworkTwitterLandingComponent } from './components/networks/twitter/landing/landing.component';
+
+import { DollarsLoginComponent } from './thedollars/components/login/login.component';
+
+import { DollarsDashboardComponent }   from './thedollars/components/ikebukuro/main.component';
+import { DollarsLeaderComponent } from './thedollars/components/leader/main.component';
+import { DollarsBlogComponent } from './thedollars/components/blog/list/list.component';
+import { DollarsBlogEditComponent } from './thedollars/components/blog/edit/edit.component';
 
 // Directives
 import { AlertDirective } from './directives/alert.directive';
 
 // Components
-import { FM5JumbotronComponent } from './fm5-jumbotron/fm5-jumbotron.component';
+import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
 import { FM5RepositoriesComponent } from './fm5-repositories/fm5-repositories.component';
-import { FM5BlogPostDisqusComponent } from './fm5-blog-post-disqus/fm5-blog-post-disqus.component';
-import { FM5PortfolioGridComponent } from './fm5-portfolio-grid/fm5-portfolio-grid.component';
-import { FM5TweetsComponent } from './fm5-tweets/fm5-tweets.component';
-import { FM5IASComponent } from './fm5-ias/fm5-ias.component';
+import { FM5BlogPostDisqusComponent } from './components/blog/post-disqus/fm5-blog-post-disqus.component';
+
+import { PortfolioLandingComponent } from './components/portfolio/landing/landing.component';
+import { PortfolioItemComponent } from './components/portfolio/item/item.component';
+import { PortfolioItemsComponent } from './components/portfolio/items/items.component';
+
+import { IASComponent } from './components/ias/ias.component';
+
+import { Fm5IasImpressionComponent } from './fm5-ias-impression/fm5-ias-impression.component';
 
 // Guards
-import { LoginGuard } from './guards/login.guard';
-import { BlogGuard } from './guards/blog.guard';
+import { LoginGuard }         from './guards/login.guard';
+import { LoggedGuard }        from './guards/logged.guard';
+import { BlogGuard }          from './guards/blog.guard';
+import { WorkGuard }          from './guards/work.guard';
 
 // Services
-import { FM5IASService } from './services/fm5-ias.service';
-import { FM5BlogService } from './services/fm5-blog.service';
-import { FM5HamonService } from './services/fm5-hamon.service';
-import { FM5InstagramService } from './services/fm5-instagram.service';
-import { FM5FlickrService } from './services/fm5-flickr.service';
-import { FM5PortfolioService } from './services/fm5-portfolio.service';
-import { FM5YoutubeService } from './services/fm5-youtube.service';
+import { APIService }         from './services/api.service';
+import { NetworksService }    from './services/networks.service';
+import { DollarsService }     from './services/dollars.service';
+import { CeltyService }       from './services/celty.service';
 import { FM5TraktService } from './services/fm5-trakt.service';
 import { FM5MALService } from './services/fm5-mal.service';
 import { FM5NoEncontradoService } from './services/fm5-noencontrado.service';
 import { FM5GithubService } from './services/fm5-github.service';
-import { FM5TwitterService } from './services/fm5-twitter.service';
+
+import { DollarsPortfolioListComponent } from './thedollars/components/portfolio/list/list.component';
+import { DollarsInboxComponent } from './thedollars/components/inbox/inbox.component';
+import { DollarsJumbotronComponent } from './thedollars/components/jumbotron/main.component';
+
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FM5PortfolioComponent,
+    PortfolioLandingComponent,
+    PortfolioItemsComponent,
+    PortfolioItemComponent,
     FM5AboutComponent,
     FM5ContactComponent,
-    FM5HomeComponent,
+    HomeComponent,
     FM5BlogComponent,
     FM5TraktComponent,
     FM5MALComponent,
-    FM5FerrocarrilesAbiertosComponent,
+    PortfolioFerrocarrilesAbiertosComponent,
+    PortfolioProximotrenComponent,
     FM5UXComponent,
     FM5Infra1Tp1Component,
-    FM5ProximotrenComponent,
     FM5BlogPostComponent,
-    FM5LoginComponent,
-    FM5Error404Component,
-    FAApiSofseComponent,
-    FM5InstagramComponent,
-    FM5FlickrComponent,
-    FM5AllbrandnewComponent,
+    Error404Component,
+    NetworkInstagramComponent,
+    NetworkFlickrComponent,
+    AllbrandnewComponent,
     FM5WebsiteComponent,
-    FM5YoutubeComponent,
-    FM5PortfolioGridComponent,
+    NetworkYouTubeLandingComponent,
     FM5LoadingComponent,
     AlertDirective,
-    FM5DollarsIkebukuroComponent,
+    DollarsLoginComponent,
+    DollarsDashboardComponent,
+    DollarsJumbotronComponent,
+    DollarsLeaderComponent,
+    DollarsBlogComponent,
+    DollarsBlogEditComponent,
+    DollarsPortfolioListComponent,
+    DollarsInboxComponent,
     FM5RepositoriesComponent,
     FM5GithubComponent,
     FM5BlogPostDisqusComponent,
-    FM5DollarsBlogComponent,
     FM5NetworksComponent,
     FM5OpenSourceComponent,
     FM5TwitterComponent,
-    FM5TweetsComponent,
-    FM5JumbotronComponent,
-    FM5IASComponent
+    NetworkTwitterListComponent,
+    JumbotronComponent,
+    IASComponent,
+    Fm5IasImpressionComponent,
+    AboutComponent,
+    NetworkTwitterLandingComponent,
+    NetworkFacebookLandingComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule.withServerTransition({appId: 'fm5hd-site'}),
     FormsModule,
     ReactiveFormsModule,
@@ -118,20 +149,18 @@ import { FM5TwitterService } from './services/fm5-twitter.service';
     Angulartics2Module.forRoot([Angulartics2GoogleTagManager]),
   ],
   providers: [
-    FM5IASService,
-    FM5BlogService, 
-    FM5HamonService, 
-    FM5InstagramService, 
-    FM5FlickrService, 
-    FM5PortfolioService, 
+    APIService,
     FM5TraktService,
     FM5MALService,
-    FM5YoutubeService, 
     FM5NoEncontradoService,
     FM5GithubService,
-    FM5TwitterService,
+    NetworksService,
+    DollarsService,
+    CeltyService,
     LoginGuard,
-    BlogGuard
+    LoggedGuard,
+    BlogGuard,
+    WorkGuard
   ],
   bootstrap: [AppComponent]
 })

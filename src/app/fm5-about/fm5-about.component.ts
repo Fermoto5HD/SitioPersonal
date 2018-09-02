@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from "@angular/platform-browser";
+import { APIService } from './../services/api.service';
 import * as moment from 'moment';
 
 @Component({
@@ -10,6 +11,7 @@ import * as moment from 'moment';
 export class FM5AboutComponent implements OnInit {
 
 	constructor(
+		private APIService: APIService,
 		meta: Meta, 
 		title: Title
 	) {
@@ -22,8 +24,16 @@ export class FM5AboutComponent implements OnInit {
 	}
 
 	age = 0;
+	about: any = null;
 
 	ngOnInit() {
+		this.APIService.variables("about").subscribe(
+			last => {
+				this.about = last;
+			},
+			err => {
+				console.log('Home: Not available.');
+			});
 		const birth = moment("1994-11-05");
 		const todaysdate = moment();
 		this.age = todaysdate.diff(birth, 'years');

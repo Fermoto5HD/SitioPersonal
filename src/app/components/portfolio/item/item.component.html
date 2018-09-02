@@ -1,0 +1,62 @@
+<FM5-jumbotron *ngIf="item" 
+	align="center"
+	column_container="col-md-8 offset-md-2"
+	maintitle="{{item.name}}"
+	lead="Renovación integral de la página por mudanza."
+	image="https://fermoto5hd.com/static/portfolio/FM5HD-v6.0.png"
+
+	breadcrumb_top="true"
+	breadcrumb_top_2="Portfolio" breadcrumb_top_2_url="/portfolio"
+	breadcrumb_top_1="{{item.category.name}}" breadcrumb_top_1_url="/portfolio/{{item.category.slug}}"
+	breadcrumb_top_active="{{item.name}}"
+>
+</FM5-jumbotron>
+
+<div *ngIf="item.blocks.length > 0">
+	<section *ngFor="let block of item.blocks" class="{{block.class}}">
+		<h3 *ngIf="block.title">{{block.title}}</h3>
+		<p *ngIf="block.description">{{block.description}}</p>
+		<div class="{{block.container}}">
+			<div class="row">
+				<div *ngFor="let content of block.content" class="{{block.columns}}" [innerHTML]="content"></div>
+			</div>
+		</div>
+	</section>	
+</div>
+<section class="bg-dark py-5 text-center" *ngIf="item.images.length > 0">
+	<div class="container-fluid">
+		<h3 style="color: white">Imagenes del proyecto</h3>
+		<p>Muchas de las veces fueron en cafés.</p>
+		<div class="row">
+			<div class="col-md-4" *ngFor="let img of item.images;">
+				<img class="img-responsive img-thumbnail mb-3" src="{{img}}">
+			</div>
+		</div>
+	</div>
+</section>
+<section class="bg-dark py-5 text-center">
+	<div class="container-fluid">
+		<h3>¿Te gustó? Quizás también te pueda interesar:</h3>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<h3>Ferrocarriles Abiertos v3.0</h3>
+						<p>Renovación del proyecto de open data ferroviario.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<h3>Sitio Personal v6.0</h3>
+						<p>Renovación de mi portfolio personal.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<h3>¿Querés un sitio similar a este?</h3>
+		<a routerLink="/contact" class="btn btn-outline-light btn-lg btn-block">Podés contactarme</a>
+	</div>
+</section>

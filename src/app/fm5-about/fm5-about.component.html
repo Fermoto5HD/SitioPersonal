@@ -3,7 +3,7 @@
 	align="left"
 	column_container="col-md-8"
 
-	title="¡Conoceme mejor!"
+	maintitle="¡Conoceme mejor!"
 	lead="Me llamo Fernando Javier Osorio Lorenzo, aunque me llaman Fer, tengo {{age}} años, y soy un programador frontend, aunque de a momentos puedo ser backend."
 	description="Además de esa mini introducción vas a poder conocerme no sólo en cuanto a lo técnico, también en cuanto a experiencia y personalidad del día a día."
 	description_2="Entre otros datos de color como mis predilectos gustos en la animación experimental y el animé, junto con mis preferencias musicales al momento de programar o transitar la ciudad."
@@ -15,10 +15,13 @@
 	<div class="container-fluid">
 		<div class="row container-with-ia">
 			<div class="main-container py-1">
-				<h2>¡Acá hay una foto de mí!</h2>
-				<p class="lead">Upd: Noviembre 2017</p>
-				<img class="img-fluid img-thumbnail" src="assets/img/profile/2017-11.jpg">
-				<hr>
+				<div *ngIf="about?.profile_pic">
+					<h2>¡Acá hay una foto de mí!</h2>
+					<p class="lead">{{about?.profile_pic[0]?.caption}}</p>
+					<p><i class="far fa-map-marker-alt"></i> {{about?.profile_pic[0]?.location}}</p>
+					<img class="img-fluid img-thumbnail" src="{{about?.profile_pic[0]?.url}}">
+					<hr>
+				</div>
 				<br>
 				<h2>¿Por qué soy programador y cómo terminé siéndolo?</h2>
 				<p>Fácil, desde chico vengo acompañado de una computadora, y siempre me intrigó querer cambiar cosas del sistema. De ahí viene el origen de todo.</p>
@@ -28,7 +31,7 @@
 				<hr>
 				<h2>Experiencia en el área</h2>
 				<p>Recién estoy haciendo el camino profesional. </p>
-				<p>Estoy profundamente agradecido con Esto Es, una agencia de publicidad y software factory que presenta innovación y soluciones de llave en mano, quienes confiaron y siguen confiando en mí para producir productos de alta calidad a los clientes finales. Gracias a éllos estoy logrando adquirir herramientas de muy buen nivel para producir y crear mejores trabajos tanto en la empresa como en los proyectos propios.</p>
+				<p>Estoy profundamente agradecido con "Esto es", una agencia de publicidad y software factory que presenta innovación y soluciones de llave en mano, quienes confiaron y siguen confiando en mí para producir productos de alta calidad a los clientes finales. Gracias a éllos estoy logrando adquirir herramientas de muy buen nivel para producir y crear mejores trabajos tanto en la empresa como en los proyectos propios.</p>
 				<hr>
 				<h2>Proyección a futuro</h2>
 				<p>A futuro quiero establecerme como un desarrollador full-stack, manejando proyectos más complejos de la mano de stacks MEAN para escalarlos fácilmente.</p>

@@ -6,6 +6,27 @@ al mismo tiempo, adherido a [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [6.3.0] - 2018-03-20
+### Modificado
+- Separación de API - El repositorio sólo contendrá la página en forma estática mientras que la API quedará en un repositorio privado (por obvias razones).
+- Cover landing de mayo.
+
+### Nuevo
+- Portfolio: Separación por categorías.
+- Portfolio: Página simple para cada trabajo realizado.
+- DollarsCP: Más funcionalidades agregadas - Aún queda más por agregar.
+
+## [6.2.0] - 2018-03-20
+### Modificado
+- FM5UX v3.1
+- Home: Cover y disposición de redes.
+- Modificaciones en IAS.
+- Eliminación de métodos inutilizados.
+
+### Nuevo
+- Integración de backend con PassportJS.
+- Contacto sin mailing (To-do: Configurar Docker para el envío de mailing).
+
 ## [6.1.1] - 2017-12-23
 ### Modificado
 - Corrección de link de changelog.
@@ -30,6 +51,8 @@ al mismo tiempo, adherido a [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Todo el sitio - First commit!
 - Archivo CHANGELOG.md (este).
 
-[Unreleased]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.1.1...HEAD
+[Unreleased]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.3.0...HEAD
+[6.2.0]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.2.0...v6.3.0
+[6.1.1]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.1.1...v6.2.0
 [6.1.1]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.1.0...v6.1.1
 [6.1.0]: https://github.com/Fermoto5HD/sitiopersonal/compare/v6.0.0...v6.1.0

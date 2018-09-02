@@ -2,6 +2,7 @@ var mongoose =      require('mongoose');
 let assert =        require('assert');
 var gracefulShutdown;
 let dbURI;
+let mongo_db;
 if (process.env.NODE_ENV === 'production') {
   //const mongoHost = process.env.MONGODB_1_PORT_27017_TCP_ADDR || '127.0.0.1'
   //const mongoPort = process.env.MONGODB_1_PORT_27017_TCP_PORT || 27017
@@ -9,26 +10,15 @@ if (process.env.NODE_ENV === 'production') {
   const mongoPass = process.env.MONGO_PWD || ''
   const mongoHost = process.env.MONGO_HOST || '127.0.0.1'
   const mongobase = process.env.MONGO_BASE
-  dbURI  = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:27017/${mongobase}`
+  dbURI = `mongodb://${mongoUser}:${mongoPass}@${mongoHost}:27017/${mongobase}`;
 } else {
-  dbURI = 'mongodb://localhost/FM5HD';
+  dbURI = "mongodb://localhost/FM5HD";
 }
 
-var promise = mongoose.connect(dbURI, {
-  useMongoClient: true,
-  /* other options */
-});
-// Or `createConnection`
-var promise = mongoose.createConnection(dbURI, {
-  useMongoClient: true,
-  /* other options */
-});
+  mongo_db = mongoose.connect(dbURI, {
+    autoReconnect: true
+  });
 
-// BRING IN YOUR SCHEMAS & MODELS
-promise.then(function(db) {
-  /* Use `db`, for instance `db.model()`*/
-  console.log("yes");
-});
 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
@@ -70,6 +60,8 @@ process.on('SIGTERM', function() {
 
 
 require('./ads');
-require('./jojos');
+require('./thedollars');
 require('./portfolio');
 require('./blog');
+require('./contact');
+require('./notifications');

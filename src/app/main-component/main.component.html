@@ -3,7 +3,10 @@
 		<a class="navbar-brand" routerLink="" (click)="navbarCollapsed = true">
 			<img src="assets/img/brand.svg" alt="Fermoto5HD" height="25">
 		</a>
-		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-site" aria-controls="navbar-site" aria-expanded="false" aria-label="Alternar navegación">
+
+		<button class="navbar-toggler" [ngClass]="{'collapsed': navbarCollapsed}" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+            [attr.aria-expanded]="!navbarCollapsed" aria-expanded="false" aria-label="Alternar navegación">
+		<!--button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-site" aria-controls="navbar-site" aria-expanded="false" aria-label="Alternar navegación"-->
 		<!--button class="navbar-toggler collapsed" type="button" (click)="navbarCollapsed = !navbarCollapsed"
             [attr.aria-expanded]="!navbarCollapsed" data-toggle="collapse" data-target="#navbar-site" aria-controls="navbar-site" aria-expanded="false" aria-label="Alternar navegación"-->
 			<span></span>
@@ -12,96 +15,126 @@
 			<span></span>
 		</button>
 
-		<div class="navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbar-site">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="">Inicio <span class="sr-only">(ahora)</span></a>
+		<ul class="navbar-nav ml-auto" [ngClass]="{'navbar-toggled': !navbarCollapsed}" id="navbar-site">
+			<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="">Inicio <span class="sr-only">(ahora)</span></a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="about">Acerca de</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="portfolio">Portfolio</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="blog">Blog</a>
+			</li>
+			<!--li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="contact">Contacto</a>
+			</li-->
+			<!--div *ngIf="has_session">
+				<li class="nav-item">
+					<a class="nav-link" (click)="ikebukuro('seeya')">Cerrar sesión</a>
 				</li>
-				<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="about">Acerca de</a>
-				</li>
-				<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="portfolio">Portfolio</a>
-				</li>
-				<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="blog">Blog</a>
-				</li>
-				<li class="d-none d-xl-inline-block nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="youtube">YouTube</a>
-				</li>
-				<li class="d-none d-xl-inline-block nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="instagram">Instagram</a>
-				</li>
-				<li class="d-none d-xl-inline-block nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="flickr">Flickr</a>
-				</li>
-				<!--li class="d-none d-xl-inline-block nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-					<a class="nav-link" routerLink="contact">Contacto</a>
-				</li-->
-				<li class="d-xl-none nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="/networks" id="navbar-dropdown-network" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						Redes sociales<!-- y contacto-->
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbar-dropdown-network">
-						<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="youtube">YouTube</a>
-						<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="instagram">Instagram</a>
-						<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="flickr">Flickr</a>
-						<!--a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="trakt">Trakt</a>
-						<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="contact">Contacto</a-->
-					</div>
-				</li>
-			</ul>
-		</div>
+			</div-->
+			<li class="nav-item">
+				<a class="nav-link" href="https://fb.me/FM5HD" target="blank" rel="noopener nofollow">
+					<span class="d-none d-lg-inline-block"><i class="fab fa-facebook"></i></span>
+					<span class="d-lg-none">Facebook</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="youtube">
+					<span class="d-none d-lg-inline-block"><i class="fab fa-youtube"></i></span>
+					<span class="d-lg-none">YouTube</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="instagram">
+					<span class="d-none d-lg-inline-block"><i class="fab fa-instagram"></i></span>
+					<span class="d-lg-none">Instagram</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+				<a class="nav-link" routerLink="flickr">
+					<span class="d-none d-lg-inline-block"><i class="fab fa-flickr"></i></span>
+					<span class="d-lg-none">Flickr</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="http://linkedin.com/in/fermoto5hd" target="_blank" rel="noopener nofollow">
+					<span class="d-none d-lg-inline-block"><i class="fab fa-linkedin"></i></span>
+					<span class="d-lg-none">LinkedIn</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="btn-change-mode" onClick="change_mode();" title="Mantenelo presionado para dejarlo en automático.">
+					<span><i id="icon-mode" class="far fa-moon"></i></span>
+					<span class="d-lg-none">Modo nocturno</span>
+				</a>
+			</li>
+			<!--li class="d-xl-none nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="/networks" id="navbar-dropdown-network" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					Redes sociales y contacto
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbar-dropdown-network">
+					<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="youtube">YouTube</a>
+					<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="instagram">Instagram</a>
+					<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="flickr">Flickr</a>
+					<a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="contact">Contacto</a>
+				</div>
+			</li-->
+		</ul>
 	</nav>
 </header>
-<main>
+<main class="navbar-is-fixed">
 	<div class="loading-overlay" #spinnerElement style="opacity: 0; display: none;">
 		<!-- md-spinner is short for <md-progress-circle mode="indeterminate"></md-progress-circle> -->
 		<FM5-loading></FM5-loading>
 	</div>
 	<router-outlet></router-outlet>
 </main>
-<footer>
+<footer style="margin-top: 0px;">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4">
 				<h3>El sitio utiliza:</h3>
 				<ul>
-					<li class="d-inline-block">
+					<li class="d-inline-block" title="Con estilo de FM5UX">
 						<a routerLink="FM5UX">
 							<img src="assets/img/fm5ux.svg" width="28" height="28" style="color: white;vertical-align: initial;">
 						</a>
 					</li>
-					<li class="d-inline-block"><i class="fab fa-font-awesome-alt fa-2x"></i></li>
-					<li class="d-inline-block"><i class="fab fa-angular fa-2x"></i></li>
-					<li class="d-inline-block"><i class="fab fa-node-js fa-2x"></i></li>
+					<li class="d-inline-block" title="Decorado con iconos de FontAwesome"><i class="fab fa-font-awesome-alt fa-2x"></i></li>
+					<li class="d-inline-block" title="Funcionando con Angular"><i class="fab fa-angular fa-2x"></i></li>
+					<li class="d-inline-block" title="Potenciado con NodeJS"><i class="fab fa-node-js fa-2x"></i></li>
+					<li class="d-inline-block" title="Flotando sobre DigitalOcean"><i class="fab fa-digital-ocean fa-2x"></i></li>
 				</ul>
 			</div>
 			<div class="col-md-4">
 				<h3>Redes sociales:</h3>
 				<ul>
 					<li class="d-inline-block">
-						<a href="http://facebook.com/Fermoto5HD" target="blank">
+						<a href="https://fb.me/FM5HD" target="blank" rel="noopener nofollow">
 							<i class="fab fa-facebook fa-2x"></i>
 						</a>
 					</li>
 					<li class="d-inline-block">
-						<a href="http://twitter.com/Fermoto5HD" target="blank">
+						<a href="http://twitter.com/Fermoto5HD" target="blank" rel="noopener nofollow">
 							<i class="fab fa-twitter-square fa-2x"></i>
 						</a>
 					</li>
 					<li class="d-inline-block">
-						<a href="https://plus.google.com/+Fermoto5HD/" target="blank">
+						<a href="https://plus.google.com/+Fermoto5HD/" target="blank" rel="noopener nofollow">
 							<i class="fab fa-google-plus fa-2x"></i>
 						</a>
 					</li>
 					<li class="d-inline-block">
-						<a href="http://linkedin.com/in/fermoto5hd" target="blank">
+						<a href="http://linkedin.com/in/fermoto5hd" target="blank" rel="noopener nofollow">
 							<i class="fab fa-linkedin fa-2x"></i>
 						</a>
 					</li>
 					<li class="d-inline-block">
-						<a href="http://github.com/Fermoto5HD" target="blank">
+						<a href="http://github.com/Fermoto5HD" target="blank" rel="noopener nofollow">
 							<i class="fab fa-github fa-2x"></i>
 						</a>
 					</li>

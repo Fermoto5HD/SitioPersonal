@@ -1,0 +1,133 @@
+<section *ngIf="items" class="jumbotron-container jumbotron-full-height jumbotron-video jumbotron-has-breadcrumb" [style.backgroundImage]="'url('+ items[0]?.snippet.thumbnails.maxres.url +')'">
+	<div class="jumbotron video-overlay jumbotron-fluid d-flex flex-center-vertical">
+		<div class="d-flex align-items-center">
+			<div class="col-md-8">
+				<div>
+					<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">{{section.cover_title}}</h1>
+				</div>
+				<p class="lead">{{section.lead}}</p>
+				<p>{{section.description}}</p>
+				<a href="https://youtube.com/Fermoto5HD" target="_blank" class="btn btn-outline-light">Ir a la cuenta</a>
+				<a *ngIf="items[0]" href="https://youtu.be/{{items[0]?.snippet.resourceId.videoId}}" target="_blank" class="btn btn-outline-light">
+					Ver el video
+				</a>
+			</div>
+		</div>
+	</div>
+	<div *ngIf="items.length > 0" class="breadcrumb-container bottom">
+		<div class="container-fluid">
+			<div class="breadcrumb row px-0 my-0">
+				<div class="col-md-12">
+					<div class="white-block">
+						<i class="fab fa-youtube"></i> {{items[0]?.snippet.title}}
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="container-fluid">
+		<h2 class="text-center">El canal en números</h2>
+		<div class="row shortcuts pb-2">
+			<span class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-dark my-0">
+						<p style="font-size: 22px;">Desde</p>
+						<p style="font-size: 40px;">2010</p>
+					</span>
+				</div>
+			</span>
+			<span class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-dark my-0">
+						<p style="font-size: 22px; padding-top: 34px;">{{stats.viewCount}}</p>
+						<p style="font-size: 12px; padding-top: 5px;">reproducciones</p>
+					</span>
+				</div>
+			</span>
+			<span class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-dark my-0">
+						<p>{{stats.subscriberCount}}</p>
+						<p style="font-size: 12px;">subscripciones</p>
+					</span>
+				</div>
+			</span>
+			<span class="col-md-3">
+				<div class="shortcut">
+					<span class="circle bg-dark my-0">
+						<p>{{stats.videoCount}}</p>
+						<p style="font-size: 12px;">videos</p>
+					</span>
+				</div>
+			</span>
+		</div>
+	</div>
+</section>
+
+<div class="container-fluid">
+	<ul class="nav nav-pills nav-fill">
+		<li class="nav-item">
+			<a class="nav-link active" (click)="showVideoList()">Últimos videos</a>
+		</li>
+		<li class="nav-item" *ngFor="let playlist of variables.playlists;" [ngClass]="{dropdown: playlist.items}">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">{{playlist.name}}</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" *ngFor="let subplaylist of playlist.items;" (click)="showVideoList(playlist.slug, subplaylist.slug)">{{subplaylist.name}}</a>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<section *ngIf="items">
+	<div class="container-fluid">
+		<div class="row" *ngIf="items.length > 0">
+			<div class="col-md-4 py-2" *ngFor="let item of items;">
+				<div class="card">
+					<a href="https://youtu.be/{{item?.snippet?.resourceId?.videoId}}" target="_blank">
+						<img class="card-img-top" *ngIf="!item?.snippet?.thumbnails?.maxres" src="{{item?.snippet?.thumbnails?.high?.url}}" alt="{{item?.snippet?.title}}" />
+						<img class="card-img-top" *ngIf="item?.snippet?.thumbnails?.maxres" src="{{item?.snippet?.thumbnails?.maxres?.url}}" alt="{{item?.snippet?.title}}" />
+					</a>
+					<div class="card-body">
+						<p class="card-text">{{item?.snippet.title}}</p>
+						<div class="btn-group">
+							<a href="https://youtu.be/{{item?.snippet?.resourceId?.videoId}}" target="_blank" class="btn btn-outline-dark">Ver video</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" *ngIf="items.length < 1">
+			<div class="col-md-4 py-2" *ngFor="let number of [0,1,2,3,4,5]">
+				<div class="card">
+					<img class="card-img-top" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAMAAAD4oy1kAAAAA1BMVEXd3d3u346CAAADlElEQVR4Xu3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/BsTogABmNcUtwAAAABJRU5ErkJggg==" />
+					<div class="card-body">
+						<div class="card-text">
+							<div class="placeholder-block" style="height: 30px; width: 60%;"></div>
+							<div class="placeholder-block" style="height: 30px; width: 40%; margin-bottom: 1rem;"></div>
+						</div>
+						<div class="placeholder-block" style="height: 38px; width: 100px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="py-4">
+	<div class="container-fluid">
+		<h2>Producción del material</h2>
+		<p>El material cargado siempre tendrá la mejor calidad posible de producción.</p>
+		<p>Actualmente el material se está cargando en 1080@60p, dando más detalle y definición a cada video cargado.</p>
+		<p>Se evita el uso del zoom digital ya que se desperdicia imagen. En caso de tener disponible un zoom optico se utilizará este recurso.</p>
+		<hr>
+		<h2>Contenido</h2>
+		<p>Las filmaciones son más que nada en las inmediaciones de los ferrocarriles metropolitanos y subterráneos de la ciudad.</p>
+		<p>Priorizo la grabación del material rodante eléctrico aunque no descarto la grabación del material tractivo diésel y el material remolcado.</p>
+		<p>Intento grabar material de todas las líneas del área, en especial los viajes por dentro ya que no hay demasiado material de éllo en YouTube.</p>
+		<hr>
+		<h2>Creative Commons</h2>
+		<p>Desde el año 2014 decidí establecer a cada video cargado a la cuenta el licenciamiento Creative Commons, permitiendo la reutilización de mi material para cualquier necesidad.</p>
+	</div>
+</section>

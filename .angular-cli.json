@@ -9,6 +9,7 @@
       "outDir": "_dist",
       "assets": [
         "assets",
+        "static",
         "favicon.png",
         "service-worker.js"
       ],
@@ -20,7 +21,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/css/FM5strap.min.css",
+        "assets/css/fm5ux.css",
         "assets/css/FM5HD-website.css",
         "assets/css/fontawesome-all.min.css"
       ],

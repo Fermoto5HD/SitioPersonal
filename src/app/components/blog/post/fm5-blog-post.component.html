@@ -1,0 +1,37 @@
+<section class="pt-5">
+	<article class="py-4">
+		<div class="container-fluid">
+			<div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+				<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">{{post.title}}</h1>
+				<p class="lead">{{post.excerpt}}</p>
+				<small>Publicado el {{post_date}}</small>
+				<hr>
+				<div [innerHTML]="post_content"></div>
+			</div>
+		</div>
+	</article>
+</section>
+<section class="py-4">
+	<div class="container-fluid">
+		<div class="col-md-6 offset-md-3 text-center">
+			<h3>¿Te gustó lo que redacté?</h3>
+			<p>¡Podés votar y/o dejarme un comentario!</p>
+			<!--div class="alert alert-info">
+				<p class="m-0">Pronto también podrás votar!</p>
+			</div-->
+			<div class="alert alert-success" [hidden]="!vote_result">
+				<p class="m-0">¡Gracias por votar!</p>
+			</div>
+			<div class="btn-group mb-3">
+				<button class="btn btn-outline-secondary" [attr.disabled]="vote_not_available ? '' : null" [ngClass]="{'disabled': vote_not_available}" (click)="onVote('Y')">¡Si!</button>
+				<button class="btn btn-outline-secondary" [attr.disabled]="vote_not_available ? '' : null" [ngClass]="{'disabled': vote_not_available}" (click)="onVote('K')">Emm... maso</button>
+				<button class="btn btn-outline-secondary" [attr.disabled]="vote_not_available ? '' : null" [ngClass]="{'disabled': vote_not_available}" (click)="onVote('N')">Nah...</button>
+			</div>
+			<fm5-blog-post-disqus slug="{{post.slug}}" title="{{post.title}}">
+				<div class="disqus-loader">
+					<p>Cargando...</p>
+				</div>
+			</fm5-blog-post-disqus>
+		</div>
+	</div>
+</section>

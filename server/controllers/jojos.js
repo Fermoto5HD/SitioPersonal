@@ -1,77 +1,64 @@
-const passport = require('passport');
-const mongoose = require('mongoose');
-const Jojo = mongoose.model('Jojos');
+const passport = require('passport'),
+      mongoose = require('mongoose'),
+      dollarMember = mongoose.model('thedollars')
 
-var sendJSONresponse = function(res, status, content) {
-  res.status(status);
-  res.json(content);
-};
+module.exports = {
+  newmember: function(req, res) {
+    // No.
+    res.status(401).json({message: "Not authorized."})
+    return
+    // if(!req.body.name || !req.body.email || !req.body.password) {
+    //   res.status(400).json({message: "All fields required."})
+    //   return;
+    // }
 
-module.exports.newjojo = function(req, res) {
+    let dollar = new dollarMember();
 
-  // if(!req.body.name || !req.body.email || !req.body.password) {
-  //   sendJSONresponse(res, 400, {
-  //     "message": "All fields required"
-  //   });
-  //   return;
-  // }
+    dollar.name = req.body.name;
+    dollar.email = req.body.email;
 
-  var jojo = new Jojo();
+    dollar.setPassword(req.body.password);
 
-  jojo.name = req.body.name;
-  jojo.email = req.body.email;
-
-  jojo.setPassword(req.body.password);
-
-  jojo.save(function(err) {
-    var token;
-    token = jojo.generateJwt();
-    res.status(200);
-    res.json({
-      "token" : token
+    dollar.save(function(err) {
+      let token
+      token = dollar.generateJwt()
+      res.status(200).json({token : token})
     });
-  });
+  },
 
-};
+  whoareyou: function(req, res) {
 
-module.exports.whoareyou = function(req, res) {
-
-  // if(!req.body.email || !req.body.password) {
-  //   sendJSONresponse(res, 400, {
-  //     "message": "All fields required"
-  //   });
-  //   return;
-  // }
-
-  passport.authenticate('local', function(err, jojo, info){
-    var token;
-
-    // If Passport throws/catches an error
-    if (err) {
-      res.status(404).json(err);
-      return;
+    if (!req.body.email || !req.body.password) {
+      res.status(400).json({message: "All fields required."})
+      return
     }
 
-    // If a jojo is found
-    if(jojo){
-      token = jojo.generateJwt();
-      res.status(200);
-      res.json({
-        "token" : token
-      });
-    } else {
-      // If jojo is not found
-      res.status(401).json(info);
-    }
-  })(req, res);
+    passport.authenticate('local', function(err, dollar_member, info){
+      let token
 
-};
+      // If Passport throws/catches an error
+      if (err) {
+        res.status(404).json(err)
+        return
+      }
 
-module.exports.list = function(req, res) {
-    Jojo.find({}, '-_id', {sort: {date_from: -1}}, function(err, stand_users) {
+      // If a dollar member is found
+      if (dollar_member) {
+        token = dollar_member.generateJwt()
+        res.status(200).json({token : token})
+      } else {
+        // If dollar member is not found
+        res.status(401).json(info)
+      }
+    })(req, res);
+  },
+
+  list: function(req, res) {
+    dollarMember.find({}, '-_id', {sort: {date_from: -1}}, function(err, result) {
       if (err) throw err;
 
-      res.status(200).json(stand_users);
+      res.status(200).json(result);
       return;
     });
   }
+}

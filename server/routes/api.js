@@ -1,207 +1,177 @@
-const express = require('express');
-const router = express.Router();
-const bodyParser = require('body-parser'); 
-const passport = require('passport');
+const 	fs =          require('fs'),
+		express =     require('express'),
+		router =      express.Router(), 
+		bodyParser =  require('body-parser'),
+		passport =    require('passport'),
+		ctrl = {
+			ads: require('../controllers/ads'),
+			contact: require('../controllers/contact'),
+			thedollars: require('../controllers/thedollars'),
+			portfolio: require('../controllers/portfolio'),
+			blog: require('../controllers/blog'),
+			youtube: require('../controllers/youtube'),
+			facebook: require('../controllers/facebook'),
+			instagram: require('../controllers/instagram'),
+			twitter: require('../controllers/twitter'),
+			flickr: require('../controllers/flickr'),
+			trakt: require('../controllers/trakt'),
+			mal: require('../controllers/mal'),
+			github: require('../controllers/github'),
+			celty: require('../controllers/celty'),
+			noencontrado: require('../controllers/noencontrado'),
+			notifications: require('../controllers/notifications')
+		};
 
-var ctrlAds = require('../controllers/ads'), 
-    ctrlJojos = require('../controllers/jojos'), 
-    ctrlPortfolio = require('../controllers/portfolio'),
-    ctrlBlog = require('../controllers/blog'),
-    ctrlCaesarino = require('../controllers/caesarino'),
-    ctrlYouTube = require('../controllers/youtube'),
-    ctrlTrakt = require('../controllers/trakt'),
-    ctrlMAL = require('../controllers/mal'),
-    ctrlGithub = require('../controllers/github'),
-    ctrlInstagram = require('../controllers/instagram'),
-    ctrlFacebook = require('../controllers/facebook'),
-    ctrlTwitter = require('../controllers/twitter'),
-    ctrlFlickr = require('../controllers/flickr'),
-    ctrlNoEncontrado = require('../controllers/noencontrado'),
-    ctrlHamonSender = require('../controllers/hamonsender');
+let secret = {};
 
-var authenticationMiddleware = require('../controllers/jojo_middleware');
+/*fs.readFile('secrets.json', function processClientSecrets(err, content) {
+	if (err) {
+		console.log('Failed to load secret keys: ' + err);
+		return;
+	}
+	secret = JSON.parse(content);
+	console.log(secret);
+});*/
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/FM5HD');
 
 module.exports = function (app, passport) {
-  // Parsers for POST data
-  router.use(bodyParser.json());
-  router.use(bodyParser.urlencoded({ extended: false }));
-  router.use(function(req, res, next) {
-      // do logging
-      console.log('Something is happening.');
-      next(); // make sure we go to the next routes and don't stop here
-  });
+	// Parsers for POST data
+	router
+		.use(bodyParser.json())
+		.use(bodyParser.urlencoded({ extended: false }))
+		.use(function(req, res, next) {
+			// do logging
+			console.log('Accessing to API.');
+			next(); // make sure we go to the next routes and don't stop here
+		});
 
-  /*passport.use(new LocalStrategy({
-      usernameField: 'email',
-      passwordField: 'passcode'
-    },
-    function(username, password, done) {
-      // ...
-    }
-  ));*/
+	/*passport.use(new LocalStrategy({
+			usernameField: 'email',
+			passwordField: 'passcode'
+		},
+		function(username, password, done) {
+			// ...
+		}
+	));*/
 
-  /* GET api listing. */
-  /*router.get('/', (req, res) => {
-    res.send('rajá');
-  });*/
+	/* GET api listing. */
+	/*router.get('/', (req, res) => {
+		res.send('rajá');
+	});*/
 
-  // Retrieve my Jojos 4 Caesar-senpai~ ^-^
-  router
-    .get('/ias', ctrlAds.get)
-    //s.post('/jojos', ctrlJojos.newjojo)
-    //.get('/jojos', ctrlJojos.whoareyou)
-    .get('/jojos', ctrlJojos.list)
+	// Retrieve my Jojos 4 Caesar-senpai~ ^-^
+	router
+		.post('/thedollars/notifications', ctrl.notifications.subscribe)
 
-  // Show them muh portfolio.
-    //.post('/portfolio', ctrlPortfolio.add)
-    .get('/portfolio', ctrlPortfolio.list)
-    //.delete('/portfolio/:id', ctrlPortfolio.remove)
+		.get('/ias', ctrl.ads.get)
 
-  // Show them muh blog.
-    .post('/blog', ctrlBlog.add)
-    //.get('/blog', passport.authenticate('local'), ctrlBlog.list)
-    .get('/blog', ctrlBlog.list)
-    .get('/blog/:slug', ctrlBlog.getpost)
-    .get('/blog/:slug/voting/:vote', ctrlBlog.votepost)
-    .delete('/blog/:slug', ctrlBlog.remove)
-    .get('/ikebukuro/blog', ctrlBlog.fulllist)
-    //.delete ('/blog/:slug', passport.authenticationMiddleware(), ctrlBlog.remove);
+		.get('/thedollars/members', ctrl.thedollars.isidentified, ctrl.thedollars.list)
 
-  // YouTube
-    .get('/youtube', ctrlYouTube.last10)
-    .get('/youtube/latest', ctrlYouTube.latest)
-    .get('/youtube/stats', ctrlYouTube.stats)
-    .get('/youtube/details', ctrlYouTube.details)
+		.get('/thedollars/count', ctrl.thedollars.isidentified, ctrl.thedollars.count)
 
-  // Give my Trakt list
-    .get('/trakt', ctrlTrakt.list)
-    .get('/trakt/last', ctrlTrakt.last)
-    .get('/trakt/history', ctrlTrakt.history)
-    .get('/trakt/cover_movie/:id', ctrlTrakt.cover_movie)
-    .get('/trakt/imdb_config', ctrlTrakt.imdb_config)
+	// Show them muh portfolio.
+		// Public
+		.get('/portfolio', ctrl.portfolio.list)
+		.get('/portfolio/category/:category', ctrl.portfolio.category)
+		.get('/portfolio/work/:slug', ctrl.portfolio.work)
+		.get('/portfolio/work/:slug/:version', ctrl.portfolio.work_unique)
+		// TheDollars CP
+		.get('/thedollars/portfolio', ctrl.thedollars.isidentified, ctrl.portfolio.list)
+		.post('/thedollars/portfolio', ctrl.thedollars.isidentified, ctrl.portfolio.add)
+		.delete('/thedollars/portfolio/:id', ctrl.thedollars.isidentified, ctrl.portfolio.remove)
 
-  // MyAnimeList!
-    .get('/mal/anime', ctrlMAL.anime)
-    .get('/mal/manga', ctrlMAL.manga)
+	// Send the contact requests
+		// Public
+		.post('/contact', ctrl.contact.add)
+		// TheDollars CP
+		.get('/thedollars/inbox', ctrl.thedollars.isidentified, ctrl.contact.list)
+		.delete('/thedollars/inbox/:id', ctrl.thedollars.isidentified, ctrl.contact.remove)
 
-  // GitHub
-    .get('/github', ctrlGithub.main)
-    
-  // Instagram
-    .get('/instagram', ctrlInstagram.list)
+	// Show them muh blog.
+		// Public
+		.get('/blog', ctrl.blog.list)
+		.get('/blog/:slug', ctrl.blog.getpost)
+		.get('/blog/:slug/voting/:vote', ctrl.blog.votepost)
+		// TheDollars CP
+		.get('/thedollars/blog', ctrl.thedollars.isidentified, ctrl.blog.fulllist)
+		.post('/thedollars/blog', ctrl.thedollars.isidentified, ctrl.blog.add)
+		.delete('/thedollars/blog/:slug', ctrl.thedollars.isidentified, ctrl.blog.remove)
 
-  // Facebook
-    .get('/fb/info', ctrlFacebook.info)
-    .get('/fb/posts', ctrlFacebook.posts)
+	// YouTube
+		.get('/youtube', ctrl.youtube.last10)
+		.get('/youtube/latest', ctrl.youtube.latest)
+		.get('/youtube/stats', ctrl.youtube.stats)
+		.get('/youtube/details', ctrl.youtube.details)
 
-  // Twitter
-    .get('/tw/latest', ctrlTwitter.last)
+	// Give my Trakt list
+		.get('/trakt', ctrl.trakt.list)
+		.get('/trakt/last', ctrl.trakt.last)
+		.get('/trakt/history', ctrl.trakt.history)
+		.get('/trakt/cover_movie/:id', ctrl.trakt.cover_movie)
+		.get('/trakt/imdb_config', ctrl.trakt.imdb_config)
 
-  // Flickr
-    .get('/flickr', ctrlFlickr.list)
-    .get('/flickr/last', ctrlFlickr.last)
-  
-  // No Encontrado
-    .get('/noencontrado', ctrlNoEncontrado.get)
+	// MyAnimeList!
+		.get('/mal/anime', ctrl.mal.anime)
+		.get('/mal/manga', ctrl.mal.manga)
 
-    // Mailing
-    .get('/hamonsender', ctrlHamonSender.send)
-    .post('/hamonsender', ctrlHamonSender.send)
+	// GitHub
+		.get('/github', ctrl.github.main)
+		
+	// Instagram
+		.get('/instagram', ctrl.instagram.main)
 
-    .get('/_caesarino-adm', passport.authenticate('local'), function(req, res){
-      console.log(res);
-    })
+	// Facebook
+		.get('/fb/info', ctrl.facebook.info)
+		.get('/fb/posts', ctrl.facebook.posts)
 
-  // Tell Caesar-chan to upload images 4 muh portfolio.
-    .post('/caesarino/uploadme', ctrlCaesarino.upload)
+	// Twitter
+		.get('/tw/latest', ctrl.twitter.last)
 
-    .post('/caesarnoticeme', isLoggedIn, function(req, res) {
-        res.send({status: "success"});
-    })
-    .get('/caesarnoticeme', isLoggedIn, function(req, res) {
-        res.send({status: "success"});
-    })
+	// Flickr
+		.get('/flickr', ctrl.flickr.list)
+		.get('/flickr/last', ctrl.flickr.last)
+	
+	// No Encontrado
+		.get('/noencontrado', ctrl.noencontrado.get)
 
-    .get('/ikebukuro', isLoggedIn, function(req, res) {
-        //res.send(req.user);
-        res.json({status: "success"});
-        /*res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });*/
-    })
+		// Mailing
+		.get('/celty', ctrl.celty.send)
+		.post('/celty', ctrl.celty.send)
+
+		// Upload method
+		.post('/thedollars/uploadme', ctrl.thedollars.isidentified, ctrl.celty.upload)
+
+		.get('/thedollars/ikebukuro', ctrl.thedollars.isidentified, function(req, res) {
+			res.json({
+				status: "success",
+				user: req.user
+			});
+		})
 
 
-    .post('/im-joining-ikebukuro', passport.authenticate('local-signup', {
-      successRedirect : '/profile', // redirect to the secure profile section
-      failureRedirect : '/signup', // redirect back to the signup page if there is an error
-      failureFlash : true // allow flash messages
-    }), function(req, res){
-      res.json({status: true});
-    })
+		.post('/thedollars/im-joining-ikebukuro', ctrl.thedollars.newcitizen, function(req, res){
+			res.json({status: true, message: "Welcome to the Dollars."});
+		})
 
-    .post('/login', function(req, res, next) {
-      console.log(req.body);
-      passport.authenticate('local-login', function(err, user, info) {
-        if (err) {
-          return next(err); // will generate a 500 error
-        }
-        // Generate a JSON response reflecting authentication status
-        console.log(user);
-        if (! user) {
-          return res.send({ success : false, message : "Your user isn't in our DB." });
-        }
-        // ***********************************************************************
-        // "Note that when using a custom callback, it becomes the application's
-        // responsibility to establish a session (by calling req.login()) and send
-        // a response."
-        // Source: http://passportjs.org/docs
-        // ***********************************************************************
-        req.login(user, loginErr => {
-          if (loginErr) {
-            return next(loginErr);
-          }
-          return res.send({ success : true, message : "You're logged" });
-        });      
-      })(req, res, next);
-    })
-    .post('/login-legacy', passport.authenticate('local-login', {
-        successRedirect : '/api/check_citizen', // redirect to the secure dashboard section
-        failureRedirect : '/thedollars', // redirect back to Dollars login if he doesn't belong to our gang
-        failureFlash : true // allow flash messages
-    }), function(req, res){
-      res.json({status: true});
-    })
-    .get('/check_citizen', function(req, res){
-      console.log(req);
-      if (req.isAuthenticated()) {
-        res.json({status: "logged"});
-      }
-      res.json({status: false});
-    })
-    .get('/seeya', function(req, res) {
-        req.logout();
-        res.send({"status": "success"});
-        //res.redirect('/');
-    })
 
-    .get('/ping', function(req, res){
-      res.status(200).json("pong!");
-    });
+		.get('/thedollars/prelogin/:user', ctrl.thedollars.user)
+		.get('/thedollars/login', function(req, res) {
+			res.redirect('/thedollars');
+		})
+		.post('/thedollars/login', ctrl.thedollars.identify)
+		.get('/thedollars/check_citizen', ctrl.thedollars.isidentified, function(req, res){
+			res.json({status: "logged"});
+		})
+		.get('/thedollars/seeya', ctrl.thedollars.isidentified, function(req, res) {
+			req.logout();
+			res.send({"status": "success"});
+		})
 
-  return router;
+		.get('/ping', function(req, res){
+			res.status(200).json({response: "pong!"});
+		});
+
+	return router;
 };
-
-// route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
-  // if user is authenticated in the session, carry on 
-  console.log(req.isAuthenticated());
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  // if they aren't redirect them to the home page
-  //res.redirect('/');
-  res.send({"status": "Please log in to view this content."});
-}

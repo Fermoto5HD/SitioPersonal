@@ -1,22 +1,20 @@
-<section class="jumbotron jumbotron-fluid jumbotron-video jumbotron-full-height flex-center-vertical p-0">
-	<div class="video-overlay d-flex align-items-center">
-		<div class="col-md-8">
-			<div>
-				<h1 class="heading-uppercase heading-uppercase-full inverted display-inline-block" style="display: inline-block">Contacto</h1>
-			</div>
-			<!--p class="lead">Lo más que seguro es que llegaste hasta acá por algo que te impactó de todo lo que presenté. Este es el lugar perfecto para que nos comuniquemos y nos conozcamos mejor. Adelante!</p-->
-			<p class="lead">Próximamente se habilitará el formulario de contacto.</p>
-			<a class="btn btn-outline-light" routerLink="">Volver</a>
-		</div>
-	</div>
-</section>
-<!--section>
+<FM5-jumbotron 
+	image="assets/img/covers/about.jpg"
+	align="left"
+	column_container="col-md-8"
+
+	maintitle="Contactame y conoceme aún más"
+	lead="Lo más que seguro es que llegaste hasta acá por algo que te impactó de todo lo que presenté."
+	description="Este es el lugar perfecto para que nos comuniquemos y nos conozcamos mejor. Adelante!"
+	>
+</FM5-jumbotron>
+<section>
 	<div class="container-fluid">
-		<form [formGroup]="theForm" (ngSubmit)="onSubmit(theForm.value)" class="row">
+		<form [formGroup]="theForm" (ngSubmit)="onSubmit(theForm.value)" class="row" [hidden]="submitted">
 			<div class="col-md-8 offset-md-2 py-2">
 				<div class="form-group">
-					<label for="name">Nombre</label>
-					<input type="text" class="form-control" id="name" required name="name" formControlName="name">
+					<label for="kimi_no_na_wa">Nombre</label>
+					<input type="text" class="form-control" id="kimi_no_na_wa" required name="kimi_no_na_wa" formControlName="kimi_no_na_wa">
 				</div>
 				<div class="form-group">
 					<label for="alterEgo">E-mail</label>
@@ -35,10 +33,14 @@
 				</div>
 			</div>
 		</form>
+		<div class="text-center" [hidden]="!submitted">
+			<h3>¡Gracias!</h3>
+			<p>Durante los próximos días estaré en contacto con vos.</p>
+		</div>
 	</div>
 </section>
 
-<section>
+<!--section>
 	<div class="container-fluid">
 		<form class="row" #contactForm="ngForm" [formGroup]="theForm" (ngSubmit)="onSubmit()" novalidate>
 			<div class="col-md-8 offset-md-2 py-2">
